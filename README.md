@@ -1,2 +1,2 @@
-# electron-example
-electron触ってみる
+# twork
+A twitter client for business use made by Electron.
