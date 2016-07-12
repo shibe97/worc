@@ -2,3 +2,5 @@
 node_modules
 dist/*
 !index.html
+assets/*
+!images
