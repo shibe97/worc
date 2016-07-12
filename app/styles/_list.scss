@@ -1,0 +1,16 @@
+.List {
+    font-size: 14px;
+
+    &__item {
+        padding: 8px 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    &__name {
+        font-weight: bold;    
+    }
+
+    &__screenName {
+        color: #999;
+    }
+}

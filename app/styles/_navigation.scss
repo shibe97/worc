@@ -1,0 +1,25 @@
+.Navigation {
+    height: 100%;
+    background-color: #f3f3f3;
+
+    &__item {
+        height: 60px;
+        text-indent: -9999px;
+        overflow: hidden;
+
+        a {
+            display: block;
+            height: 100%;
+        }
+    }
+
+    &__item--home {
+        background: url('../images/icn_home_01.svg') no-repeat center center;
+        background-size: 32px 32px;
+    }
+
+    &__item--mentions {
+        background: url('../images/icn_mentions_01.svg') no-repeat center center;
+        background-size: 24px 24px;
+    }
+}

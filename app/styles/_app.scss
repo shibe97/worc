@@ -1,0 +1,13 @@
+.App {
+    &__left {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100%;
+    }
+    &__right {
+        padding-left: 60px;
+        height: 100vh;
+    }
+}
