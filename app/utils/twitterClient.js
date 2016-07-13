@@ -10,20 +10,27 @@ export default class TwitterClient {
         });
     }
 
-    twGetPromise(api) {
+    twGetPromise(api, params) {
         return new Promise((resolve, reject) => {
-            this.client.get(api, {count : 200},  (error, data, response) => {
+            this.client.get(api, params, (error, data, response) => {
                 if (error) {
                     reject(new Error(error));
                 } else {
-                    console.log(response);
                     resolve(data);
                 }
             });
         });
     }
 
-    resolveFunc (response, callback, dispatch) {
+    twGet(api, params, callback) {
+        return dispatch => {
+            this.twGetPromise(api, params)
+            .then(response => this.resolveFunc(response, callback, dispatch))
+            .catch(error => this.rejectFunc(error, dispatch));
+        };
+    }
+
+    resolveFunc(response, callback, dispatch) {
         return dispatch(callback(response, dispatch));
     }
 
@@ -33,20 +40,12 @@ export default class TwitterClient {
         });
     }
 
-    twGet(api, callback) {
-        return dispatch => {
-            this.twGetPromise(api)
-            .then(response => this.resolveFunc(response, callback, dispatch))
-            .catch(error => this.rejectFunc(error, dispatch));
-        };
-    }
-
     getHomeTimeline() {
         return dispatch => {
             dispatch({
                 type : 'GETTING_HOME_TIMELINE'
             });
-            dispatch(this.twGet('statuses/home_timeline', (data) => {
+            dispatch(this.twGet('statuses/home_timeline', {count : 200}, (data) => {
                 return {
                     type : 'GET_HOME_TIMELINE_SUCCESS',
                     data : data
@@ -60,7 +59,7 @@ export default class TwitterClient {
             dispatch({
                 type : 'GETTING_MENTIONS_TIMELINE'
             });
-            dispatch(this.twGet('statuses/mentions_timeline', (data) => {
+            dispatch(this.twGet('statuses/mentions_timeline', {count : 200}, (data) => {
                 return {
                     type : 'GET_MENTIONS_TIMELINE_SUCCESS',
                     data : data
