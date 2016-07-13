@@ -10,6 +10,7 @@ import Routes from './routes';
 // Reducer
 import homeTimelineReducer from './reducers/homeTimeline';
 import mentionsTimelineReducer from './reducers/mentionsTimeline';
+import updateReducer from './reducers/update';
 
 // ミドルウェア
 const middleware = [ thunk ];
@@ -17,7 +18,8 @@ const middleware = [ thunk ];
 // Store作成
 let reducer = combineReducers({
     homeTimelineReducer,
-    mentionsTimelineReducer
+    mentionsTimelineReducer,
+    updateReducer
 });
 
 const finalCreateStore = compose(

@@ -14,12 +14,22 @@ class PostForm extends Component {
         });
     }
 
+    postUpdate() {
+        this.props.dispatch(this.client.postUpdate(this.refs.text.value));
+    }
+
     render() {
         return (
             <form className="PostForm">
-                <textarea className="PostForm__textarea" placeholder="What are you doing now?"></textarea>
+                <textarea className="PostForm__textarea" placeholder="What are you doing now?" ref="text"></textarea>
                 <div className="PostForm__actions">
-                    <input className="PostForm__submitButton Button Button__normal" type="button" value="Post" />
+                    {
+                        this.props.data.postingUpdate
+                        ?
+                        <input className="Button Button__normal disabled" type="button" value="Posting..." onClick={this.postUpdate.bind(this)} />
+                        :
+                        <input className="Button Button__normal" type="button" value="Post" onClick={this.postUpdate.bind(this)} />
+                    }
                 </div>
             </form>
         );
@@ -28,6 +38,6 @@ class PostForm extends Component {
 
 export default connect(function (state) {
     return {
-        data : state.homeTimelineReducer
+        data : state.updateReducer
     };
 })(PostForm);
