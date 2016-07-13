@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import storage from 'electron-json-storage';
 import TwitterClient from '../utils/twitterClient';
+import Tweet from './Tweet';
 
 class MentionsTimeline extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         storage.get('auth', (error, data) => {
             if (error || Object.keys(data).length === 0) {
@@ -22,17 +19,7 @@ class MentionsTimeline extends Component {
     returnMentionsTimeline(timeline) {
         if (timeline.length > 0) {
             return timeline.map((item, index) => {
-                return (
-                    <li className="List__item" key={index}>
-                        <dl>
-                            <dt>
-                                <span className="List__name">{item.user.name}</span>
-                                <span className="List__screenName ml5px">@{item.user.screen_name}</span>
-                            </dt>
-                            <dd>{item.text}</dd>
-                        </dl>
-                    </li>    
-                );
+                return <Tweet tweet={item} key={index} />;
             });
         }
     }
