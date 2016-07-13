@@ -7,16 +7,6 @@ import { requestGetHomeTimeline } from '../actions/homeTimeline';
 
 class HomeTimeline extends Component {
     componentDidMount() {
-        /*
-        storage.get('auth', (error, data) => {
-            if (error || Object.keys(data).length === 0) {
-                throw error;
-            } else {
-                this.client = new TwitterClient(data);
-                this.props.dispatch(this.client.getHomeTimeline());
-            }
-        });
-        */
         this.props.dispatch(requestGetHomeTimeline());
     }
 

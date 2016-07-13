@@ -3,17 +3,11 @@ import { connect } from 'react-redux';
 import storage from 'electron-json-storage';
 import TwitterClient from '../utils/twitterClient';
 import Tweet from '../components/Tweet';
+import { requestGetMentionsTimeline } from '../actions/mentionsTimeline';
 
 class MentionsTimeline extends Component {
     componentDidMount() {
-        storage.get('auth', (error, data) => {
-            if (error || Object.keys(data).length === 0) {
-                throw error;
-            } else {
-                this.client = new TwitterClient(data);
-                this.props.dispatch(this.client.getMentionsTimeline());
-            }
-        });
+        this.props.dispatch(requestGetMentionsTimeline());
     }
 
     returnMentionsTimeline(timeline) {

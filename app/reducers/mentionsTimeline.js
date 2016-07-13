@@ -16,6 +16,16 @@ export default function mentionsTimelineReducer (items = initialItems, action) {
         case 'SYSTEM_ERROR':
             _items.gettingMentionsTimeline = false;
             break;
+        case 'REQUEST_GET_MENTIONS_TIMELINE':
+            _items.gettingMentionsTimeline = true;
+            break;
+        case 'SUCCESS_GET_MENTIONS_TIMELINE':
+            _items.gettingMentionsTimeline = false;
+            _items.mentionsTimeline = action.payload.data;
+            break;
+        case 'FAILURE_GET_MENTIONS_TIMELINE':
+            _items.gettingMentionsTimeline = false;
+            break;
         default:
             break;
     }
