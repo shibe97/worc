@@ -16,6 +16,16 @@ export default function homeTimelineReducer (items = initialItems, action) {
         case 'SYSTEM_ERROR':
             _items.gettingHomeTimeline = false;
             break;
+        case 'REQUEST_GET_HOME_TIMELINE':
+            _items.gettingHomeTimeline = true;
+            break;
+        case 'SUCCESS_GET_HOME_TIMELINE':
+            _items.gettingHomeTimeline = false;
+            _items.homeTimeline = action.payload.data;
+            break;
+        case 'FAILURE_GET_HOME_TIMELINE':
+            _items.gettingHomeTimeline = false;
+            break;
         default:
             break;
     }

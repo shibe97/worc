@@ -14,9 +14,9 @@ export default class TwitterClient {
         return new Promise((resolve, reject) => {
             this.client.get(api, params, (error, data, response) => {
                 if (error) {
-                    reject(new Error(error));
+                    reject({error});
                 } else {
-                    resolve(data);
+                    resolve({data});
                 }
             });
         });

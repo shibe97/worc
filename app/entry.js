@@ -1,8 +1,11 @@
+import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './sagas';
 
 // Routing
 import Routes from './routes';
@@ -13,7 +16,8 @@ import mentionsTimelineReducer from './reducers/mentionsTimeline';
 import updateReducer from './reducers/update';
 
 // ミドルウェア
-const middleware = [ thunk ];
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [ sagaMiddleware ];
 
 // Store作成
 let reducer = combineReducers({
@@ -26,6 +30,8 @@ const finalCreateStore = compose(
     applyMiddleware(...middleware)
 )(createStore);
 const store = finalCreateStore(reducer);
+console.log(sagaMiddleware);
+sagaMiddleware.run(rootSaga);
 
 render(
     <Provider store={store}>

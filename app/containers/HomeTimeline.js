@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import storage from 'electron-json-storage';
 import TwitterClient from '../utils/twitterClient';
 import Tweet from '../components/Tweet';
+import { requestGetHomeTimeline } from '../actions/homeTimeline';
 
 class HomeTimeline extends Component {
     componentDidMount() {
+        /*
         storage.get('auth', (error, data) => {
             if (error || Object.keys(data).length === 0) {
                 throw error;
@@ -14,6 +16,8 @@ class HomeTimeline extends Component {
                 this.props.dispatch(this.client.getHomeTimeline());
             }
         });
+        */
+        this.props.dispatch(requestGetHomeTimeline());
     }
 
     returnHomeTimeline(timeline) {

@@ -11,12 +11,15 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "redux": "^3.5.2",
+    "redux-actions": "^0.10.1",
+    "redux-saga": "^0.11.0",
     "redux-thunk": "^2.1.0",
     "twitter": "^1.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-core": "^6.9.1",
+    "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "gulp": "^3.9.1",
