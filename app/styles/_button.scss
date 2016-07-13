@@ -1,0 +1,42 @@
+.Button {
+    display: inline-block;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: 5px 8px;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.disabled, &:disabled {
+        background-image: none;
+        background-color: #ccc;
+        cursor: default;
+
+        &:hover {
+            background-color: #ccc;
+            background-image: none;
+        }
+    }
+
+    &__normal {
+        background: -moz-linear-gradient(top, #fff, #ddd);
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+        background-color: #ddd;
+        color: #333;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+    
+        &.disabled, &:disabled {
+            color: #999;
+        }
+
+        &:hover {
+            background: -moz-linear-gradient(top, #fafafa, #d8d8d8);
+            background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#d8d8d8));
+            background-color: #ddd;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Navigation from './Navigation';
+import PostForm from '../containers/PostForm';
 
 export default class App extends Component {
     render() {
@@ -10,6 +11,7 @@ export default class App extends Component {
                     <Navigation />
                 </div>
                 <div className="App__right">
+                    <PostForm />
                     {this.props.children}
                 </div>
             </div>
