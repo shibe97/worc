@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import storage from 'electron-json-storage';
 import TwitterClient from '../utils/twitterClient';
-import Tweet from './Tweet';
+import Tweet from '../components/Tweet';
 
-class HomeTimeline extends Component {
+class MentionsTimeline extends Component {
     componentDidMount() {
         storage.get('auth', (error, data) => {
             if (error || Object.keys(data).length === 0) {
                 throw error;
             } else {
                 this.client = new TwitterClient(data);
-                this.props.dispatch(this.client.getHomeTimeline());
+                this.props.dispatch(this.client.getMentionsTimeline());
             }
         });
     }
 
-    returnHomeTimeline(timeline) {
+    returnMentionsTimeline(timeline) {
         if (timeline.length > 0) {
             return timeline.map((item, index) => {
                 return <Tweet tweet={item} key={index} />;
@@ -25,14 +25,14 @@ class HomeTimeline extends Component {
     }
 
     render() {
-        if (this.props.data.gettingHomeTimeline) {
+        if (this.props.data.gettingMentionsTimeline) {
             return (
                 <div className="Loading" />
             );
         }
         return (
             <ul className="List">
-                {this.returnHomeTimeline(this.props.data.homeTimeline)}
+                {this.returnMentionsTimeline(this.props.data.mentionsTimeline)}
             </ul>
         );
     }
@@ -40,6 +40,6 @@ class HomeTimeline extends Component {
 
 export default connect(function (state) {
     return {
-        data : state.homeTimelineReducer
+        data : state.mentionsTimelineReducer
     };
-})(HomeTimeline);
+})(MentionsTimeline);
