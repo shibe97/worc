@@ -1,6 +1,6 @@
 'use strict';
 
-import { app, BrowserWindow, shell } from 'electron';
+import { app, BrowserWindow, shell, screen } from 'electron';
 import Authentication from './utils/authentication';
 import storage from 'electron-json-storage';
 
@@ -23,7 +23,12 @@ app.on('ready', function() {
         });
 
         // メイン画面の表示。ウィンドウの幅、高さを指定できる
-        mainWindow = new BrowserWindow({width: 800, height: 600});
+        mainWindow = new BrowserWindow({
+            x: 0,
+            y: 0,
+            width: 500,
+            height: screen.getPrimaryDisplay().size.height
+        });
         mainWindow.loadURL('file://' + __dirname + '/index.html');
         mainWindow.openDevTools(true);
 

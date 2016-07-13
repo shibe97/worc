@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron'
+import { BrowserWindow, screen } from 'electron'
 import NodeTwitterApi    from 'node-twitter-api'
 
 let authWindow = null;
@@ -19,8 +19,8 @@ export default class Authentication {
             }
 
             authWindow = new BrowserWindow({
-                width:  800,
-                height: 600
+                width: screen.getPrimaryDisplay().size.width,
+                height: screen.getPrimaryDisplay().size.height
             });
 
             authWindow.webContents.on('will-navigate', (event, url) => {
