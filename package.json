@@ -27,7 +27,8 @@
   "scripts": {
     "build": "babel app --out-dir dist --source-maps-inline",
     "watch": "babel app --out-dir dist --watch --source-maps-inline",
-    "test": "mocha --compilers js:babel-core/register test/**/*.js"
+    "test": "mocha --compilers js:babel-core/register test/**/*.js",
+    "start": "electron dist/main.js"
   },
   "repository": {
     "type": "git",
