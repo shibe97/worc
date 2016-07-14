@@ -21,7 +21,9 @@ class HomeTimeline extends Component {
     render() {
         if (this.props.data.gettingHomeTimeline) {
             return (
-                <div className="Loading" />
+                <div className="List">
+                    <div className="Loading" />
+                </div>
             );
         }
         return (
