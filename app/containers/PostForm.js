@@ -2,26 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import storage from 'electron-json-storage';
 import TwitterClient from '../utils/twitterClient';
+import { inputUpdate, requestPostUpdate } from '../actions/update';
 
 class PostForm extends Component {
-    componentDidMount() {
-        storage.get('auth', (error, data) => {
-            if (error || Object.keys(data).length === 0) {
-                throw error;
-            } else {
-                this.client = new TwitterClient(data);
-            }
-        });
+    inputUpdate() {
+        this.props.dispatch(inputUpdate(this.refs.text.value));
     }
 
     postUpdate() {
-        this.props.dispatch(this.client.postUpdate(this.refs.text.value));
+        this.props.dispatch(requestPostUpdate(this.refs.text.value));
     }
 
     render() {
         return (
             <form className="PostForm">
-                <textarea className="PostForm__textarea" placeholder="What are you doing now?" ref="text"></textarea>
+                <textarea className="PostForm__textarea" placeholder="What are you doing now?" ref="text" value={this.props.data.update} onChange={this.inputUpdate.bind(this)}></textarea>
                 <div className="PostForm__actions">
                     {
                         this.props.data.postingUpdate

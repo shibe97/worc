@@ -1,6 +1,7 @@
 import { call, put, fork, take } from 'redux-saga/effects';
 import { REQUEST_GET_HOME_TIMELINE, successGetHomeTimeline, failureGetHomeTimeline } from '../actions/homeTimeline';
 import { REQUEST_GET_MENTIONS_TIMELINE, successGetMentionsTimeline, failureGetMentionsTimeline } from '../actions/mentionsTimeline';
+import { REQUEST_POST_UPDATE, successPostUpdate, failurePostUpdate } from '../actions/update';
 import TwitterClient from '../utils/twitterClient';
 import storage from 'electron-json-storage';
 
@@ -42,7 +43,22 @@ function* handleGetMentionsTimeline() {
     }
 }
 
+function* handlePostUpdate() {
+    while (true) {
+        const { payload } = yield take(REQUEST_POST_UPDATE);
+        const client = yield call(createTwitterClient);
+        console.log(payload);
+        const { data, error } = yield client.twPostPromise('statuses/update', {status : payload});
+        if (error) {
+            yield put(failurePostUpdate({ error }));
+        } else {
+            yield put(successPostUpdate({ data }));
+        }
+    }
+}
+
 export default function* rootSaga() {
     yield fork(handleGetHomeTimeline);
     yield fork(handleGetMentionsTimeline);
+    yield fork(handlePostUpdate);
 }
