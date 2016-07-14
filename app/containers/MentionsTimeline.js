@@ -21,7 +21,9 @@ class MentionsTimeline extends Component {
     render() {
         if (this.props.data.gettingMentionsTimeline) {
             return (
-                <div className="Loading" />
+                <div className="List">
+                    <div className="Loading" />
+                </div>
             );
         }
         return (
