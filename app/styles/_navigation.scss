@@ -7,19 +7,19 @@
         text-indent: -9999px;
         overflow: hidden;
 
+        &--home {
+            background: url('../images/icn_home_01.svg') no-repeat center center;
+            background-size: 32px 32px;
+        }
+
+        &--mentions {
+            background: url('../images/icn_mentions_01.svg') no-repeat center center;
+            background-size: 24px 24px;
+        }
+
         a {
             display: block;
             height: 100%;
         }
-    }
-
-    &__item--home {
-        background: url('../images/icn_home_01.svg') no-repeat center center;
-        background-size: 32px 32px;
-    }
-
-    &__item--mentions {
-        background: url('../images/icn_mentions_01.svg') no-repeat center center;
-        background-size: 24px 24px;
     }
 }

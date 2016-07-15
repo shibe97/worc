@@ -1,0 +1,32 @@
+.Tweet {
+    &__name {
+        font-weight: bold;    
+    }
+
+    &__screenName {
+        color: #999;
+    }
+
+    &__text {
+        word-wrap: break-word;
+        overflow-wrap: break-word;    
+    }
+
+    &__actions {
+        padding-top: 5px;
+    }
+
+    &__action {
+        display: inline-block;
+        padding-right: 40px;
+        path {
+            fill: #ccc;
+        }
+    }
+
+    &__actionCount {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0 5px;
+    }
+}

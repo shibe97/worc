@@ -15,4 +15,23 @@
     &__screenName {
         color: #999;
     }
+
+    &__action {
+        display: inline-block;
+        text-indent: -9999px;
+        overflow: hidden;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        &--favorite {
+            background-image: url('../images/icn_favorite_01.svg');
+        }
+
+        &--retweet {
+            background-image: url('../images/icn_retweet_01.svg');
+        }
+    }
 }
