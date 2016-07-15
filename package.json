@@ -2,7 +2,7 @@
   "name": "twork",
   "version": "1.0.0",
   "description": "A twitter client for business use",
-  "main": "./dist/app.js",
+  "main": "./dist/main.js",
   "dependencies": {
     "electron-json-storage": "^2.0.0",
     "node-twitter-api": "^1.7.4",
