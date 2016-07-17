@@ -13,7 +13,7 @@ class MentionsTimeline extends Component {
     returnMentionsTimeline(timeline) {
         if (timeline.length > 0) {
             return timeline.map((item, index) => {
-                return <Tweet tweet={item} key={index} />;
+                return <Tweet tweet={item} key={index} dispatch={this.props.dispatch} />;
             });
         }
     }

@@ -6,13 +6,6 @@ const initialItems = {
 export default function homeTimelineReducer (items = initialItems, action) {
     let _items = Object.assign({}, items);
     switch (action.type) {
-        case 'GETTING_HOME_TIMELINE':
-            _items.gettingHomeTimeline = true;
-            break;
-        case 'GET_HOME_TIMELINE_SUCCESS':
-            _items.gettingHomeTimeline = false;
-            _items.homeTimeline = action.data;
-            break;
         case 'SYSTEM_ERROR':
             _items.gettingHomeTimeline = false;
             break;
@@ -25,6 +18,15 @@ export default function homeTimelineReducer (items = initialItems, action) {
             break;
         case 'FAILURE_GET_HOME_TIMELINE':
             _items.gettingHomeTimeline = false;
+            break;
+
+        case 'SUCCESS_POST_FAVORITES_CREATE':
+            _items.homeTimeline.forEach((tweet) => {
+                if (tweet.id_str === action.payload.id) {
+                    tweet.favorite_count ++;
+                    tweet.favorited = true;
+                }
+            });
             break;
         default:
             break;

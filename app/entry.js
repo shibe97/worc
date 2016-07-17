@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
 
@@ -17,6 +17,8 @@ import updateReducer from './reducers/update';
 
 // ミドルウェア
 const sagaMiddleware = createSagaMiddleware();
+const logger = createLogger();
+//const middleware = [ sagaMiddleware, logger ];
 const middleware = [ sagaMiddleware ];
 
 // Store作成
@@ -30,7 +32,6 @@ const finalCreateStore = compose(
     applyMiddleware(...middleware)
 )(createStore);
 const store = finalCreateStore(reducer);
-console.log(sagaMiddleware);
 sagaMiddleware.run(rootSaga);
 
 render(

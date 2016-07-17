@@ -6,7 +6,6 @@ export default function* handlePostUpdate() {
     while (true) {
         const { payload } = yield take(REQUEST_POST_UPDATE);
         const client = yield call(createTwitterClient);
-        console.log(payload);
         const { data, error } = yield client.twPostPromise('statuses/update', {status : payload});
         if (error) {
             yield put(failurePostUpdate({ error }));

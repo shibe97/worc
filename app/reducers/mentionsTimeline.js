@@ -6,13 +6,6 @@ const initialItems = {
 export default function mentionsTimelineReducer (items = initialItems, action) {
     let _items = Object.assign({}, items);
     switch (action.type) {
-        case 'GETTING_MENTIONS_TIMELINE':
-            _items.gettingMentionsTimeline = true;
-            break;
-        case 'GET_MENTIONS_TIMELINE_SUCCESS':
-            _items.gettingMentionsTimeline = false;
-            _items.mentionsTimeline = action.data;
-            break;
         case 'SYSTEM_ERROR':
             _items.gettingMentionsTimeline = false;
             break;
@@ -25,6 +18,15 @@ export default function mentionsTimelineReducer (items = initialItems, action) {
             break;
         case 'FAILURE_GET_MENTIONS_TIMELINE':
             _items.gettingMentionsTimeline = false;
+            break;
+
+        case 'SUCCESS_POST_FAVORITES_CREATE':
+            _items.mentionsTimeline.forEach((tweet) => {
+                if (tweet.id_str === action.payload.id) {
+                    tweet.favorite_count ++;
+                    tweet.favorited = true;
+                }
+            });
             break;
         default:
             break;

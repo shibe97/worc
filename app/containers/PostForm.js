@@ -5,8 +5,8 @@ import TwitterClient from '../utils/twitterClient';
 import { inputUpdate, requestPostUpdate } from '../actions/update';
 
 class PostForm extends Component {
-    inputUpdate() {
-        this.props.dispatch(inputUpdate(this.refs.text.value));
+    inputUpdate(e) {
+        this.props.dispatch(inputUpdate(e.target.value));
     }
 
     postUpdate() {

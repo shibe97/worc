@@ -19,6 +19,10 @@
     &__action {
         display: inline-block;
         padding-right: 40px;
+
+        .isActioned path {
+            fill: #009999;
+        }
         path {
             fill: #ccc;
         }
