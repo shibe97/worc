@@ -36,6 +36,15 @@ export default function homeTimelineReducer (items = initialItems, action) {
                 }
             });
             break;
+
+        case 'SUCCESS_POST_RETWEET':
+            _items.homeTimeline.forEach((tweet) => {
+                if (tweet.id_str === action.payload.id) {
+                    tweet.retweet_count ++;
+                    tweet.retweeted = true;
+                }
+            });
+            break;
         default:
             break;
     }

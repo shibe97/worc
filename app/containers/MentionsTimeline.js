@@ -19,7 +19,6 @@ class MentionsTimeline extends Component {
     }
 
     render() {
-        console.log(this.props.data.mentionsTimeline);
         if (this.props.data.gettingMentionsTimeline) {
             return (
                 <div className="List">
