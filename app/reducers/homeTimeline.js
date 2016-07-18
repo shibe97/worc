@@ -28,6 +28,14 @@ export default function homeTimelineReducer (items = initialItems, action) {
                 }
             });
             break;
+        case 'SUCCESS_POST_FAVORITES_DESTROY':
+            _items.homeTimeline.forEach((tweet) => {
+                if (tweet.id_str === action.payload.id) {
+                    tweet.favorite_count --;
+                    tweet.favorited = false;
+                }
+            });
+            break;
         default:
             break;
     }
