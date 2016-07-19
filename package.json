@@ -29,7 +29,7 @@
     "mocha": "^2.5.3"
   },
   "scripts": {
-    "build": "babel app --out-dir dist --source-maps-inline",
+    "build": "babel app --out-dir dist --source-maps-inline && gulp sass",
     "watch": "babel app --out-dir dist --watch --source-maps-inline",
     "test": "mocha --compilers js:babel-core/register test/**/*.js",
     "start": "electron dist/main.js"
