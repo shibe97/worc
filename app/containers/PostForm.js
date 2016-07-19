@@ -18,7 +18,7 @@ class PostForm extends Component {
             <form className="PostForm">
                 <textarea className="PostForm__textarea" placeholder="What are you doing now?" ref="text" value={this.props.data.update} onChange={this.inputUpdate.bind(this)}></textarea>
                 <div className="PostForm__actions">
-                    <span className="mr10px">{this.props.data.remainingCharacters}</span>
+                    <span className={this.props.data.remainingCharacters < 0 ? 'PostForm__overLength mr10px' : 'mrr10px'}>{this.props.data.remainingCharacters}</span>
                     {
                         this.props.data.postingUpdate
                         ?
