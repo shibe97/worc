@@ -23,14 +23,20 @@ export default class Tweet extends Component {
         this.props.dispatch(requestPostRetweet(tweetId));
     }
 
+    getTime(date) {
+        return `${date.getHours()}:${date.getMinutes()}`;
+    }
+
     render() {
         const {tweet} = this.props;
+        console.log(tweet);
         return (
             <li className="List__item">
                 <dl>
-                    <dt>
+                    <dt className="Tweet__meta">
                         <span className="Tweet__name">{tweet.user.name}</span>
                         <span className="Tweet__screenName ml5px">@{tweet.user.screen_name}</span>
+                        <span className="Tweet__createdAt ml5px">{this.getTime(new Date(tweet.created_at))}</span>
                     </dt>
                     <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities.urls)}}></dd>
                     <dd className="Tweet__actions">

@@ -1,10 +1,21 @@
 .Tweet {
+    &__meta {
+        @include clearfix;
+    }
+
     &__name {
         font-weight: bold;    
     }
 
     &__screenName {
         color: #999;
+    }
+
+    &__createdAt {
+        color: #ccc;
+        font-size: 10px;
+        padding-top: 3px;
+        float: right;
     }
 
     &__text {
