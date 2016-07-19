@@ -10,6 +10,10 @@ class MentionsTimeline extends Component {
         this.props.dispatch(requestGetMentionsTimeline());
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return JSON.stringify(this.props) !== JSON.stringify(nextProps);
+    }
+
     returnMentionsTimeline(timeline) {
         if (timeline.length > 0) {
             return timeline.map((item, index) => {

@@ -10,6 +10,10 @@ class HomeTimeline extends Component {
         this.props.dispatch(requestGetHomeTimeline());
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return JSON.stringify(this.props) !== JSON.stringify(nextProps);
+    }
+
     returnHomeTimeline(timeline) {
         if (timeline.length > 0) {
             return timeline.map((item, index) => {
