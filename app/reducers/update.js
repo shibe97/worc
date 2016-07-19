@@ -1,6 +1,9 @@
+import twitterText from 'twitter-text';
+
 const initialItems = {
-    update : '',
-    postingUpdate : false
+    update              : '',
+    remainingCharacters : 140,
+    postingUpdate       : false
 };
 
 export default function updateReducer (items = initialItems, action) {
@@ -21,6 +24,7 @@ export default function updateReducer (items = initialItems, action) {
             break;
         case 'INPUT_UPDATE':
             _items.update = action.payload;
+            _items.remainingCharacters = 140 - twttr.txt.getTweetLength(action.payload);
             break;
         default:
             break;
