@@ -4,6 +4,7 @@ import handleGetMentionsTimeline from './mentionsTimeline';
 import handlePostUpdate from './update';
 import { handlePostFavoritesCreate, handlePostFavoritesDestroy } from './favorites';
 import { handlePostRetweet } from './retweet';
+import handleStreamUser from './userStream';
 
 export default function* rootSaga() {
     yield fork(handleGetHomeTimeline);
@@ -12,4 +13,5 @@ export default function* rootSaga() {
     yield fork(handlePostFavoritesCreate);
     yield fork(handlePostFavoritesDestroy);
     yield fork(handlePostRetweet);
+    yield fork(handleStreamUser);
 }

@@ -51,6 +51,29 @@ export default class TwitterClient {
         };
     }
 
+    twStreamPromise(api, params) {
+        return new Promise((resolve, reject) => {
+            this.client.stream(api, params, (stream) => {
+                stream.on('data', (data) => {
+                    if (data['created_at']) {
+                        resolve(data['created_at']);
+                    }
+                });
+                stream.on('error', (error) => {
+                    reject(new Error(error));
+                });
+            });
+        });
+    }
+
+    twStream(api, params, callback) {
+        return dispatch => {
+            this.twStreamPromise(api, params)
+            .then(response => this.resolveFunc(response, callback, dispatch))
+            .catch(error => this.rejectFunc(error, dispatch));
+        };
+    }
+
     resolveFunc(response, callback, dispatch) {
         return dispatch(callback(response, dispatch));
     }
@@ -97,6 +120,20 @@ export default class TwitterClient {
             dispatch(this.twPost('statuses/update', {status : tweet}, (data) => {
                 return {
                     type : 'POST_UPDATE_SUCCESS',
+                    data : data
+                };
+            }));
+        };
+    }
+
+    streamUser() {
+        return dispatch => {
+            dispatch({
+                type : 'STREAMING_USER'
+            });
+            dispatch(this.twStream('user', {}, (data) => {
+                return {
+                    type : 'STREAM_USER_SUCCESS',
                     data : data
                 };
             }));
