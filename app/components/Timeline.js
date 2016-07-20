@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tweet from './Tweet';
+import Modal from 'react-awesome-modal';
 
 export default class Timeline extends Component {
     constructor(props) {
@@ -30,9 +31,20 @@ export default class Timeline extends Component {
             );
         }
         return (
-            <ul className="List">
-                {this.returnTimeline(this.props.timeline)}
-            </ul>
+            <div>
+                <ul className="List">
+                    {this.returnTimeline(this.props.timeline)}
+                </ul>
+                <Modal visible={this.state.retweetModal} width="300" height="120" effect="fadeInDown">
+                    <div className="Modal">
+                        <p className="Modal__title">Are you sure you wanna retweet?</p>
+                        <div className="Modal__actions mt20px">
+                            <input className="Button Button__submit" type="button" value="retweet" />
+                            <a className="ml20px" href="javascript:void(0);">cancel</a>
+                        </div>
+                    </div>
+                </Modal>
+            </div>
         );
     }
 }
