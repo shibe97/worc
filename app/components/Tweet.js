@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
-import { requestPostRetweet } from '../actions/retweet';
 
 export default class Tweet extends Component {
     returnLinkedText(text, urls = []) {
@@ -11,20 +9,16 @@ export default class Tweet extends Component {
         return str;
     }
 
+    getTime(date) {
+        return `${date.getHours()}:${date.getMinutes()}`;
+    }
+
     postFavorites(tweetId, favorited) {
-        if (favorited) {
-            this.props.dispatch(requestPostFavoritesDestroy(tweetId));
-        } else {
-            this.props.dispatch(requestPostFavoritesCreate(tweetId));
-        }
+        this.props.postFavorites(tweetId, favorited);
     }
 
     postRetweet(tweetId) {
-        this.props.dispatch(requestPostRetweet(tweetId));
-    }
-
-    getTime(date) {
-        return `${date.getHours()}:${date.getMinutes()}`;
+        this.props.postRetweet(tweetId);
     }
 
     render() {

@@ -10,7 +10,7 @@ class MentionsTimeline extends Component {
 
     render() {
         return (
-            <Timeline timeline={this.props.data.mentionsTimeline} gettingTimeline={this.props.data.gettingMentionsTimeline} />
+            <Timeline timeline={this.props.data.mentionsTimeline} gettingTimeline={this.props.data.gettingMentionsTimeline} dispatch={this.props.dispatch} />
         );
     }
 }

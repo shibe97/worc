@@ -10,7 +10,7 @@ class HomeTimeline extends Component {
 
     render() {
         return (
-            <Timeline timeline={this.props.data.homeTimeline} gettingTimeline={this.props.data.gettingHomeTimeline} />
+            <Timeline timeline={this.props.data.homeTimeline} gettingTimeline={this.props.data.gettingHomeTimeline} dispatch={this.props.dispatch} />
         );
     }
 }
