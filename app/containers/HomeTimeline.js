@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import storage from 'electron-json-storage';
-import TwitterClient from '../utils/twitterClient';
-import Tweet from '../components/Tweet';
+import Timeline from '../components/Timeline';
 import { requestGetHomeTimeline } from '../actions/homeTimeline';
 
 class HomeTimeline extends Component {
@@ -10,30 +8,9 @@ class HomeTimeline extends Component {
         this.props.dispatch(requestGetHomeTimeline());
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return JSON.stringify(this.props) !== JSON.stringify(nextProps);
-    }
-
-    returnHomeTimeline(timeline) {
-        if (timeline.length > 0) {
-            return timeline.map((item, index) => {
-                return <Tweet tweet={item} key={index} dispatch={this.props.dispatch} />;
-            });
-        }
-    }
-
     render() {
-        if (this.props.data.gettingHomeTimeline) {
-            return (
-                <div className="List">
-                    <div className="Loading" />
-                </div>
-            );
-        }
         return (
-            <ul className="List">
-                {this.returnHomeTimeline(this.props.data.homeTimeline)}
-            </ul>
+            <Timeline timeline={this.props.data.homeTimeline} gettingTimeline={this.props.data.gettingHomeTimeline} />
         );
     }
 }
