@@ -6,8 +6,8 @@ import { requestStreamUser } from '../actions/userStream';
 
 class HomeTimeline extends Component {
     componentDidMount() {
-        //this.props.dispatch(requestGetHomeTimeline());
-        this.props.dispatch(requestStreamUser());
+        this.props.dispatch(requestGetHomeTimeline());
+        this.props.dispatch(requestStreamUser(this.props.dispatch));
     }
 
     render() {

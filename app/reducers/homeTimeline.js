@@ -20,6 +20,10 @@ export default function homeTimelineReducer (items = initialItems, action) {
             _items.gettingHomeTimeline = false;
             break;
 
+        case 'SUCCESS_STREAM_USER':
+            _items.homeTimeline.unshift(action.payload.data);
+            break;
+
         case 'SUCCESS_POST_FAVORITES_CREATE':
             _items.homeTimeline.forEach((tweet) => {
                 if (tweet.id_str === action.payload.id) {
