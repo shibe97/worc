@@ -29,13 +29,14 @@ app.on('ready', function() {
             width: 500,
             height: screen.getPrimaryDisplay().size.height
         });
-        mainWindow.loadURL('file://' + __dirname + '/index.html');
-        mainWindow.openDevTools(true);
 
         mainWindow.webContents.on('new-window', (e, url) => {
             e.preventDefault();
             shell.openExternal(url);
         })
+
+        mainWindow.loadURL('file://' + __dirname + '/index.html');
+        mainWindow.openDevTools(true);
 
         // ウィンドウが閉じられたらアプリも終了
         mainWindow.on('closed', function() {
