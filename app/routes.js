@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-import App from './components/App';
+import App from './containers/App';
 import HomeTimeline from './containers/HomeTimeline';
 import MentionsTimeline from './containers/MentionsTimeline';
 

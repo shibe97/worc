@@ -4,6 +4,10 @@ import Navigation from './Navigation';
 import PostForm from '../containers/PostForm';
 
 export default class App extends Component {
+    componentDidMount() {
+        this.props.requestStreamUser();
+    }
+
     render() {
         return (
             <div className="App">
