@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Tweet from './Tweet';
 import Modal from 'react-awesome-modal';
-import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
-import { requestPostRetweet } from '../actions/retweet';
 
 export default class Timeline extends Component {
     constructor(props) {
@@ -13,22 +11,25 @@ export default class Timeline extends Component {
         };
     }
 
-    /*
-    shouldComponentUpdate(nextProps, nextState) {
-        return JSON.stringify(this.props) !== JSON.stringify(nextProps);
-    }*/
+    componentDidMount() {
+        this.props.requestGetTimeline();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('willRecieve');
+    }
 
     postFavorites(tweetId, favorited) {
         if (favorited) {
-            this.props.dispatch(requestPostFavoritesDestroy(tweetId));
+            this.props.requestPostFavoritesDestroy(tweetId);
         } else {
-            this.props.dispatch(requestPostFavoritesCreate(tweetId));
+            this.props.requestPostFavoritesCreate(tweetId);
         }
     }
 
     postRetweet() {
         this.closeRetweetModal();
-        this.props.dispatch(requestPostRetweet(this.state.tweetId));
+        this.props.requestPostRetweet(this.state.tweetId);
     }
 
     popupRetweetModal(tweetId) {
@@ -47,13 +48,14 @@ export default class Timeline extends Component {
     returnTimeline(timeline) {
         if (timeline.length > 0) {
             return timeline.map((item, index) => {
-                return <Tweet tweet={item} key={index} dispatch={this.props.dispatch} postFavorites={this.postFavorites.bind(this)} postRetweet={this.popupRetweetModal.bind(this)} />;
+                return <Tweet tweet={item} key={index} postFavorites={this.postFavorites.bind(this)} postRetweet={this.popupRetweetModal.bind(this)} />;
             });
         }
     }
 
     render() {
-        if (this.props.gettingTimeline) {
+        console.log('render');
+        if (this.props.data.gettingTimeline) {
             return (
                 <div className="List">
                     <div className="Loading" />
@@ -63,7 +65,7 @@ export default class Timeline extends Component {
         return (
             <div>
                 <ul className="List">
-                    {this.returnTimeline(this.props.timeline)}
+                    {this.returnTimeline(this.props.data.timeline)}
                 </ul>
                 <Modal visible={this.state.retweetModal} width="300" height="120" effect="fadeInDown">
                     <div className="Modal">

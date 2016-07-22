@@ -1,27 +1,27 @@
 const initialItems = {
-    gettingMentionsTimeline : false,
-    mentionsTimeline        : []
+    gettingTimeline : false,
+    timeline        : []
 };
 
-export default function mentionsTimelineReducer (items = initialItems, action) {
+export default function timelineReducer (items = initialItems, action) {
     let _items = Object.assign({}, items);
     switch (action.type) {
         case 'SYSTEM_ERROR':
-            _items.gettingMentionsTimeline = false;
+            _items.gettingTimeline = false;
             break;
         case 'REQUEST_GET_MENTIONS_TIMELINE':
-            _items.gettingMentionsTimeline = true;
+            _items.gettingTimeline = true;
             break;
         case 'SUCCESS_GET_MENTIONS_TIMELINE':
-            _items.gettingMentionsTimeline = false;
-            _items.mentionsTimeline = action.payload.data;
+            _items.gettingTimeline = false;
+            _items.timeline = action.payload.data;
             break;
         case 'FAILURE_GET_MENTIONS_TIMELINE':
-            _items.gettingMentionsTimeline = false;
+            _items.gettingTimeline = false;
             break;
 
         case 'SUCCESS_POST_FAVORITES_CREATE':
-            _items.mentionsTimeline.forEach((tweet) => {
+            _items.timeline.forEach((tweet) => {
                 if (tweet.id_str === action.payload.id) {
                     tweet.favorite_count ++;
                     tweet.favorited = true;
@@ -29,7 +29,7 @@ export default function mentionsTimelineReducer (items = initialItems, action) {
             });
             break;
         case 'SUCCESS_POST_FAVORITES_DESTROY':
-            _items.mentionsTimeline.forEach((tweet) => {
+            _items.timeline.forEach((tweet) => {
                 if (tweet.id_str === action.payload.id) {
                     tweet.favorite_count --;
                     tweet.favorited = false;
@@ -38,7 +38,7 @@ export default function mentionsTimelineReducer (items = initialItems, action) {
             break;
 
         case 'SUCCESS_POST_RETWEET':
-            _items.mentionsTimeline.forEach((tweet) => {
+            _items.timeline.forEach((tweet) => {
                 if (tweet.id_str === action.payload.id) {
                     tweet.retweet_count ++;
                     tweet.retweeted = true;
