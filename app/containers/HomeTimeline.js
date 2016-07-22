@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Timeline from '../components/Timeline';
+import HomeTimeline from '../components/HomeTimeline';
 import { requestGetHomeTimeline } from '../actions/homeTimeline';
 
-class HomeTimeline extends Component {
-    componentDidMount() {
-        this.props.dispatch(requestGetHomeTimeline());
-    }
-
-    render() {
-        return (
-            <Timeline timeline={this.props.data.homeTimeline} gettingTimeline={this.props.data.gettingHomeTimeline} dispatch={this.props.dispatch} />
-        );
-    }
-}
-
-export default connect(function (state) {
+const mapStateToProps = (state) => {
     return {
         data : state.homeTimelineReducer
     };
-})(HomeTimeline);
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    requestGetHomeTimeline() {
+        dispatch(requestGetHomeTimeline());
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeTimeline);
