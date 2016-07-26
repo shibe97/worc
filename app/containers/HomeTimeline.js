@@ -6,7 +6,8 @@ import { requestPostRetweet } from '../actions/retweet';
 
 const mapStateToProps = (state) => {
     return {
-        data : state.homeTimelineReducer
+        gettingTimeline : state.homeTimelineReducer.gettingTimeline,
+        timeline        : state.homeTimelineReducer.timeline
     };
 }
 

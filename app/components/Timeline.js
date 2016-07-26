@@ -15,10 +15,6 @@ export default class Timeline extends Component {
         this.props.requestGetTimeline();
     }
 
-    componentWillReceiveProps(nextProps) {
-        console.log('willRecieve');
-    }
-
     postFavorites(tweetId, favorited) {
         if (favorited) {
             this.props.requestPostFavoritesDestroy(tweetId);
@@ -54,8 +50,7 @@ export default class Timeline extends Component {
     }
 
     render() {
-        console.log('render');
-        if (this.props.data.gettingTimeline) {
+        if (this.props.gettingTimeline) {
             return (
                 <div className="List">
                     <div className="Loading" />
@@ -65,7 +60,7 @@ export default class Timeline extends Component {
         return (
             <div>
                 <ul className="List">
-                    {this.returnTimeline(this.props.data.timeline)}
+                    {this.returnTimeline(this.props.timeline)}
                 </ul>
                 <Modal visible={this.state.retweetModal} width="300" height="120" effect="fadeInDown">
                     <div className="Modal">
