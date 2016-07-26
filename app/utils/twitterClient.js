@@ -14,7 +14,6 @@ export default class TwitterClient {
     twGetPromise(api, params) {
         return new Promise((resolve, reject) => {
             this.client.get(api, params, (error, data, response) => {
-                console.log(data);
                 if (error) {
                     reject({error});
                 } else {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from 'react-awesome-modal';
+import { Link } from 'react-router';
 
 export default class Lists extends Component {
 
@@ -21,7 +21,7 @@ export default class Lists extends Component {
                     {
                         this.props.list.map((item, index) => (
                             <li className="List__item" key={index}>
-                                {item.name}
+                                <Link to={`/lists/${item.id_str}`}>{item.name}</Link>
                             </li>
                         ))
                     }
