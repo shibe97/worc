@@ -18,7 +18,13 @@ export default class Lists extends Component {
         return (
             <div>
                 <ul className="List">
-                    <li>list</li>
+                    {
+                        this.props.list.map((item, index) => (
+                            <li className="List__item" key={index}>
+                                {item.name}
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
         );
