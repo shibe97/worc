@@ -14,6 +14,7 @@ import Routes from './routes';
 import homeTimelineReducer from './reducers/homeTimeline';
 import mentionsTimelineReducer from './reducers/mentionsTimeline';
 import updateReducer from './reducers/update';
+import listsReducer from './reducers/lists';
 
 // ミドルウェア
 const sagaMiddleware = createSagaMiddleware();
@@ -25,7 +26,8 @@ const middleware = [ sagaMiddleware ];
 let reducer = combineReducers({
     homeTimelineReducer,
     mentionsTimelineReducer,
-    updateReducer
+    updateReducer,
+    listsReducer
 });
 
 const finalCreateStore = compose(
