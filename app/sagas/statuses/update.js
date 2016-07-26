@@ -1,6 +1,6 @@
 import { call, put, fork, take } from 'redux-saga/effects';
-import { REQUEST_POST_UPDATE, successPostUpdate, failurePostUpdate } from '../actions/update';
-import { createTwitterClient } from '../utils/twitterClient';
+import { REQUEST_POST_UPDATE, successPostUpdate, failurePostUpdate } from '../../actions/update';
+import { createTwitterClient } from '../../utils/twitterClient';
 
 export default function* handlePostUpdate() {
     while (true) {

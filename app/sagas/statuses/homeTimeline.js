@@ -1,6 +1,6 @@
 import { call, put, fork, take } from 'redux-saga/effects';
-import { REQUEST_GET_HOME_TIMELINE, successGetHomeTimeline, failureGetHomeTimeline } from '../actions/homeTimeline';
-import { createTwitterClient } from '../utils/twitterClient';
+import { REQUEST_GET_HOME_TIMELINE, successGetHomeTimeline, failureGetHomeTimeline } from '../../actions/homeTimeline';
+import { createTwitterClient } from '../../utils/twitterClient';
 
 export default function* handleGetHomeTimeline() {
     while (true) {

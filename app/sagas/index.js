@@ -1,10 +1,10 @@
 import { call, put, fork, take } from 'redux-saga/effects';
-import handleGetHomeTimeline from './homeTimeline';
-import handleGetMentionsTimeline from './mentionsTimeline';
-import handlePostUpdate from './update';
-import { handlePostFavoritesCreate, handlePostFavoritesDestroy } from './favorites';
-import { handlePostRetweet } from './retweet';
-import handleStreamUser from './userStream';
+import handleGetHomeTimeline from './statuses/homeTimeline';
+import handleGetMentionsTimeline from './statuses/mentionsTimeline';
+import handlePostUpdate from './statuses/update';
+import { handlePostFavoritesCreate, handlePostFavoritesDestroy } from './favorites/favorites';
+import { handlePostRetweet } from './statuses/retweet';
+import handleStreamUser from './streams/userStream';
 
 export default function* rootSaga() {
     yield fork(handleGetHomeTimeline);

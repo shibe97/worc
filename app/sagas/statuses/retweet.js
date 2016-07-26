@@ -1,6 +1,6 @@
 import { call, put, fork, take } from 'redux-saga/effects';
-import { REQUEST_POST_RETWEET, successPostRetweet, failurePostRetweet } from '../actions/retweet';
-import { createTwitterClient } from '../utils/twitterClient';
+import { REQUEST_POST_RETWEET, successPostRetweet, failurePostRetweet } from '../../actions/retweet';
+import { createTwitterClient } from '../../utils/twitterClient';
 
 export function* handlePostRetweet() {
     while (true) {

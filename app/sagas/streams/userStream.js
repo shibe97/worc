@@ -1,6 +1,6 @@
 import { call, put, fork, take } from 'redux-saga/effects';
-import { REQUEST_STREAM_USER, successStreamUser, failureStreamUser } from '../actions/userStream';
-import { createTwitterClient } from '../utils/twitterClient';
+import { REQUEST_STREAM_USER, successStreamUser, failureStreamUser } from '../../actions/userStream';
+import { createTwitterClient } from '../../utils/twitterClient';
 
 export default function* handleStreamUser() {
     const { dispatch } = yield take(REQUEST_STREAM_USER);

@@ -1,6 +1,6 @@
 import { call, put, fork, take } from 'redux-saga/effects';
-import { REQUEST_POST_FAVORITES_CREATE, REQUEST_POST_FAVORITES_DESTROY, successPostFavoritesCreate, successPostFavoritesDestroy, failurePostFavoritesCreate, failurePostFavoritesDestroy } from '../actions/favorites';
-import { createTwitterClient } from '../utils/twitterClient';
+import { REQUEST_POST_FAVORITES_CREATE, REQUEST_POST_FAVORITES_DESTROY, successPostFavoritesCreate, successPostFavoritesDestroy, failurePostFavoritesCreate, failurePostFavoritesDestroy } from '../../actions/favorites';
+import { createTwitterClient } from '../../utils/twitterClient';
 
 export function* handlePostFavoritesCreate() {
     while (true) {
