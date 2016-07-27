@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const initialItems = {
     gettingTimeline : false,
     timeline        : []
@@ -14,14 +16,16 @@ export default function homeTimelineReducer (items = initialItems, action) {
             break;
         case 'SUCCESS_GET_HOME_TIMELINE':
             _items.gettingTimeline = false;
-            _items.timeline = action.payload.data;
+            _items.timeline = _.cloneDeep(action.payload.data);
             break;
         case 'FAILURE_GET_HOME_TIMELINE':
             _items.gettingTimeline = false;
             break;
 
         case 'SUCCESS_STREAM_USER':
-            _items.timeline.unshift(action.payload.data);
+            let newTimeline = _.cloneDeep(_items.timeline);
+            newTimeline.unshift(action.payload.data);
+            _items.timeline = newTimeline;
             break;
 
         case 'SUCCESS_POST_FAVORITES_CREATE':

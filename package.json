@@ -5,6 +5,7 @@
   "main": "./dist/main.js",
   "dependencies": {
     "electron-json-storage": "^2.0.0",
+    "lodash": "^4.14.0",
     "node-twitter-api": "^1.7.4",
     "react": "^15.1.0",
     "react-awesome-modal": "^0.3.3",

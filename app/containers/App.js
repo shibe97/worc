@@ -4,14 +4,12 @@ import { requestStreamUser } from '../actions/userStream';
 
 const mapStateToProps = (state) => {
     return {};
-}
+};
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        requestStreamUser : () => {
-            dispatch(requestStreamUser(dispatch));
-        }
+const mapDispatchToProps = (dispatch) => ({
+    requestStreamUser() {
+        dispatch(requestStreamUser(dispatch));
     }
-}
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
