@@ -17,6 +17,15 @@
             background-size: 24px 24px;
         }
 
+        &--lists {
+            background: url('../images/icn_lists_01.svg') no-repeat center center;
+            background-size: 30px 30px;
+        }
+
+        path {
+            fill: #eee;
+        }
+
         a {
             display: block;
             height: 100%;
