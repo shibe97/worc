@@ -5,25 +5,25 @@ import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../acti
 import { requestPostRetweet } from '../actions/retweet';
 
 const mapStateToProps = (state) => {
-    return {
-        gettingTimeline : state.mentionsTimelineReducer.gettingTimeline,
-        timeline        : state.mentionsTimelineReducer.timeline
-    };
+  return {
+    gettingTimeline : state.mentionsTimelineReducer.gettingTimeline,
+    timeline        : state.mentionsTimelineReducer.timeline
+  };
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    requestGetTimeline() {
-        dispatch(requestGetMentionsTimeline());
-    },
-    requestPostFavoritesCreate(tweetId) {
-        dispatch(requestPostFavoritesCreate(tweetId));
-    },
-    requestPostFavoritesDestroy(tweetId) {
-        dispatch(requestPostFavoritesDestroy(tweetId));
-    },
-    requestPostRetweet(tweetId) {
-        dispatch(requestPostRetweet(tweetId));
-    }
+  requestGetTimeline() {
+    dispatch(requestGetMentionsTimeline());
+  },
+  requestPostFavoritesCreate(tweetId) {
+    dispatch(requestPostFavoritesCreate(tweetId));
+  },
+  requestPostFavoritesDestroy(tweetId) {
+    dispatch(requestPostFavoritesDestroy(tweetId));
+  },
+  requestPostRetweet(tweetId) {
+    dispatch(requestPostRetweet(tweetId));
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Timeline);

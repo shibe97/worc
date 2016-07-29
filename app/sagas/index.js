@@ -9,13 +9,13 @@ import handleGetList from './lists/list';
 import handleGetListsStatuses from './lists/statuses';
 
 export default function* rootSaga() {
-    yield fork(handleGetHomeTimeline);
-    yield fork(handleGetMentionsTimeline);
-    yield fork(handlePostUpdate);
-    yield fork(handlePostFavoritesCreate);
-    yield fork(handlePostFavoritesDestroy);
-    yield fork(handlePostRetweet);
-    yield fork(handleStreamUser);
-    yield fork(handleGetList);
-    yield fork(handleGetListsStatuses);
+  yield fork(handleGetHomeTimeline);
+  yield fork(handleGetMentionsTimeline);
+  yield fork(handlePostUpdate);
+  yield fork(handlePostFavoritesCreate);
+  yield fork(handlePostFavoritesDestroy);
+  yield fork(handlePostRetweet);
+  yield fork(handleStreamUser);
+  yield fork(handleGetList);
+  yield fork(handleGetListsStatuses);
 }

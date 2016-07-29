@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import createLogger from 'redux-logger';
+// import createLogger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
 
@@ -18,27 +18,27 @@ import listsReducer from './reducers/lists';
 
 // ミドルウェア
 const sagaMiddleware = createSagaMiddleware();
-const logger = createLogger();
-//const middleware = [ sagaMiddleware, logger ];
-const middleware = [ sagaMiddleware ];
+// const logger = createLogger();
+// const middleware = [ sagaMiddleware, logger ];
+const middleware = [sagaMiddleware];
 
 // Store作成
-let reducer = combineReducers({
-    homeTimelineReducer,
-    mentionsTimelineReducer,
-    updateReducer,
-    listsReducer
+const reducer = combineReducers({
+  homeTimelineReducer,
+  mentionsTimelineReducer,
+  updateReducer,
+  listsReducer
 });
 
 const finalCreateStore = compose(
-    applyMiddleware(...middleware)
+  applyMiddleware(...middleware)
 )(createStore);
 const store = finalCreateStore(reducer);
 sagaMiddleware.run(rootSaga);
 
 render(
-    <Provider store={store}>
-        <Routes />
-    </Provider>,
-    document.getElementById('app')
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
+  document.getElementById('app')
 );

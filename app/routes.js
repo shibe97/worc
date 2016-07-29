@@ -8,17 +8,17 @@ import Lists from './containers/Lists';
 import ListsTimeline from './containers/ListsTimeline';
 
 export default class Routes extends Component {
-    render() {
-        return (
-            <Router history={hashHistory}>
-                <Route component={App} path="/">
-                    <IndexRoute component={HomeTimeline} />
-                    <Route component={HomeTimeline} path="homeTimeline" />
-                    <Route component={MentionsTimeline} path="mentionsTimeline" />
-                    <Route component={Lists} path="lists" />
-                    <Route component={ListsTimeline} path="lists/:listId" />
-                </Route>
-            </Router>
-        );
-    }
+  render() {
+    return (
+      <Router history={hashHistory}>
+        <Route component={App} path="/">
+          <IndexRoute component={HomeTimeline} />
+          <Route component={HomeTimeline} path="homeTimeline" />
+          <Route component={MentionsTimeline} path="mentionsTimeline" />
+          <Route component={Lists} path="lists" />
+          <Route component={ListsTimeline} path="lists/:listId" />
+        </Route>
+      </Router>
+    );
+  }
 }

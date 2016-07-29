@@ -3,11 +3,11 @@ import { REQUEST_STREAM_USER, successStreamUser, failureStreamUser } from '../..
 import { createTwitterClient } from '../../utils/twitterClient';
 
 export default function* handleStreamUser() {
-    const { dispatch } = yield take(REQUEST_STREAM_USER);
-    const client = yield call(createTwitterClient);
-    client.twStream('user', {}, (stream) => {
-        stream.on('data', (data) => {
-            dispatch(successStreamUser({ data }));
-        });
+  const { dispatch } = yield take(REQUEST_STREAM_USER);
+  const client = yield call(createTwitterClient);
+  client.twStream('user', {}, (stream) => {
+    stream.on('data', (data) => {
+      dispatch(successStreamUser({ data }));
     });
+  });
 }
