@@ -4,49 +4,52 @@ const initialItems = {
 };
 
 export default function timelineReducer(items = initialItems, action) {
-  let _items = Object.assign({}, items);
   switch (action.type) {
     case 'SYSTEM_ERROR':
-      _items.gettingTimeline = false;
-      break;
+      return { ...items, gettingTimeline: false }
+
     case 'REQUEST_GET_MENTIONS_TIMELINE':
-      _items.gettingTimeline = true;
-      break;
+      return { ...items, gettingTimeline: true }
+
     case 'SUCCESS_GET_MENTIONS_TIMELINE':
-      _items.gettingTimeline = false;
-      _items.timeline = action.payload.data;
-      break;
+      return {
+        ...items,
+        gettingTimeline: false,
+        timeline: action.payload.data
+      }
+
     case 'FAILURE_GET_MENTIONS_TIMELINE':
-      _items.gettingTimeline = false;
-      break;
+      return { ...items, gettingTimeline: false }
 
     case 'SUCCESS_POST_FAVORITES_CREATE':
-      _items.timeline.forEach((tweet) => {
+      return items.timeline.map((tweet) => {
         if (tweet.id_str === action.payload.id) {
           tweet.favorite_count ++;
           tweet.favorited = true;
         }
+        return tweet;
       });
-      break;
+
     case 'SUCCESS_POST_FAVORITES_DESTROY':
-      _items.timeline.forEach((tweet) => {
+      return items.timeline.map((tweet) => {
         if (tweet.id_str === action.payload.id) {
           tweet.favorite_count --;
           tweet.favorited = false;
         }
+        return tweet;
       });
-      break;
 
     case 'SUCCESS_POST_RETWEET':
-      _items.timeline.forEach((tweet) => {
+      return items.timeline.map((tweet) => {
         if (tweet.id_str === action.payload.id) {
           tweet.retweet_count ++;
           tweet.retweeted = true;
         }
+        return tweet;
       });
-      break;
+
     default:
       break;
   }
-  return _items;
+  return items;
 }
