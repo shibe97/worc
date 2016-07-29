@@ -4,20 +4,20 @@ import storage from 'electron-json-storage';
 export default class TwitterClient {
   constructor(token) {
     this.client = new Twitter({
-      consumer_key        : 'AdfRer5kIrdPHmiNlYZPvxI5N',
-      consumer_secret     : 'dVLTFLgg21EfUzF56PARBDyhzibwCN4HJCQ4juulwFt9VS6Vx6',
-      access_token_key    : token['accessToken'],
-      access_token_secret : token['accessTokenSecret']
+      consumer_key: 'AdfRer5kIrdPHmiNlYZPvxI5N',
+      consumer_secret: 'dVLTFLgg21EfUzF56PARBDyhzibwCN4HJCQ4juulwFt9VS6Vx6',
+      access_token_key: token.accessToken,
+      access_token_secret: token.accessTokenSecret
     });
   }
 
   twGetPromise(api, params) {
     return new Promise((resolve, reject) => {
-      this.client.get(api, params, (error, data, response) => {
+      this.client.get(api, params, (error, data) => {
         if (error) {
-          reject({error});
+          reject({ error });
         } else {
-          resolve({data});
+          resolve({ data });
         }
       });
     });
@@ -25,7 +25,7 @@ export default class TwitterClient {
 
   twPostPromise(api, params) {
     return new Promise((resolve, reject) => {
-      this.client.post(api, params, (error, data, response) => {
+      this.client.post(api, params, (error, data) => {
         if (error) {
           reject(new Error(error));
         } else {
@@ -47,7 +47,7 @@ export default class TwitterClient {
 
   rejectFunc(error, dispatch) {
     return dispatch({
-      type : 'SYSTEM_ERROR'
+      type: 'SYSTEM_ERROR'
     });
   }
 }

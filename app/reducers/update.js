@@ -1,33 +1,35 @@
-import twitterText from 'twitter-text';
-
 const initialItems = {
-  update              : '',
-  remainingCharacters : 140,
-  postingUpdate       : false
+  update: '',
+  remainingCharacters: 140,
+  postingUpdate: false
 };
 
-export default function updateReducer (items = initialItems, action) {
-  let _items = Object.assign({}, items);
+export default function updateReducer(items = initialItems, action) {
   switch (action.type) {
     case 'SYSTEM_ERROR':
-      _items.postingUpdate = false;
-      break;
+      return Object.assign({}, items, {
+        postingUpdate: false
+      });
     case 'REQUEST_POST_UPDATE':
-      _items.postingUpdate = true;
-      break;
+      return Object.assign({}, items, {
+        postingUpdate: true
+      });
     case 'SUCCESS_POST_UPDATE':
-      _items.postingUpdate = false;
-      _items.update = '';
-      break;
+      return Object.assign({}, items, {
+        postingUpdate: false,
+        update: ''
+      });
     case 'FAILURE_POST_UPDATE':
-      _items.postingUpdate = false;
-      break;
+      return Object.assign({}, items, {
+        postingUpdate: false
+      });
     case 'INPUT_UPDATE':
-      _items.update = action.payload;
-      _items.remainingCharacters = 140 - twttr.txt.getTweetLength(action.payload);
-      break;
+      return Object.assign({}, items, {
+        update: action.payload,
+        remainingCharacters: 140 - twttr.txt.getTweetLength(action.payload)
+      });
     default:
       break;
   }
-  return _items;
-};
+  return items;
+}

@@ -1,4 +1,4 @@
-import { call, put, fork, take } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 import handleGetHomeTimeline from './statuses/homeTimeline';
 import handleGetMentionsTimeline from './statuses/mentionsTimeline';
 import handlePostUpdate from './statuses/update';

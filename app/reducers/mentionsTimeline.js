@@ -1,9 +1,9 @@
 const initialItems = {
-  gettingTimeline : false,
-  timeline        : []
+  gettingTimeline: false,
+  timeline: []
 };
 
-export default function timelineReducer (items = initialItems, action) {
+export default function timelineReducer(items = initialItems, action) {
   let _items = Object.assign({}, items);
   switch (action.type) {
     case 'SYSTEM_ERROR':
@@ -49,4 +49,4 @@ export default function timelineReducer (items = initialItems, action) {
       break;
   }
   return _items;
-};
+}
