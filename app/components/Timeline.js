@@ -50,7 +50,6 @@ export default class Timeline extends Component {
   }
 
   render() {
-    console.log('render:timeline');
     if (this.props.gettingTimeline) {
       return (
         <div className="List">

@@ -1,60 +1,88 @@
-import _ from 'lodash';
-
-const initialItems = {
+const initialState = {
   gettingTimeline : false,
   timeline        : []
 };
 
-export default function homeTimelineReducer (items = initialItems, action) {
-  let _items = Object.assign({}, items);
+export default function homeTimelineReducer (state = initialState, action) {
   switch (action.type) {
     case 'SYSTEM_ERROR':
-      _items.gettingTimeline = false;
-      break;
+      return {
+        ...state,
+        gettingTimeline : false
+      };
+
     case 'REQUEST_GET_HOME_TIMELINE':
-      _items.gettingTimeline = true;
-      break;
+      return {
+        ...state,
+        gettingTimeline : true
+      };
+
     case 'SUCCESS_GET_HOME_TIMELINE':
-      _items.gettingTimeline = false;
-      _items.timeline = _.cloneDeep(action.payload.data);
-      break;
+      return {
+        ...state,
+        gettingTimeline : false,
+        timeline : action.payload.data
+      };
+
     case 'FAILURE_GET_HOME_TIMELINE':
-      _items.gettingTimeline = false;
-      break;
+      return {
+        ...state,
+        gettingTimeline : false
+      };
 
     case 'SUCCESS_STREAM_USER':
-      let newTimeline = _.cloneDeep(_items.timeline);
-      newTimeline.unshift(action.payload.data);
-      _items.timeline = newTimeline;
-      break;
+      return {
+        ...state,
+        timeline : [
+          action.payload.data,
+          ...state.timeline
+        ]
+      };
 
     case 'SUCCESS_POST_FAVORITES_CREATE':
-      _items.timeline.forEach((tweet) => {
-        if (tweet.id_str === action.payload.id) {
-          tweet.favorite_count ++;
-          tweet.favorited = true;
-        }
-      });
-      break;
+      return {
+        ...state,
+        timeline : state.timeline.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              favorite_count : tweet.favorite_count + 1,
+              favorited : true
+            });
+          }
+          return tweet;
+        })
+      };
+
     case 'SUCCESS_POST_FAVORITES_DESTROY':
-      _items.timeline.forEach((tweet) => {
-        if (tweet.id_str === action.payload.id) {
-          tweet.favorite_count --;
-          tweet.favorited = false;
-        }
-      });
-      break;
+      return {
+        ...state,
+        timeline : state.timeline.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              favorite_count : tweet.favorite_count - 1,
+              favorited : false
+            });
+          }
+          return tweet;
+        })
+      };
 
     case 'SUCCESS_POST_RETWEET':
-      _items.timeline.forEach((tweet) => {
-        if (tweet.id_str === action.payload.id) {
-          tweet.retweet_count ++;
-          tweet.retweeted = true;
-        }
-      });
-      break;
+      return {
+        ...state,
+        timeline : state.timeline.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              retweet_count : tweet.retweet_count + 1,
+              retweeted : true
+            });
+          }
+          return tweet;
+        })
+      };
+
     default:
       break;
   }
-  return _items;
+  return state;
 };

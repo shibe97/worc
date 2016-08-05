@@ -1,55 +1,79 @@
-const initialItems = {
-  gettingTimeline: false,
-  timeline: []
+const initialState = {
+  gettingTimeline : false,
+  timeline        : []
 };
 
-export default function timelineReducer(items = initialItems, action) {
+export default function mentionsTimelineReducer (state = initialState, action) {
   switch (action.type) {
     case 'SYSTEM_ERROR':
-      return { ...items, gettingTimeline: false }
+      return {
+        ...state,
+        gettingTimeline : false
+      };
 
     case 'REQUEST_GET_MENTIONS_TIMELINE':
-      return { ...items, gettingTimeline: true }
+      return {
+        ...state,
+        gettingTimeline : true
+      };
 
     case 'SUCCESS_GET_MENTIONS_TIMELINE':
       return {
-        ...items,
-        gettingTimeline: false,
-        timeline: action.payload.data
-      }
+        ...state,
+        gettingTimeline : false,
+        timeline : action.payload.data
+      };
 
     case 'FAILURE_GET_MENTIONS_TIMELINE':
-      return { ...items, gettingTimeline: false }
+      return {
+        ...state,
+        gettingTimeline : false
+      };
 
     case 'SUCCESS_POST_FAVORITES_CREATE':
-      return items.timeline.map((tweet) => {
-        if (tweet.id_str === action.payload.id) {
-          tweet.favorite_count ++;
-          tweet.favorited = true;
-        }
-        return tweet;
-      });
+      return {
+        ...state,
+        timeline : state.timeline.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              favorite_count : tweet.favorite_count + 1,
+              favorited : true
+            });
+          }
+          return tweet;
+        })
+      };
 
     case 'SUCCESS_POST_FAVORITES_DESTROY':
-      return items.timeline.map((tweet) => {
-        if (tweet.id_str === action.payload.id) {
-          tweet.favorite_count --;
-          tweet.favorited = false;
-        }
-        return tweet;
-      });
+      return {
+        ...state,
+        timeline : state.timeline.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              favorite_count : tweet.favorite_count - 1,
+              favorited : false
+            });
+          }
+          return tweet;
+        })
+      };
 
     case 'SUCCESS_POST_RETWEET':
-      return items.timeline.map((tweet) => {
-        if (tweet.id_str === action.payload.id) {
-          tweet.retweet_count ++;
-          tweet.retweeted = true;
-        }
-        return tweet;
-      });
+      return {
+        ...state,
+        timeline : state.timeline.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              retweet_count : tweet.retweet_count + 1,
+              retweeted : true
+            });
+          }
+          return tweet;
+        })
+      };
 
     default:
       break;
   }
-  return items;
-}
+  return state;
+};
