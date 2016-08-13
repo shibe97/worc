@@ -9,6 +9,8 @@ export default class TwitterClient {
       access_token_key: token.accessToken,
       access_token_secret: token.accessTokenSecret
     });
+    this.user_id = token.user_id;
+    this.screen_name = token.screen_name;
   }
 
   twGetPromise(api, params) {

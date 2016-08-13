@@ -11,9 +11,9 @@ const mapStateToProps = (state) => {
   };
 }
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   requestGetTimeline() {
-    dispatch(requestGetListsStatuses('142045715'));
+    dispatch(requestGetListsStatuses(ownProps.params.listId));
   },
   requestPostFavoritesCreate(tweetId) {
     dispatch(requestPostFavoritesCreate(tweetId));

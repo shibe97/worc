@@ -6,7 +6,7 @@ export default function* handleGetList() {
   while (true) {
     yield take(REQUEST_GET_LIST);
     const client = yield call(createTwitterClient);
-    const { data, error } = yield client.twGetPromise('lists/list', { screen_name: 'shibe97' });
+    const { data, error } = yield client.twGetPromise('lists/list', { user_id: client.user_id });
     if (error) {
       yield put(failureGetList({ error }));
     } else {

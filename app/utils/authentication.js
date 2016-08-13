@@ -28,8 +28,9 @@ export default class Authentication {
         if (matched) {
           event.preventDefault();
 
-          nodeTwitterApi.getAccessToken(requestToken, requestTokenSecret, matched[2], (_error, accessToken, accessTokenSecret) => {
-            const token = { accessToken, accessTokenSecret };
+          nodeTwitterApi.getAccessToken(requestToken, requestTokenSecret, matched[2], (_error, accessToken, accessTokenSecret, results) => {
+            const { user_id, screen_name} = results;
+            const token = { accessToken, accessTokenSecret, user_id, screen_name };
             callback(token);
             if (authWindow) {
               authWindow.close();
