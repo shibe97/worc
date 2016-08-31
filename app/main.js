@@ -5,18 +5,18 @@ import Authentication from './utils/authentication';
 import storage from 'electron-json-storage';
 
 // メインウィンドウはGCされないようにグローバル宣言
-var mainWindow = null;
+let mainWindow = null;
 
 // 全てのウィンドウが閉じたら終了
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
   if (process.platform != 'darwin') {
     app.quit();
   }
 });
 
 // Electronの初期化完了後に実行
-app.on('ready', function() {
-  new Authentication(function(token) {
+app.on('ready', () => {
+  new Authentication((token) => {
 
     storage.set('auth', token, (error) => {
       if (error) throw error;
