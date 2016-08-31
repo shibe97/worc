@@ -1,3 +1,5 @@
+import twitterText from 'twitter-text';
+
 const initialItems = {
   update: '',
   remainingCharacters: 140,
