@@ -29,11 +29,15 @@ export default class Authentication {
           event.preventDefault();
 
           nodeTwitterApi.getAccessToken(requestToken, requestTokenSecret, matched[2], (_error, accessToken, accessTokenSecret, results) => {
-            const { user_id, screen_name} = results;
-            const token = { accessToken, accessTokenSecret, user_id, screen_name };
-            callback(token);
-            if (authWindow) {
-              authWindow.close();
+            if (error) {
+              new Authentication(callback);
+            } else {
+              const { user_id, screen_name} = results;
+              const token = { accessToken, accessTokenSecret, user_id, screen_name };
+              callback(token);
+              if (authWindow) {
+                authWindow.close();
+              }
             }
           });
         }
