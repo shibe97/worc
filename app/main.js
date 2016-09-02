@@ -1,21 +1,23 @@
 'use strict';
 
-import { app, BrowserWindow, shell, screen } from 'electron';
+import { app, BrowserWindow, shell, screen, Menu } from 'electron';
 import Authentication from './utils/authentication';
 import storage from 'electron-json-storage';
+import menu from './menu';
 
 // メインウィンドウはGCされないようにグローバル宣言
 let mainWindow = null;
 
 // 全てのウィンドウが閉じたら終了
 app.on('window-all-closed', () => {
-  if (process.platform != 'darwin') {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
 // Electronの初期化完了後に実行
 app.on('ready', () => {
+  Menu.setApplicationMenu(menu)
   new Authentication((token) => {
 
     storage.set('auth', token, (error) => {

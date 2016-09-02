@@ -16,13 +16,13 @@ import mentionsTimelineReducer from './reducers/mentionsTimeline';
 import updateReducer from './reducers/update';
 import listsReducer from './reducers/lists';
 
-// ミドルウェア
+// Middleware
 const sagaMiddleware = createSagaMiddleware();
 // const logger = createLogger();
 // const middleware = [ sagaMiddleware, logger ];
 const middleware = [sagaMiddleware];
 
-// Store作成
+// Store
 const reducer = combineReducers({
   homeTimelineReducer,
   mentionsTimelineReducer,
