@@ -23,6 +23,9 @@ export default class Tweet extends Component {
 
   render() {
     const { tweet } = this.props;
+    if (!tweet.user) {
+      return <li />
+    }
     return (
       <li className="List__item">
         <dl>
