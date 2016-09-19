@@ -3,6 +3,7 @@ import Timeline from '../components/Timeline';
 import { requestGetListsStatuses } from '../actions/lists';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
 import { requestPostRetweet } from '../actions/retweet';
+import { requestStreamSite } from '../actions/siteStream';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,6 +24,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   requestPostRetweet(tweetId) {
     dispatch(requestPostRetweet(tweetId));
+  },
+  requestStreamSite() {
+    dispatch(requestStreamSite(
+      dispatch,
+      ownProps.params.listId
+    ));
   }
 });
 

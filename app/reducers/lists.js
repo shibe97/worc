@@ -52,6 +52,15 @@ export default function listsReducer (state = initialState, action) {
         gettingStatuses : false
       };
 
+    case 'SUCCESS_STREAM_SITE':
+      return {
+        ...state,
+        statuses : [
+          action.payload.data,
+          ...state.statuses
+        ]
+      };
+
     default:
       break;
   }

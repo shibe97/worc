@@ -5,6 +5,7 @@ import handlePostUpdate from './statuses/update';
 import { handlePostFavoritesCreate, handlePostFavoritesDestroy } from './favorites/favorites';
 import { handlePostRetweet } from './statuses/retweet';
 import handleStreamUser from './streams/userStream';
+import handleStreamSite from './streams/siteStream';
 import handleGetList from './lists/list';
 import handleGetListsStatuses from './lists/statuses';
 
@@ -16,6 +17,7 @@ export default function* rootSaga() {
   yield fork(handlePostFavoritesDestroy);
   yield fork(handlePostRetweet);
   yield fork(handleStreamUser);
+  yield fork(handleStreamSite);
   yield fork(handleGetList);
   yield fork(handleGetListsStatuses);
 }

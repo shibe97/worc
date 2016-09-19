@@ -12,6 +12,9 @@ export default class Timeline extends Component {
   }
 
   componentDidMount() {
+    if (this.props.requestStreamSite) {
+      this.props.requestStreamSite();
+    }
     this.props.requestGetTimeline();
   }
 
