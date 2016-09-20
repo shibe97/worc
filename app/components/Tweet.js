@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Name from './Atoms/Name';
+import ScreenName from './Atoms/ScreenName';
+import CreatedAt from './Atoms/CreatedAt';
 
 export default class Tweet extends Component {
   returnLinkedText(text, urls = []) {
@@ -32,9 +35,9 @@ export default class Tweet extends Component {
       <li className="List__item">
         <dl>
           <dt className="Tweet__meta">
-            <span className="Tweet__name">{tweet.user && tweet.user.name}</span>
-            <span className="Tweet__screenName ml5px">@{tweet.user && tweet.user.screen_name}</span>
-            <span className="Tweet__createdAt ml5px">{this.getTime(new Date(tweet.created_at))}</span>
+            <Name>{tweet.user && tweet.user.name}</Name>
+            <ScreenName>@{tweet.user && tweet.user.screen_name}</ScreenName>
+            <CreatedAt>{this.getTime(new Date(tweet.created_at))}</CreatedAt>
           </dt>
           <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>
           <dd className="Tweet__actions">
