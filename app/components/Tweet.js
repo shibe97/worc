@@ -30,8 +30,8 @@ export default class Tweet extends Component {
         <dl>
           <dt className="Tweet__meta">
             <Name>{tweet.user && tweet.user.name}</Name>
-            <ScreenName>@{tweet.user && tweet.user.screen_name}</ScreenName>
-            <CreatedAt>{tweet.created_at}</CreatedAt>
+            <span className="ml5px"><ScreenName>@{tweet.user && tweet.user.screen_name}</ScreenName></span>
+            <span className="ml5px"><CreatedAt>{tweet.created_at}</CreatedAt></span>
           </dt>
           <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>
           <dd className="Tweet__actions">
