@@ -12,12 +12,6 @@ export default class Tweet extends Component {
     return str;
   }
 
-  getTime(date) {
-    const hours = date.getHours();
-    const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : `${date.getMinutes()}`;
-    return `${hours}:${minutes}`;
-  }
-
   postFavorites(tweetId, favorited) {
     this.props.postFavorites(tweetId, favorited);
   }
@@ -37,7 +31,7 @@ export default class Tweet extends Component {
           <dt className="Tweet__meta">
             <Name>{tweet.user && tweet.user.name}</Name>
             <ScreenName>@{tweet.user && tweet.user.screen_name}</ScreenName>
-            <CreatedAt>{this.getTime(new Date(tweet.created_at))}</CreatedAt>
+            <CreatedAt>{tweet.created_at}</CreatedAt>
           </dt>
           <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>
           <dd className="Tweet__actions">
