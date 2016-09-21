@@ -11,13 +11,13 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-      <div className="App__left">
-      <Navigation />
-      </div>
-      <div className="App__right">
-      <PostForm />
-      {this.props.children}
-      </div>
+        <div className="App__left">
+          <Navigation />
+        </div>
+        <div className="App__right">
+          <PostForm />
+          {this.props.children}
+        </div>
       </div>
     );
   }
