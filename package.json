@@ -10,7 +10,7 @@
     "moment": "^2.15.0",
     "node-twitter-api": "^1.7.4",
     "react": "^15.1.0",
-    "react-awesome-modal": "^0.3.3",
+    "react-awesome-modal": "^1.0.2",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
@@ -44,7 +44,8 @@
     "build": "babel app --out-dir dist --source-maps-inline && gulp sass",
     "watch": "babel app --out-dir dist --watch --source-maps-inline",
     "test": "mocha --compilers js:babel-core/register test/**/*.js",
-    "start": "electron dist/main.js"
+    "start": "electron dist/main.js",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
