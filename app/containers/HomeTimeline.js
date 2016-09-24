@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import Timeline from '../components/Timeline';
-import { requestGetHomeTimeline } from '../actions/homeTimeline';
+import { requestGetHomeTimeline, setUser } from '../actions/timeline';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
 import { requestPostRetweet } from '../actions/retweet';
 
 const mapStateToProps = (state) => {
   return {
     gettingTimeline : state.homeTimelineReducer.gettingTimeline,
-    timeline        : state.homeTimelineReducer.timeline
+    timeline        : state.homeTimelineReducer.timeline,
+    user            : state.userReducer.user
   };
 }
 
@@ -23,6 +24,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   requestPostRetweet(tweetId) {
     dispatch(requestPostRetweet(tweetId));
+  },
+  setUser(user) {
+    dispatch(setUser(user));
   }
 });
 

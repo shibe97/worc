@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Timeline from '../components/Timeline';
-import { requestGetMentionsTimeline } from '../actions/mentionsTimeline';
+import { requestGetMentionsTimeline, setUser } from '../actions/timeline';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
 import { requestPostRetweet } from '../actions/retweet';
 
@@ -23,6 +23,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   requestPostRetweet(tweetId) {
     dispatch(requestPostRetweet(tweetId));
+  },
+  setUser(user) {
+    dispatch(setUser(user));
   }
 });
 
