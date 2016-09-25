@@ -1,0 +1,20 @@
+.User {
+    height: 100%;
+    padding-top: 100px;
+    border-radius: 5px;
+
+    &__whiteArea {
+        background-color: #fff;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    &__info {
+        display: flex;
+    }
+
+    &__img {
+        border-radius: 3px;
+    }
+}
