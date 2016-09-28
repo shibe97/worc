@@ -29,8 +29,8 @@ export default class Tweet extends Component {
       <li className="List__item">
         <dl>
           <dt className="Tweet__meta">
-            <Name>{tweet.user && tweet.user.name}</Name>
-            <span className="ml5px"><ScreenName>@{tweet.user && tweet.user.screen_name}</ScreenName></span>
+            <Name><a href="javascript:void(0);" onClick={() => this.props.setUser(tweet.user)}>{tweet.user.name}</a></Name>
+            <span className="ml5px"><ScreenName>@{tweet.user.screen_name}</ScreenName></span>
             <span className="ml5px"><CreatedAt>{tweet.created_at}</CreatedAt></span>
           </dt>
           <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>

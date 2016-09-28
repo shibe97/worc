@@ -7,14 +7,18 @@
         background-color: #fff;
         height: 100%;
         padding: 10px;
+        border-radius: 0 0 5px 5px;
         box-sizing: border-box;
     }
 
     &__info {
-        display: flex;
+        position: relative;
+        padding-left: 60px;
     }
 
     &__img {
-        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
