@@ -93,7 +93,7 @@ export default class Timeline extends Component {
         <ul className="List">
           {this.returnTimeline(this.props.timeline)}
         </ul>
-        <Modal visible={this.state.userModal} width="340" height="300" effect="fadeInDown" onClickAway={() => this.closeUserModal()}>
+        <Modal visible={this.state.userModal} width="340" height="340" effect="fadeInDown" onClickAway={() => this.closeUserModal()}>
           <div className="User" style={modalStyle}>
             <div className="User__whiteArea">
               <div className="User__info">
@@ -102,7 +102,7 @@ export default class Timeline extends Component {
                 <br />
                 <ScreenName>@{this.props.user.screen_name}</ScreenName>
               </div>
-              <p>{this.props.user.description}</p>
+              <p className="User__description">{this.props.user.description}</p>
               <ul>
                 <li>tweets:{this.props.user.statuses_count}</li>
                 <li>friends:{this.props.user.friends_count}</li>
