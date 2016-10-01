@@ -8,7 +8,8 @@ import { requestStreamSite } from '../actions/siteStream';
 const mapStateToProps = (state) => {
   return {
     gettingTimeline : state.listsReducer.gettingStatuses,
-    timeline        : state.listsReducer.statuses
+    timeline        : state.listsReducer.statuses,
+    user            : state.userReducer.user
   };
 }
 
