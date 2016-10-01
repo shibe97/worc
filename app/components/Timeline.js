@@ -103,10 +103,25 @@ export default class Timeline extends Component {
                 <ScreenName>@{this.props.user.screen_name}</ScreenName>
               </div>
               <p className="User__description">{this.props.user.description}</p>
-              <ul>
-                <li>tweets:{this.props.user.statuses_count}</li>
-                <li>friends:{this.props.user.friends_count}</li>
-                <li>followers:{this.props.user.followers_count}</li>
+              <ul className="User__count">
+                <li className="User__countItem">
+                  <dl>
+                    <dd className="User__countValue">{this.props.user.statuses_count}</dd>
+                    <dt className="User__countKey">tweets</dt>
+                  </dl>
+                </li>
+                <li className="User__countItem">
+                  <dl>
+                    <dd className="User__countValue">{this.props.user.friends_count}</dd>
+                    <dt className="User__countKey">friends</dt>
+                  </dl>
+                </li>
+                <li className="User__countItem">
+                  <dl>
+                    <dd className="User__countValue">{this.props.user.followers_count}</dd>
+                    <dt className="User__countKey">followers</dt>
+                  </dl>
+                </li>
               </ul>
             </div>
           </div>
