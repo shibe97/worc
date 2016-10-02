@@ -14,6 +14,22 @@ export default class Timeline extends Component {
     };
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.gettingTimeline !== nextProps.gettingTimeline) {
+      return true;
+    }
+    if (this.props.timeline !== nextProps.timeline) {
+      return true;
+    }
+    if (this.state.userModal !== nextState.userModal) {
+      return true;
+    }
+    if (this.state.retweetModal !== nextState.retweetModal) {
+      return true;
+    }
+    return false;
+  }
+
   componentDidMount() {
     if (this.props.requestStreamSite) {
       this.props.requestStreamSite();
@@ -84,10 +100,12 @@ export default class Timeline extends Component {
         </div>
       );
     }
-    const modalStyle = {
-      background : `url(${this.props.user.profile_background_image_url_https}) repeat center -40px`
-    };
-    console.log(this.props.user);
+    let modalStyle = {};
+    if (this.props.user.profile_background_image_url_https) {
+      modalStyle = {
+        background : `url(${this.props.user.profile_background_image_url_https}) repeat center -40px`
+      };
+    }
     return (
       <div>
         <ul className="List">

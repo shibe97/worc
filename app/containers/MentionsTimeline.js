@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   requestGetTimeline() {
+    console.log('mentionsTimeline:requestGetTimeline');
     dispatch(requestGetMentionsTimeline());
   },
   requestPostFavoritesCreate(tweetId) {
