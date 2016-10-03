@@ -13,6 +13,3 @@ export const FAILURE_GET_MENTIONS_TIMELINE = 'FAILURE_GET_MENTIONS_TIMELINE';
 export const requestGetMentionsTimeline = createAction(REQUEST_GET_MENTIONS_TIMELINE);
 export const successGetMentionsTimeline = createAction(SUCCESS_GET_MENTIONS_TIMELINE);
 export const failureGetMentionsTimeline = createAction(FAILURE_GET_MENTIONS_TIMELINE);
-
-export const SET_USER = 'SET_USER';
-export const setUser = createAction(SET_USER);

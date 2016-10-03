@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tweet from './Tweet';
+import User from '../containers/User';
 import Name from './Atoms/Name';
 import ScreenName from './Atoms/ScreenName';
 import Modal from 'react-awesome-modal';
@@ -8,7 +9,6 @@ export default class Timeline extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userModal    : false,
       retweetModal : false,
       tweetId      : ''
     };
@@ -19,9 +19,6 @@ export default class Timeline extends Component {
       return true;
     }
     if (this.props.timeline !== nextProps.timeline) {
-      return true;
-    }
-    if (this.state.userModal !== nextState.userModal) {
       return true;
     }
     if (this.state.retweetModal !== nextState.retweetModal) {
@@ -65,9 +62,6 @@ export default class Timeline extends Component {
 
   setUser(user) {
     this.props.setUser(user);
-    this.setState({
-      userModal : true
-    });
   }
 
   returnTimeline(timeline) {
@@ -86,12 +80,6 @@ export default class Timeline extends Component {
     }
   }
 
-  closeUserModal() {
-    this.setState({
-      userModal : false
-    });
-  }
-
   render() {
     if (this.props.gettingTimeline) {
       return (
@@ -100,50 +88,12 @@ export default class Timeline extends Component {
         </div>
       );
     }
-    let modalStyle = {};
-    if (this.props.user.profile_background_image_url_https) {
-      modalStyle = {
-        background : `url(${this.props.user.profile_background_image_url_https}) repeat center -40px`
-      };
-    }
     return (
       <div>
         <ul className="List">
           {this.returnTimeline(this.props.timeline)}
         </ul>
-        <Modal visible={this.state.userModal} width="340" height="340" effect="fadeInDown" onClickAway={() => this.closeUserModal()}>
-          <div className="User" style={modalStyle}>
-            <div className="User__whiteArea">
-              <div className="User__info">
-                <img className="User__img" src={this.props.user.profile_image_url_https} alt="profile_image" />
-                <Name>{this.props.user.name}</Name>
-                <br />
-                <ScreenName>@{this.props.user.screen_name}</ScreenName>
-              </div>
-              <p className="User__description">{this.props.user.description}</p>
-              <ul className="User__count">
-                <li className="User__countItem">
-                  <dl>
-                    <dd className="User__countValue">{this.props.user.statuses_count}</dd>
-                    <dt className="User__countKey">tweets</dt>
-                  </dl>
-                </li>
-                <li className="User__countItem">
-                  <dl>
-                    <dd className="User__countValue">{this.props.user.friends_count}</dd>
-                    <dt className="User__countKey">friends</dt>
-                  </dl>
-                </li>
-                <li className="User__countItem">
-                  <dl>
-                    <dd className="User__countValue">{this.props.user.followers_count}</dd>
-                    <dt className="User__countKey">followers</dt>
-                  </dl>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Modal>
+        <User />
         <Modal visible={this.state.retweetModal} width="340" height="120" effect="fadeInDown">
           <div className="Modal">
             <p className="Modal__title">Are you sure you wanna retweet?</p>

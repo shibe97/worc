@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Timeline from '../components/Timeline';
 import { requestGetListsStatuses } from '../actions/lists';
+import { setUser } from '../actions/user';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
 import { requestPostRetweet } from '../actions/retweet';
 import { requestStreamSite } from '../actions/siteStream';
@@ -31,6 +32,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       dispatch,
       ownProps.params.listId
     ));
+  },
+  setUser(user) {
+    dispatch(setUser(user));
   }
 });
 
