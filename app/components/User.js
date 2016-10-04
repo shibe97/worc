@@ -9,6 +9,9 @@ export default class User extends Component {
   }
 
   render() {
+    if (!this.props.user.user.profile_background_image_url_https) {
+      return <div />;
+    }
     const style = {
       background : `url(${this.props.user.user.profile_background_image_url_https}) repeat center -40px`
     };
