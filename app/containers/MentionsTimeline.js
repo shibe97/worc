@@ -3,7 +3,7 @@ import Timeline from '../components/Timeline';
 import { requestGetMentionsTimeline } from '../actions/timeline';
 import { setUser } from '../actions/user';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
-import { requestPostRetweet } from '../actions/retweet';
+import { openRetweetModal } from '../actions/retweet';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,11 +23,11 @@ const mapDispatchToProps = (dispatch) => ({
   requestPostFavoritesDestroy(tweetId) {
     dispatch(requestPostFavoritesDestroy(tweetId));
   },
-  requestPostRetweet(tweetId) {
-    dispatch(requestPostRetweet(tweetId));
-  },
   setUser(user) {
     dispatch(setUser(user));
+  },
+  openRetweetModal(tweetId) {
+    dispatch(openRetweetModal(tweetId));
   }
 });
 
