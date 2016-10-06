@@ -72,6 +72,12 @@ export default function mentionsTimelineReducer (state = initialState, action) {
         })
       };
 
+    case 'RESET_TIMELINE':
+      return {
+        ...state,
+        timeline : []
+      };
+
     default:
       break;
   }

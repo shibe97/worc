@@ -24,7 +24,7 @@ export default class Timeline extends Component {
     return false;
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (this.props.requestStreamSite) {
       this.props.requestStreamSite();
     }

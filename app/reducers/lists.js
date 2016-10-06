@@ -61,6 +61,13 @@ export default function listsReducer (state = initialState, action) {
         ]
       };
 
+    case 'RESET_TIMELINE':
+      return {
+        ...state,
+        list : [],
+        statuses : []
+      };
+
     default:
       break;
   }

@@ -81,6 +81,12 @@ export default function homeTimelineReducer (state = initialState, action) {
         })
       };
 
+    case 'RESET_TIMELINE':
+      return {
+        ...state,
+        timeline : []
+      };
+
     default:
       break;
   }
