@@ -29,19 +29,19 @@ export default class User extends Component {
             <ul className="User__count">
               <li className="User__countItem">
                 <dl>
-                  <dd className="User__countValue">{this.props.user.user.statuses_count}</dd>
+                  <dd className="User__countValue">{this.props.user.user.statuses_count.toLocaleString()}</dd>
                   <dt className="User__countKey">tweets</dt>
                 </dl>
               </li>
               <li className="User__countItem">
                 <dl>
-                  <dd className="User__countValue">{this.props.user.user.friends_count}</dd>
+                  <dd className="User__countValue">{this.props.user.user.friends_count.toLocaleString()}</dd>
                   <dt className="User__countKey">friends</dt>
                 </dl>
               </li>
               <li className="User__countItem">
                 <dl>
-                  <dd className="User__countValue">{this.props.user.user.followers_count}</dd>
+                  <dd className="User__countValue">{this.props.user.user.followers_count.toLocaleString()}</dd>
                   <dt className="User__countKey">followers</dt>
                 </dl>
               </li>
