@@ -3,8 +3,10 @@ import App            from '../components/app';
 import { requestStreamUser } from '../actions/userStream';
 import { resetTimeline } from '../actions/timeline';
 
-const mapStateToProps = (state) => {
-  return {};
+const mapStateToProps = (state, ownProps) => {
+  return {
+    pathname : ownProps.location.pathname === '/' ? '/homeTimeline' : ownProps.location.pathname
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({

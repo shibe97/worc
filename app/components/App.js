@@ -12,7 +12,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="App__left">
-          <Navigation resetTimeline={this.props.resetTimeline} />
+          <Navigation resetTimeline={this.props.resetTimeline} pathname={this.props.pathname} />
         </div>
         <div className="App__right">
           <PostForm />

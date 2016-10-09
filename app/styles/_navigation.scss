@@ -34,5 +34,10 @@
         &:hover {
             background-color: lighten(#234, 5%);
         }
+
+        &.isSelected {
+            background-color: darken(#234, 5%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+        }
     }
 }
