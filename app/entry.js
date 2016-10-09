@@ -12,6 +12,7 @@ import Routes from './routes';
 
 // Reducer
 import homeTimelineReducer from './reducers/homeTimeline';
+import userTimelineReducer from './reducers/userTimeline';
 import mentionsTimelineReducer from './reducers/mentionsTimeline';
 import userReducer from './reducers/user';
 import retweetReducer from './reducers/retweet';
@@ -27,6 +28,7 @@ const middleware = [sagaMiddleware];
 // Store
 const reducer = combineReducers({
   homeTimelineReducer,
+  userTimelineReducer,
   mentionsTimelineReducer,
   userReducer,
   retweetReducer,

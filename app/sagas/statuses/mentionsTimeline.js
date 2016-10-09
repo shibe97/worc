@@ -1,5 +1,5 @@
 import { call, put, take } from 'redux-saga/effects';
-import { REQUEST_GET_MENTIONS_TIMELINE, successGetMentionsTimeline, failureGetMentionsTimeline } from '../../actions/mentionsTimeline';
+import { REQUEST_GET_MENTIONS_TIMELINE, successGetMentionsTimeline, failureGetMentionsTimeline } from '../../actions/timeline';
 import { createTwitterClient } from '../../utils/twitterClient';
 
 export default function* handleGetMentionsTimeline() {

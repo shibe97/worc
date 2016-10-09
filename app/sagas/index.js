@@ -1,5 +1,6 @@
 import { fork } from 'redux-saga/effects';
 import handleGetHomeTimeline from './statuses/homeTimeline';
+import handleGetUserTimeline from './statuses/userTimeline';
 import handleGetMentionsTimeline from './statuses/mentionsTimeline';
 import handlePostUpdate from './statuses/update';
 import { handlePostFavoritesCreate, handlePostFavoritesDestroy } from './favorites/favorites';
@@ -11,6 +12,7 @@ import handleGetListsStatuses from './lists/statuses';
 
 export default function* rootSaga() {
   yield fork(handleGetHomeTimeline);
+  yield fork(handleGetUserTimeline);
   yield fork(handleGetMentionsTimeline);
   yield fork(handlePostUpdate);
   yield fork(handlePostFavoritesCreate);
