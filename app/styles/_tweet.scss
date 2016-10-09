@@ -44,4 +44,10 @@
         text-decoration: none;
         padding: 0 5px;
     }
+
+    &__retweetedBy {
+        fill: $color-accent;
+        color: #ccc;
+        font-size: 12px;
+    }
 }
