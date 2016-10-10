@@ -26,7 +26,11 @@ export default class User extends Component {
             <ul className="User__count">
               <li className="User__countItem">
                 <dl>
-                  <dd className="User__countValue">{this.props.user.user.statuses_count.toLocaleString()}</dd>
+                  <dd className="User__countValue">
+                    <Link to={`userTimeline/${this.props.user.user.id_str}`} onClick={() => this.props.closeUserModal()}>
+                      {this.props.user.user.statuses_count.toLocaleString()}
+                    </Link>
+                  </dd>
                   <dt className="User__countKey">tweets</dt>
                 </dl>
               </li>
