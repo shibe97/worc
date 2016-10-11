@@ -38,7 +38,7 @@ app.on('ready', () => {
     })
 
     mainWindow.loadURL('file://' + __dirname + '/index.html');
-    mainWindow.openDevTools(true);
+    // mainWindow.openDevTools(true);
 
     // ウィンドウが閉じられたらアプリも終了
     mainWindow.on('closed', function() {
