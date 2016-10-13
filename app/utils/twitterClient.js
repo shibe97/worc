@@ -4,8 +4,8 @@ import storage from 'electron-json-storage';
 export default class TwitterClient {
   constructor(token) {
     this.client = new Twitter({
-      consumer_key: 'AdfRer5kIrdPHmiNlYZPvxI5N',
-      consumer_secret: 'dVLTFLgg21EfUzF56PARBDyhzibwCN4HJCQ4juulwFt9VS6Vx6',
+      consumer_key: 'ML0rRHB8yfuhxf3lR0DtTzW5j',
+      consumer_secret: 'lhGbkm21g5e65fUKk3nAvG0DTQMXMQOneNymhmkex5DqFxipHy',
       access_token_key: token.accessToken,
       access_token_secret: token.accessTokenSecret
     });

@@ -7,8 +7,8 @@ export default class Authentication {
   constructor(callback) {
     const nodeTwitterApi = new NodeTwitterApi({
       callback: 'http://example.com',
-      consumerKey: 'AdfRer5kIrdPHmiNlYZPvxI5N',
-      consumerSecret: 'dVLTFLgg21EfUzF56PARBDyhzibwCN4HJCQ4juulwFt9VS6Vx6',
+      consumerKey: 'ML0rRHB8yfuhxf3lR0DtTzW5j',
+      consumerSecret: 'lhGbkm21g5e65fUKk3nAvG0DTQMXMQOneNymhmkex5DqFxipHy',
     });
 
     nodeTwitterApi.getRequestToken((error, requestToken, requestTokenSecret) => {
