@@ -1,7 +1,7 @@
 {
-  "name": "twork",
+  "name": "worc",
   "version": "1.0.0",
-  "description": "A twitter client for business use",
+  "description": "A quiet twitter client",
   "main": "./dist/main.js",
   "dependencies": {
     "electron": "^1.3.1",
@@ -47,16 +47,16 @@
     "test": "mocha --compilers js:babel-core/register test/**/*.js",
     "start": "electron dist/main.js",
     "gulp": "gulp",
-    "zip": "electron-zip-packager ./ twork --platform=darwin --arch=x64 --version=1.3.3"
+    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shibe97/twork.git"
+    "url": "git+https://github.com/shibe97/worc.git"
   },
   "author": "shibe97",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shibe97/twork/issues"
+    "url": "https://github.com/shibe97/worc/issues"
   },
-  "homepage": "https://github.com/shibe97/twork#readme"
+  "homepage": "https://github.com/shibe97/worc#readme"
 }
