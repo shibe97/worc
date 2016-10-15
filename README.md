@@ -2,10 +2,10 @@
 
 
 # Motivation
-Twitter is one of the great information gathering tool.
+Twitter is one of the great information gathering tool.  
 You guys wanna use twitter during your working time.
 
-Worc is made for you.
+Worc is made for you.  
 A quiet twitter client made by Electron.
 
 
