@@ -39,7 +39,7 @@
     "gulp-eslint": "^3.0.1",
     "gulp-sass": "^2.3.2",
     "jest": "^16.0.1",
-    "jsdom": "^9.2.1",
+    "jsdom": "^9.2.1"
   },
   "scripts": {
     "build": "babel app --out-dir dist --source-maps-inline && gulp sass",
