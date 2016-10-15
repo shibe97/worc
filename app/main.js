@@ -29,7 +29,10 @@ app.on('ready', () => {
       x: 0,
       y: 0,
       width: 500,
-      height: screen.getPrimaryDisplay().size.height
+      height: screen.getPrimaryDisplay().size.height,
+      webPreferences: {
+        webSecurity: false
+      }
     });
 
     mainWindow.webContents.on('new-window', (e, url) => {
