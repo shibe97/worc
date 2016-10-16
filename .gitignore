@@ -6,3 +6,4 @@ assets/*
 !images
 worc-darwin-x64.zip
 worc-darwin-x64
+npm-debug.log
