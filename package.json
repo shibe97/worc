@@ -44,7 +44,7 @@
   "scripts": {
     "build": "babel app --out-dir dist --source-maps-inline && gulp sass",
     "watch": "babel app --out-dir dist --watch --source-maps-inline",
-    "test": "jest dist",
+    "test": "jest app",
     "start": "electron dist/main.js",
     "gulp": "gulp",
     "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --overwrite"
