@@ -3,6 +3,11 @@ node_js:
   - 6.3.0
 script:
   - npm test
+after_success:
+  - test ${TRAVIS_TAG} && npm run zip
+cache:
+  directories:
+    - node_modules
 deploy:
   provider: releases
   api_key:
