@@ -47,7 +47,7 @@
     "test": "jest dist",
     "start": "electron dist/main.js",
     "gulp": "gulp",
-    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3"
+    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --overwrite"
   },
   "repository": {
     "type": "git",
