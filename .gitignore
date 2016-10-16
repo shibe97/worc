@@ -4,3 +4,5 @@ dist/*
 !index.html
 assets/*
 !images
+worc-darwin-x64.zip
+worc-darwin-x64
