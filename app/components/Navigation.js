@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 const Item = ({ current, to, onClick, children, itemClass }) => {
-  if (current === to) {
+  if (current.includes(to)) {
     return (
       <li className={`Navigation__item isSelected ${itemClass}`}>
         {children}
