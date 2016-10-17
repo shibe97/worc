@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - 6.3.0
+install:
+  - npm install
+  - npm run build
 script:
   - npm test
 after_success:
