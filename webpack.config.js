@@ -11,7 +11,6 @@ module.exports = {
     filename : '[name].js',
   },
   node : {
-    __filename : false,
     __dirname  : false
   },
   module : {
