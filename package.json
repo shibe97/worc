@@ -25,6 +25,7 @@
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.5",
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
@@ -39,15 +40,17 @@
     "gulp-eslint": "^3.0.1",
     "gulp-sass": "^2.3.2",
     "jest": "^16.0.1",
-    "jsdom": "^9.2.1"
+    "jsdom": "^9.2.1",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.2"
   },
   "scripts": {
-    "build": "babel app --out-dir dist --source-maps-inline && gulp sass",
-    "watch": "babel app --out-dir dist --watch --source-maps-inline",
+    "watch": "webpack --watch",
+    "build": "webpack && gulp sass",
     "test": "jest app",
     "start": "electron dist/main.js",
     "gulp": "gulp",
-    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --overwrite"
+    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --ignore='node_modules' --overwrite"
   },
   "repository": {
     "type": "git",
