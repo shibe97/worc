@@ -10,27 +10,31 @@ You guys wanna use twitter during your working time.
 Worc is made for you.  
 A quiet twitter client made by Electron.
 
+# Downloads
+You can download from following link.
 
-## How To Develop
-### Setup
+[https://github.com/shibe97/worc/releases](https://github.com/shibe97/worc/releases)
+
+# How To Develop
+## Setup
 ```
 $ npm install
 ```
 
-### Build
+## Build
 ```
 $ npm run build
 ```
 
-### Watch and auto build
+## Watch and auto build
 ```
 $ npm run watch & npm run gulp
 ```
 
-### Test
+## Test
 ```
 $ npm test
 ```
 
-## License
+# License
 MIT
