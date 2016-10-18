@@ -52,6 +52,34 @@ export default function listsReducer (state = initialState, action) {
         gettingStatuses : false
       };
 
+    case 'SUCCESS_POST_FAVORITES_CREATE':
+      return {
+        ...state,
+        statuses : state.statuses.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              favorite_count : tweet.favorite_count + 1,
+              favorited : true
+            });
+          }
+          return tweet;
+        })
+      };
+
+    case 'SUCCESS_POST_FAVORITES_DESTROY':
+      return {
+        ...state,
+        statuses : state.statuses.map((tweet) => {
+          if (tweet.id_str === action.payload.id) {
+            return Object.assign({}, tweet, {
+              favorite_count : tweet.favorite_count - 1,
+              favorited : false
+            });
+          }
+          return tweet;
+        })
+      };
+
     case 'SUCCESS_STREAM_SITE':
       return {
         ...state,
