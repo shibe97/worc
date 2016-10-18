@@ -1,5 +1,5 @@
 import { connect }    from 'react-redux';
-import App            from '../components/app';
+import App            from '../components/App';
 import { requestStreamUser } from '../actions/userStream';
 import { resetTimeline } from '../actions/timeline';
 
