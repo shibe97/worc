@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import Name from './Atoms/Name';
-import ScreenName from './Atoms/ScreenName';
+import Name from './Atoms/Name/Name';
+import ScreenName from './Atoms/ScreenName/ScreenName';
 import Modal from 'react-awesome-modal';
 
 export default class User extends Component {
