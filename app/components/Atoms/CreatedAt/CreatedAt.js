@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './createdAt.css';
 
 export default ({ children }) => {
   const getTime = (date) => {
@@ -8,6 +9,6 @@ export default ({ children }) => {
   }
 
   return (
-    <span className="Tweet__createdAt">{ getTime(new Date(children)) }</span>
+    <span className={styles.createdAt}>{ getTime(new Date(children)) }</span>
   )
 };
