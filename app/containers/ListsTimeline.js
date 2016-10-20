@@ -3,7 +3,6 @@ import Timeline from '../components/Timeline';
 import { requestGetListsStatuses } from '../actions/lists';
 import { setUser } from '../actions/user';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
-import { openRetweetModal } from '../actions/retweet';
 import { requestStreamSite } from '../actions/siteStream';
 
 const mapStateToProps = (state) => {
@@ -32,9 +31,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   setUser(user) {
     dispatch(setUser(user));
-  },
-  openRetweetModal(tweetId) {
-    dispatch(openRetweetModal(tweetId));
   }
 });
 

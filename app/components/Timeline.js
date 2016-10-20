@@ -51,7 +51,6 @@ export default class Timeline extends Component {
             tweet={item}
             key={index}
             postFavorites={this.postFavorites.bind(this)}
-            postRetweet={this.props.openRetweetModal}
             setUser={this.setUser.bind(this)}
           />
         );
