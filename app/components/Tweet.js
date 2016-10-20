@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Name from './Atoms/Name';
-import ScreenName from './Atoms/ScreenName';
-import CreatedAt from './Atoms/CreatedAt';
+import Name from './Atoms/Name/Name';
+import ScreenName from './Atoms/ScreenName/ScreenName';
+import CreatedAt from './Atoms/CreatedAt/CreatedAt';
 
 export default class Tweet extends Component {
   returnLinkedText(text, urls = []) {
@@ -36,7 +36,7 @@ export default class Tweet extends Component {
               </p>
               <Name><a href="javascript:void(0);" onClick={() => this.props.setUser(tweet.retweeted_status.user)}>{tweet.retweeted_status.user.name}</a></Name>
               <span className="ml5px"><ScreenName>@{tweet.retweeted_status.user.screen_name}</ScreenName></span>
-              <span className="ml5px"><CreatedAt>{tweet.retweeted_status.created_at}</CreatedAt></span>
+              <span className="Tweet__createdAt"><CreatedAt>{tweet.retweeted_status.created_at}</CreatedAt></span>
             </dt>
             <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.retweeted_status.text, tweet.retweeted_status.entities && tweet.retweeted_status.entities.urls)}}></dd>
             <dd className="Tweet__actions">
@@ -69,7 +69,7 @@ export default class Tweet extends Component {
           <dt className="Tweet__meta">
             <Name><a href="javascript:void(0);" onClick={() => this.props.setUser(tweet.user)}>{tweet.user.name}</a></Name>
             <span className="ml5px"><ScreenName>@{tweet.user.screen_name}</ScreenName></span>
-            <span className="ml5px"><CreatedAt>{tweet.created_at}</CreatedAt></span>
+            <span className="Tweet__createdAt"><CreatedAt>{tweet.created_at}</CreatedAt></span>
           </dt>
           <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>
           <dd className="Tweet__actions">
