@@ -23,6 +23,10 @@ module.exports = {
       {
         test : /\.json$/,
         loader : 'json?sourceMap'
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css?modules&localIdentName=[local]--[hash:base64:5]'],
       }
     ]
   },
