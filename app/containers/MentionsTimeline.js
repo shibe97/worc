@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 import Timeline from '../components/Timeline';
 import { requestGetMentionsTimeline } from '../actions/timeline';
 import { setUser } from '../actions/user';
-import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../actions/favorites';
-import { openRetweetModal } from '../actions/retweet';
 
 const mapStateToProps = (state) => {
   return {
@@ -17,17 +15,8 @@ const mapDispatchToProps = (dispatch) => ({
   requestGetTimeline() {
     dispatch(requestGetMentionsTimeline());
   },
-  requestPostFavoritesCreate(tweetId) {
-    dispatch(requestPostFavoritesCreate(tweetId));
-  },
-  requestPostFavoritesDestroy(tweetId) {
-    dispatch(requestPostFavoritesDestroy(tweetId));
-  },
   setUser(user) {
     dispatch(setUser(user));
-  },
-  openRetweetModal(tweetId) {
-    dispatch(openRetweetModal(tweetId));
   }
 });
 
