@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Name from './Atoms/Name/Name';
 import ScreenName from './Atoms/ScreenName/ScreenName';
 import CreatedAt from './Atoms/CreatedAt/CreatedAt';
-import RetweetTrigger from '../containers/Atoms/RetweetTrigger';
-import FavoriteTrigger from '../containers/Atoms/FavoriteTrigger';
+import Triggers from './Molecules/Triggers/Triggers';
 
 export default class Tweet extends Component {
   returnLinkedText(text, urls = []) {
@@ -34,22 +33,7 @@ export default class Tweet extends Component {
             </dt>
             <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.retweeted_status.text, tweet.retweeted_status.entities && tweet.retweeted_status.entities.urls)}}></dd>
             <dd className="Tweet__actions">
-              <ul>
-                <li className="Tweet__action">
-                  <RetweetTrigger
-                    id_str={tweet.retweeted_status.id_str}
-                    retweeted={tweet.retweeted_status.retweeted}
-                    retweet_count={tweet.retweeted_status.retweet_count}
-                  />
-                </li>
-                <li className="Tweet__action">
-                  <FavoriteTrigger
-                    id_str={tweet.retweeted_status.id_str}
-                    favorited={tweet.retweeted_status.favorited}
-                    favorite_count={tweet.retweeted_status.favorite_count}
-                  />
-                </li>
-              </ul>
+              <Triggers tweet={tweet.retweeted_status} />
             </dd>
           </dl>
         </li>
@@ -65,22 +49,7 @@ export default class Tweet extends Component {
           </dt>
           <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>
           <dd className="Tweet__actions">
-            <ul>
-              <li className="Tweet__action">
-                <RetweetTrigger
-                  id_str={tweet.id_str}
-                  retweeted={tweet.retweeted}
-                  retweet_count={tweet.retweet_count}
-                />
-              </li>
-              <li className="Tweet__action">
-                <FavoriteTrigger
-                  id_str={tweet.id_str}
-                  favorited={tweet.favorited}
-                  favorite_count={tweet.favorite_count}
-                />
-              </li>
-            </ul>
+            <Triggers tweet={tweet} />
           </dd>
         </dl>
       </li>
