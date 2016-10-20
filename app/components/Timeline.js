@@ -31,14 +31,6 @@ export default class Timeline extends Component {
     this.props.requestGetTimeline();
   }
 
-  postFavorites(tweetId, favorited) {
-    if (favorited) {
-      this.props.requestPostFavoritesDestroy(tweetId);
-    } else {
-      this.props.requestPostFavoritesCreate(tweetId);
-    }
-  }
-
   setUser(user) {
     this.props.setUser(user);
   }
@@ -50,7 +42,6 @@ export default class Timeline extends Component {
           <Tweet
             tweet={item}
             key={index}
-            postFavorites={this.postFavorites.bind(this)}
             setUser={this.setUser.bind(this)}
           />
         );
