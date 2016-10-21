@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Text from './Atoms/Text/Text';
 import Meta from './Molecules/Meta/Meta';
 import Triggers from './Molecules/Triggers/Triggers';
 
@@ -27,7 +28,9 @@ export default class Tweet extends Component {
               </p>
               <Meta tweet={tweet.retweeted_status} />
             </dt>
-            <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.retweeted_status.text, tweet.retweeted_status.entities && tweet.retweeted_status.entities.urls)}}></dd>
+            <dd>
+              <Text tweet={tweet.retweeted_status} />
+            </dd>
             <dd className="Tweet__actions">
               <Triggers tweet={tweet.retweeted_status} />
             </dd>
@@ -41,7 +44,9 @@ export default class Tweet extends Component {
           <dt className="Tweet__meta">
             <Meta tweet={tweet} />
           </dt>
-          <dd className="Tweet__text" dangerouslySetInnerHTML={{__html : this.returnLinkedText(tweet.text, tweet.entities && tweet.entities.urls)}}></dd>
+          <dd>
+            <Text tweet={tweet} />
+          </dd>
           <dd className="Tweet__actions">
             <Triggers tweet={tweet} />
           </dd>
