@@ -1,0 +1,8 @@
+.meta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.createdAt {
+  margin-left: auto;
+}
