@@ -1,0 +1,11 @@
+@import '../../../styles/variable';
+
+.actionCount {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.isActioned path {
+  fill: var(--color-accent) !important;
+}
