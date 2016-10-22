@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var cssImport = require('postcss-import');
+var cssNested = require('postcss-nested');
 
 module.exports = {
   context : __dirname,
@@ -26,9 +28,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css?modules&localIdentName=[local]--[hash:base64:5]'],
+        loaders: ['style', 'css?modules&localIdentName=[local]--[hash:base64:5]', 'postcss'],
       }
     ]
   },
+  postcss : [cssImport, cssNested],
   target : 'electron'
 };
