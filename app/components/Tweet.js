@@ -1,57 +1,24 @@
 import React, { Component } from 'react';
-import Text from './Atoms/Text/Text';
-import Meta from './Molecules/Meta/Meta';
-import Triggers from './Molecules/Triggers/Triggers';
+import Tweet from './Organisms/Tweet/Tweet';
 
-export default class Tweet extends Component {
-  returnLinkedText(text, urls = []) {
-    let str = text;
-    urls.reverse().forEach((url) => {
-      str = str.substr(0, url.indices[0]) + `<a href="${url.url}" target="_blank" >${url.display_url}</a>` + str.substr(url.indices[1]);
-    });
-    return str;
+export default ({ tweet = {} }) => {
+  if (!tweet.user) {
+    return <li />
   }
-
-  render() {
-    const { tweet } = this.props;
-    if (!tweet.user) {
-      return <li />
-    }
-    if (tweet.retweeted_status) {
-      return (
-        <li className="List__item">
-          <dl>
-            <dt className="Tweet__meta">
-              <p className="Tweet__retweetedBy">
-                <svg height="8px" version="1.1" viewBox="0 0 100 60"><path d="M24.9,46V19.9H35L17.5,0L0,19.9h10.1V50c0,5.523,4.476,10,10,10H65L52.195,46H24.9z M89.9,40.1V10c0-5.523-4.477-10-10-10 H35l12.804,14h27.295v26.1H65L82.5,60L100,40.1H89.9z"/></svg>
-                <span className="ml5px">retweeted by {tweet.user.name}</span>
-              </p>
-              <Meta tweet={tweet.retweeted_status} />
-            </dt>
-            <dd>
-              <Text tweet={tweet.retweeted_status} />
-            </dd>
-            <dd className="Tweet__actions">
-              <Triggers tweet={tweet.retweeted_status} />
-            </dd>
-          </dl>
-        </li>
-      );
-    }
+  if (tweet.retweeted_status) {
     return (
       <li className="List__item">
-        <dl>
-          <dt className="Tweet__meta">
-            <Meta tweet={tweet} />
-          </dt>
-          <dd>
-            <Text tweet={tweet} />
-          </dd>
-          <dd className="Tweet__actions">
-            <Triggers tweet={tweet} />
-          </dd>
-        </dl>
+        <p className="Tweet__retweetedBy">
+          <svg height="8px" version="1.1" viewBox="0 0 100 60"><path d="M24.9,46V19.9H35L17.5,0L0,19.9h10.1V50c0,5.523,4.476,10,10,10H65L52.195,46H24.9z M89.9,40.1V10c0-5.523-4.477-10-10-10 H35l12.804,14h27.295v26.1H65L82.5,60L100,40.1H89.9z"/></svg>
+          <span className="ml5px">retweeted by {tweet.user.name}</span>
+        </p>
+        <Tweet tweet={tweet.retweeted_status} />
       </li>
     );
   }
-}
+  return (
+    <li className="List__item">
+      <Tweet tweet={tweet} />
+    </li>
+  );
+};
