@@ -43,6 +43,9 @@
     "jest": "^16.0.1",
     "jsdom": "^9.2.1",
     "json-loader": "^0.5.4",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^1.0.0",
+    "postcss-nested": "^1.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   },
