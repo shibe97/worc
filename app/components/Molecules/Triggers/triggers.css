@@ -1,0 +1,8 @@
+.action {
+  display: inline-block;
+  padding-right: 40px;
+  
+  path {
+    fill: #ccc;
+  }
+}
