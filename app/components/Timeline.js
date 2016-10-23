@@ -5,13 +5,6 @@ import Retweet from '../containers/Retweet';
 import Modal from 'react-awesome-modal';
 
 export default class Timeline extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      tweetId : ''
-    };
-  }
-
   shouldComponentUpdate(nextProps, nextState) {
     if (this.props.gettingTimeline !== nextProps.gettingTimeline) {
       return true;
