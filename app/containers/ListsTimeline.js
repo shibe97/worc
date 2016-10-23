@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Timeline from '../components/Timeline';
+import ListsTimeline from '../components/ListsTimeline';
 import { requestGetListsStatuses } from '../actions/lists';
 import { requestStreamSite } from '../actions/siteStream';
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Timeline);
+export default connect(mapStateToProps, mapDispatchToProps)(ListsTimeline);

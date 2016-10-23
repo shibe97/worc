@@ -18,7 +18,7 @@ export default class Routes extends Component {
           <Route component={UserTimeline} path="userTimeline/:userId" />
           <Route component={MentionsTimeline} path="mentionsTimeline" />
           <Route component={Lists} path="lists" />
-          <Route component={ListsTimeline} path="lists/:listId" />
+          <Route component={ListsTimeline} path="lists/:listId/:listName" />
         </Route>
       </Router>
     );
