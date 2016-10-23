@@ -29,21 +29,14 @@ export default class Timeline extends Component {
     this.props.requestGetTimeline();
   }
 
-  setUser(user) {
-    this.props.setUser(user);
-  }
-
   returnTimeline(timeline) {
     if (timeline.length > 0) {
-      return timeline.map((item, index) => {
-        return (
-          <Tweet
-            tweet={item}
-            key={index}
-            setUser={this.setUser.bind(this)}
-          />
-        );
-      });
+      return timeline.map((item, index) => (
+        <Tweet
+          tweet={item}
+          key={index}
+        />
+      ));
     }
   }
 

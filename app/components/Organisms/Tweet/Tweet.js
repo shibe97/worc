@@ -4,10 +4,10 @@ import Triggers from '../../Molecules/Triggers/Triggers';
 import Text from '../../Atoms/Text/Text';
 import styles from './tweet.css';
 
-export default ({ tweet = {} }) => (
+export default ({ tweet = {}, setUser }) => (
   <dl>
     <dt>
-      <Meta tweet={tweet} />
+      <Meta tweet={tweet} setUser={setUser} />
     </dt>
     <dd>
       <Text tweet={tweet} />

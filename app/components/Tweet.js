@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Tweet from './Organisms/Tweet/Tweet';
+import Tweet from '../containers/Organisms/Tweet';
 
 export default ({ tweet = {} }) => {
   if (!tweet.user) {
