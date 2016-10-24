@@ -5,7 +5,6 @@ export default ({ tweet = {} }) => {
   if (!tweet.user) {
     return <li />
   }
-  console.log(tweet);
   if (tweet.retweeted_status) {
     return (
       <li className="List__item">
