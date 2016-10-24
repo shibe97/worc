@@ -21,7 +21,7 @@ export default class Lists extends Component {
           {
             this.props.list.map((item, index) => (
               <li className="List__item" key={index}>
-                <Link to={`/lists/${item.id_str}`}>{item.name}</Link>
+                <Link to={`/lists/${item.id_str}/${encodeURIComponent(item.name)}`}>{item.name}</Link>
               </li>
             ))
           }

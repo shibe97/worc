@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import Timeline from '../components/Timeline';
+import ListsTimeline from '../components/ListsTimeline';
 import { requestGetListsStatuses } from '../actions/lists';
-import { setUser } from '../actions/user';
 import { requestStreamSite } from '../actions/siteStream';
 
 const mapStateToProps = (state) => {
@@ -21,10 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       dispatch,
       ownProps.params.listId
     ));
-  },
-  setUser(user) {
-    dispatch(setUser(user));
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Timeline);
+export default connect(mapStateToProps, mapDispatchToProps)(ListsTimeline);
