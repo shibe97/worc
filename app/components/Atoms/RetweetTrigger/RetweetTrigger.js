@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './RetweetTrigger.css';
+import styles from './retweetTrigger.css';
 
 export default ({ id_str, retweeted, retweet_count, openRetweetModal }) => (
   <span>
