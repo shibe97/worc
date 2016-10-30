@@ -4,7 +4,7 @@ import styles from './listsTimeline.css';
 
 export default class ListsTimeline extends Component {
   componentWillMount() {
-    this.props.requestStreamSite();
+    this.props.requestStreamSiteFollow();
   }
 
   render() {

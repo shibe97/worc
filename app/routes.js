@@ -7,6 +7,7 @@ import UserTimeline from './containers/UserTimeline';
 import MentionsTimeline from './containers/MentionsTimeline';
 import Lists from './containers/Lists';
 import ListsTimeline from './containers/ListsTimeline';
+import SearchTimeline from './containers/SearchTimeline';
 
 export default class Routes extends Component {
   render() {
@@ -19,6 +20,7 @@ export default class Routes extends Component {
           <Route component={MentionsTimeline} path="mentionsTimeline" />
           <Route component={Lists} path="lists" />
           <Route component={ListsTimeline} path="lists/:listId/:listName" />
+          <Route component={SearchTimeline} path="searchTimeline" />
         </Route>
       </Router>
     );

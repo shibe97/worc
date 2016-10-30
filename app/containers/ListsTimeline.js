@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ListsTimeline from '../components/ListsTimeline';
 import { requestGetListsStatuses } from '../actions/lists';
-import { requestStreamSite } from '../actions/siteStream';
+import { requestStreamSiteFollow } from '../actions/siteStream';
 
 const mapStateToProps = (state) => {
   return {
@@ -15,8 +15,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   requestGetTimeline() {
     dispatch(requestGetListsStatuses(ownProps.params.listId));
   },
-  requestStreamSite() {
-    dispatch(requestStreamSite(
+  requestStreamSiteFollow() {
+    dispatch(requestStreamSiteFollow(
       dispatch,
       ownProps.params.listId
     ));
