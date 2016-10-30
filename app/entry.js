@@ -14,6 +14,7 @@ import Routes from './routes';
 import homeTimelineReducer from './reducers/homeTimeline';
 import userTimelineReducer from './reducers/userTimeline';
 import mentionsTimelineReducer from './reducers/mentionsTimeline';
+import searchReducer from './reducers/searchTimeline';
 import userReducer from './reducers/user';
 import retweetReducer from './reducers/retweet';
 import updateReducer from './reducers/update';
@@ -30,6 +31,7 @@ const reducer = combineReducers({
   homeTimelineReducer,
   userTimelineReducer,
   mentionsTimelineReducer,
+  searchReducer,
   userReducer,
   retweetReducer,
   updateReducer,

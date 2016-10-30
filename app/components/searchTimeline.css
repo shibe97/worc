@@ -1,0 +1,14 @@
+.inputText {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin-right: 7px;
+}
+
+.searchArea {
+  background-color: #def;
+  border-bottom: 1px solid #cde;
+  padding: 10px 20px;
+  display: flex;
+}

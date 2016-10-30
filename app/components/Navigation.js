@@ -26,9 +26,10 @@ export default class Navigation extends Component {
   render() {
     return (
       <ul className="Navigation">
-        <Item current={this.props.pathname} to="/homeTimeline" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--home">ホーム</Item>
-        <Item current={this.props.pathname} to="/mentionsTimeline" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--mentions">リプライ</Item>
-        <Item current={this.props.pathname} to="/lists" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--lists">リスト</Item>
+        <Item current={this.props.pathname} to="/homeTimeline" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--home">home</Item>
+        <Item current={this.props.pathname} to="/mentionsTimeline" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--mentions">mentions</Item>
+        <Item current={this.props.pathname} to="/lists" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--lists">lists</Item>
+        <Item current={this.props.pathname} to="/searchTimeline" onClick={() => this.props.resetTimeline()} itemClass="Navigation__item--search">search</Item>
       </ul>
     );
   }

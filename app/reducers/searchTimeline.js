@@ -1,52 +1,37 @@
 const initialState = {
-  gettingList     : false,
-  list            : [],
   gettingStatuses : false,
+  query           : '',
   statuses        : []
 };
 
-export default function listsReducer (state = initialState, action) {
+export default function searchReducer (state = initialState, action) {
   switch (action.type) {
     case 'SYSTEM_ERROR':
       return {
         ...state,
-        gettingList     : false,
         gettingStatuses : false
       };
 
-    case 'REQUEST_GET_LIST':
+    case 'INPUT_QUERY':
       return {
         ...state,
-        gettingList     : true
+        query : action.payload
       };
 
-    case 'SUCCESS_GET_LIST':
-      return {
-        ...state,
-        gettingList : false,
-        list : action.payload.data
-      };
-
-    case 'FAILURE_GET_LIST':
-      return {
-        ...state,
-        gettingList : false
-      };
-
-    case 'REQUEST_GET_LISTS_STATUSES':
+    case 'REQUEST_GET_SEARCH_TWEETS':
       return {
         ...state,
         gettingStatuses : true
       };
 
-    case 'SUCCESS_GET_LISTS_STATUSES':
+    case 'SUCCESS_GET_SEARCH_TWEETS':
       return {
         ...state,
         gettingStatuses : false,
-        statuses : action.payload.data
+        statuses : action.payload.data.statuses
       };
 
-    case 'FAILURE_GET_LISTS_STATUSES':
+    case 'FAILURE_GET_SEARCH_TWEETS':
       return {
         ...state,
         gettingStatuses : false
@@ -184,7 +169,7 @@ export default function listsReducer (state = initialState, action) {
         })
       };
 
-    case 'SUCCESS_STREAM_SITE_FOLLOW':
+    case 'SUCCESS_STREAM_SITE_TRACK':
       return {
         ...state,
         statuses : [
@@ -196,7 +181,6 @@ export default function listsReducer (state = initialState, action) {
     case 'RESET_TIMELINE':
       return {
         ...state,
-        list : [],
         statuses : []
       };
 
