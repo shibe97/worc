@@ -1,6 +1,6 @@
 {
   "name": "worc",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A quiet twitter client",
   "main": "./dist/main.js",
   "dependencies": {
