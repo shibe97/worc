@@ -32,6 +32,7 @@
     "babel-preset-stage-2": "^6.11.0",
     "css-loader": "^0.25.0",
     "electron-zip-packager": "^4.0.0",
+    "enzyme": "^2.5.1",
     "eslint": "^3.1.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.12.0",
@@ -40,12 +41,14 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-sass": "^2.3.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.1",
     "jsdom": "^9.2.1",
     "json-loader": "^0.5.4",
     "postcss-import": "^8.1.2",
     "postcss-loader": "^1.0.0",
     "postcss-nested": "^1.0.0",
+    "react-addons-test-utils": "^15.3.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   },
@@ -56,6 +59,11 @@
     "start": "electron dist/main.js",
     "gulp": "gulp",
     "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --ignore='node_modules' --overwrite"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "identity-obj-proxy"
+    }
   },
   "repository": {
     "type": "git",
