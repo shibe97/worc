@@ -1,3 +1,6 @@
+import { favoritesCreate, favoritesDestroy } from '../utils/favorite';
+import { retweetsCreate, retweetsDestroy } from '../utils/retweet';
+
 const initialState = {
   gettingTimeline : false,
   timeline        : []
@@ -40,135 +43,29 @@ export default function homeTimelineReducer (state = initialState, action) {
       };
 
     case 'SUCCESS_POST_FAVORITES_CREATE':
-      return {
-        ...state,
-        timeline : state.timeline.map((tweet) => {
-          if (tweet.retweeted_status && tweet.retweeted_status.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweeted_status : {
-                ...tweet.retweeted_status,
-                favorite_count : tweet.retweeted_status.favorite_count + 1,
-                favorited : true
-              }
-            });
-          } else if (tweet.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              favorite_count : tweet.favorite_count + 1,
-              favorited : true
-            });
-          }
-          return tweet;
-        })
-      };
-
-    case 'FAILURE_POST_FAVORITES_CREATE':
-      return {
-        ...state,
-        timeline : state.timeline.map((tweet) => {
-          if (tweet.retweeted_status && tweet.retweeted_status.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweeted_status : {
-                ...tweet.retweeted_status,
-                favorite_count : tweet.retweeted_status.favorite_count - 1,
-                favorited : false
-              }
-            });
-          } else if (tweet.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              favorite_count : tweet.favorite_count - 1,
-              favorited : false
-            });
-          }
-          return tweet;
-        })
-      };
-
-    case 'SUCCESS_POST_FAVORITES_DESTROY':
-      return {
-        ...state,
-        timeline : state.timeline.map((tweet) => {
-          if (tweet.retweeted_status && tweet.retweeted_status.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweeted_status : {
-                ...tweet.retweeted_status,
-                favorite_count : tweet.retweeted_status.favorite_count - 1,
-                favorited : false
-              }
-            });
-          } else if (tweet.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              favorite_count : tweet.favorite_count - 1,
-              favorited : false
-            });
-          }
-          return tweet;
-        })
-      };
-
     case 'FAILURE_POST_FAVORITES_DESTROY':
       return {
         ...state,
-        timeline : state.timeline.map((tweet) => {
-          if (tweet.retweeted_status && tweet.retweeted_status.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweeted_status : {
-                ...tweet.retweeted_status,
-                favorite_count : tweet.retweeted_status.favorite_count + 1,
-                favorited : true
-              }
-            });
-          } else if (tweet.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              favorite_count : tweet.favorite_count - 1,
-              favorited : true
-            });
-          }
-          return tweet;
-        })
+        timeline : favoritesCreate(state.timeline, action.payload.id)
+      };
+
+    case 'SUCCESS_POST_FAVORITES_DESTROY':
+    case 'FAILURE_POST_FAVORITES_CREATE':
+      return {
+        ...state,
+        timeline : favoritesDestroy(state.timeline, action.payload.id)
       };
 
     case 'SUCCESS_POST_RETWEET':
       return {
         ...state,
-        timeline : state.timeline.map((tweet) => {
-          if (tweet.retweeted_status && tweet.retweeted_status.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweeted_status : {
-                ...tweet.retweeted_status,
-                retweet_count : tweet.retweeted_status.retweet_count + 1,
-                retweeted : true
-              }
-            });
-          } else if (tweet.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweet_count : tweet.retweet_count + 1,
-              retweeted : true
-            });
-          }
-          return tweet;
-        })
+        timeline : retweetsCreate(state.timeline, action.payload.id)
       };
 
     case 'FAILURE_POST_RETWEET':
       return {
         ...state,
-        timeline : state.timeline.map((tweet) => {
-          if (tweet.retweeted_status && tweet.retweeted_status.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweeted_status : {
-                ...tweet.retweeted_status,
-                retweet_count : tweet.retweeted_status.retweet_count - 1,
-                retweeted : false
-              }
-            });
-          } else if (tweet.id_str === action.payload.id) {
-            return Object.assign({}, tweet, {
-              retweet_count : tweet.retweet_count - 1,
-              retweeted : false
-            });
-          }
-          return tweet;
-        })
+        timeline : retweetsDestroy(state.timeline, action.payload.id)
       };
 
     case 'RESET_TIMELINE':
