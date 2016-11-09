@@ -81,7 +81,7 @@ export default function listsReducer (state = initialState, action) {
         statuses : retweetsDestroy(state.statuses, action.payload.id)
       };
 
-    case 'SUCCESS_STREAM_SITE_FOLLOW':
+    case 'SUCCESS_STREAM_LISTS':
       return {
         ...state,
         statuses : [
