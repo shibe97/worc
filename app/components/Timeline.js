@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Tweet from './Tweet';
 import User from '../containers/User';
 import Retweet from '../containers/Retweet';
+import Loading from './Atoms/Loading/Loading';
 import Modal from 'react-awesome-modal';
 
 export default class Timeline extends Component {
@@ -34,7 +35,7 @@ export default class Timeline extends Component {
     if (this.props.gettingTimeline) {
       return (
         <div className="List">
-          <div className="Loading" />
+          <Loading />
         </div>
       );
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import Loading from './Atoms/Loading/Loading';
 
 export default class Lists extends Component {
 
@@ -11,7 +12,7 @@ export default class Lists extends Component {
     if (this.props.gettingList) {
       return (
         <div className="List">
-          <div className="Loading" />
+          <Loading />
         </div>
       );
     }

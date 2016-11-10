@@ -50,6 +50,7 @@
     "postcss-nested": "^1.0.0",
     "react-addons-test-utils": "^15.3.2",
     "style-loader": "^0.13.1",
+    "svg-url-loader": "^1.1.0",
     "webpack": "^1.13.2"
   },
   "scripts": {

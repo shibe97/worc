@@ -29,6 +29,10 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: ['style', 'css?modules&localIdentName=[local]--[hash:base64:5]', 'postcss'],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader'
       }
     ]
   },
