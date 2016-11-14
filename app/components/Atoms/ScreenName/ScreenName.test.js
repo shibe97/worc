@@ -8,7 +8,6 @@ describe('components/atoms/screenName', function() {
     expect(render(<ScreenName>foo</ScreenName>).text()).toEqual('foo');
   });
   it('should have a "screenName" class', function() {
-    console.log(shallow(<ScreenName>foo</ScreenName>).hasClass());
     expect(shallow(<ScreenName>foo</ScreenName>).hasClass('screenName')).toEqual(true);
   });
 });
