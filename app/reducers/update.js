@@ -19,7 +19,8 @@ export default function updateReducer(items = initialItems, action) {
     case 'SUCCESS_POST_UPDATE':
       return Object.assign({}, items, {
         postingUpdate: false,
-        update: ''
+        update: '',
+        remainingCharacters: 140
       });
     case 'FAILURE_POST_UPDATE':
       return Object.assign({}, items, {

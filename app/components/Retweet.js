@@ -14,7 +14,7 @@ export default class Retweet extends Component {
         <div className="Modal">
           <p className="Modal__title">Are you sure you wanna retweet?</p>
           <div className="Modal__actions mt20px">
-            <Button type="submit" value="retweet" disabledValue="retweeting..." onClick={() => this.postRetweet()} />
+            <Button type="submit" value="retweet" onClick={() => this.postRetweet()} />
             <a className="ml20px" href="javascript:void(0);" onClick={() => this.props.closeRetweetModal()}>cancel</a>
           </div>
         </div>
