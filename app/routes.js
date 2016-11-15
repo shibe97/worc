@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './containers/App';
-import HomeTimeline from './containers/HomeTimeline';
-import UserTimeline from './containers/UserTimeline';
-import MentionsTimeline from './containers/MentionsTimeline';
+import HomeTimeline from './containers/Modules/HomeTimeline';
+import UserTimeline from './containers/Modules/UserTimeline';
+import MentionsTimeline from './containers/Modules/MentionsTimeline';
 import Lists from './containers/Lists';
-import ListsTimeline from './containers/ListsTimeline';
-import SearchTimeline from './containers/SearchTimeline';
+import ListsTimeline from './containers/Modules/ListsTimeline';
+import SearchTimeline from './containers/Modules/SearchTimeline';
 
 export default class Routes extends Component {
   render() {
