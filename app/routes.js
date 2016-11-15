@@ -5,7 +5,7 @@ import App from './containers/App';
 import HomeTimeline from './containers/Modules/HomeTimeline';
 import UserTimeline from './containers/Modules/UserTimeline';
 import MentionsTimeline from './containers/Modules/MentionsTimeline';
-import Lists from './containers/Lists';
+import Lists from './containers/Molecules/Lists';
 import ListsTimeline from './containers/Modules/ListsTimeline';
 import SearchTimeline from './containers/Modules/SearchTimeline';
 
