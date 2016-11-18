@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Textarea from './Atoms/Textarea/Textarea';
+import RemainingCharacters from './Atoms/RemainingCharacters/RemainingCharacters';
 import Button from './Atoms/Button/Button';
 
 export default class PostForm extends Component {
@@ -8,7 +9,7 @@ export default class PostForm extends Component {
       <form className="PostForm">
         <Textarea value={this.props.data.update} inputUpdate={this.props.inputUpdate} />
         <div className="PostForm__actions">
-          <span className={this.props.data.remainingCharacters < 0 ? 'PostForm__overLength mr15px' : 'mr15px'}>{this.props.data.remainingCharacters}</span>
+          <RemainingCharacters remainingCharacters={this.props.data.remainingCharacters} />
           <Button
             type="normal"
             value="Post"
