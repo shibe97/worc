@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './button.css';
 
-export default ({ disabled=false, type='normal', value, disabledValue, onClick }) => {
+export default ({ disabled = false, type = 'normal', value, disabledValue, onClick }) => {
   if (disabled) {
     return (
-      <input className={`${styles.button} ${styles.disabled}`} type="button" value={disabledValue ? disabledValue : value} />
+      <input className={`${styles.button} ${styles.disabled}`} type="button" value={disabledValue || value} />
     );
   } else if (type === 'submit') {
     return (

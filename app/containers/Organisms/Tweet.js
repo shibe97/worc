@@ -2,11 +2,9 @@ import { connect } from 'react-redux';
 import Tweet from '../../components/Organisms/Tweet/Tweet';
 import { setUser } from '../../actions/user';
 
-const mapStateToProps = (state) => {
-  return {};
-}
+const mapStateToProps = () => ({});
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   setUser(user) {
     dispatch(setUser(user));
   }

@@ -1,25 +1,25 @@
 const initialState = {
-  modal   : false,
-  tweetId : ''
+  modal: false,
+  tweetId: ''
 };
 
-export default function retweetReducer (state = initialState, action) {
+export default function retweetReducer(state = initialState, action) {
   switch (action.type) {
     case 'OPEN_RETWEET_MODAL':
       return {
         ...state,
-        modal   : true,
-        tweetId : action.payload
+        modal: true,
+        tweetId: action.payload
       };
 
     case 'CLOSE_RETWEET_MODAL':
       return {
         ...state,
-        modal : false
+        modal: false
       };
 
     default:
       break;
   }
   return state;
-};
+}

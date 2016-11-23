@@ -21,7 +21,7 @@ export default class SearchTimeline extends Component {
     return (
       <div>
         <div className={styles.searchArea}>
-          <input className={styles.inputText} type="text" value={this.props.query} onChange={(e) => this.inputQuery(e.target.value)} />
+          <input className={styles.inputText} type="text" value={this.props.query} onChange={e => this.inputQuery(e.target.value)} />
           <input className="Button Button__normal" type="button" value="Search" onClick={() => this.requestGetTimeline()} />
         </div>
         <Timeline

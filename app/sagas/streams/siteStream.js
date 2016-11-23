@@ -6,23 +6,20 @@ export function* handleStreamSiteFollow() {
   const { dispatch, listId } = yield take(REQUEST_STREAM_SITE_FOLLOW);
   const client = yield call(createTwitterClient);
   const { data } = yield client.twGetPromise('lists/members', { list_id: listId, count: 1000 });
-  const users = data.users.map((user) => {
-    return user.id_str;
-  }).join(',');
+  const users = data.users.map(user => user.id_str).join(',');
   client.twStream('statuses/filter', { follow: users }, (stream) => {
-    stream.on('data', (data) => {
-      dispatch(successStreamSiteFollow({ data }));
+    stream.on('data', (followData) => {
+      dispatch(successStreamSiteFollow({ followData }));
     });
   });
 }
 
 export function* handleStreamSiteTrack() {
   const { dispatch, keyword } = yield take(REQUEST_STREAM_SITE_TRACK);
-  console.log(keyword);
   const client = yield call(createTwitterClient);
   client.twStream('statuses/filter', { track: keyword }, (stream) => {
-    stream.on('data', (data) => {
-      dispatch(successStreamSiteTrack({ data }));
+    stream.on('data', (trackData) => {
+      dispatch(successStreamSiteTrack({ trackData }));
     });
   });
 }

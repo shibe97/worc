@@ -42,16 +42,6 @@ export default class TwitterClient {
       callback(stream);
     });
   }
-
-  resolveFunc(response, callback, dispatch) {
-    return dispatch(callback(response, dispatch));
-  }
-
-  rejectFunc(error, dispatch) {
-    return dispatch({
-      type: 'SYSTEM_ERROR'
-    });
-  }
 }
 
 export function createTwitterClient() {

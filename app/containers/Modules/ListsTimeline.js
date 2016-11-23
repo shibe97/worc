@@ -3,13 +3,11 @@ import ListsTimeline from '../../components/Modules/ListsTimeline/ListsTimeline'
 import { requestGetListsStatuses } from '../../actions/lists';
 import { requestStreamSiteFollow } from '../../actions/siteStream';
 
-const mapStateToProps = (state) => {
-  return {
-    gettingTimeline : state.listsReducer.gettingStatuses,
-    timeline        : state.listsReducer.statuses,
-    user            : state.userReducer.user
-  };
-}
+const mapStateToProps = state => ({
+  gettingTimeline: state.listsReducer.gettingStatuses,
+  timeline: state.listsReducer.statuses,
+  user: state.userReducer.user
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   requestGetTimeline() {

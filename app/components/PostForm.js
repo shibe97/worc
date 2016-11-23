@@ -14,7 +14,8 @@ export default class PostForm extends Component {
             type="normal"
             value="Post"
             onClick={() => this.props.requestPostUpdate(this.props.data.update)}
-            disabled={this.props.data.postingUpdate || this.props.data.remainingCharacters === 140 || this.props.data.remainingCharacters < 0} />
+            disabled={this.props.data.postingUpdate || this.props.data.remainingCharacters === 140 || this.props.data.remainingCharacters < 0}
+          />
         </div>
       </form>
     );

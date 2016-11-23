@@ -32,7 +32,7 @@ export default class Authentication {
             if (error) {
               new Authentication(callback);
             } else {
-              const { user_id, screen_name} = results;
+              const { user_id, screen_name } = results;
               const token = { accessToken, accessTokenSecret, user_id, screen_name };
               callback(token);
               if (authWindow) {

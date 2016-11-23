@@ -1,4 +1,5 @@
 import { Menu, app } from 'electron';
+
 const template = [
   {
     label: 'Edit',
@@ -32,15 +33,15 @@ const template = [
       {
         label: 'Reload',
         accelerator: 'CmdOrCtrl+R',
-        click (item, focusedWindow) {
-          if (focusedWindow) focusedWindow.reload()
+        click(item, focusedWindow) {
+          if (focusedWindow) focusedWindow.reload();
         }
       },
       {
         label: 'Toggle Developer Tools',
         accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click (item, focusedWindow) {
-          if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+        click(item, focusedWindow) {
+          if (focusedWindow) focusedWindow.webContents.toggleDevTools();
         }
       },
       {
@@ -74,10 +75,10 @@ const template = [
       }
     ]
   }
-]
+];
 
 if (process.platform === 'darwin') {
-  const name = app.getName()
+  const name = app.getName();
   template.unshift({
     label: name,
     submenu: [
@@ -91,7 +92,7 @@ if (process.platform === 'darwin') {
         role: 'quit'
       }
     ]
-  })
+  });
   // Edit menu.
   template[1].submenu.push(
     {
@@ -108,7 +109,7 @@ if (process.platform === 'darwin') {
         }
       ]
     }
-  )
+  );
   // Window menu.
   template[3].submenu = [
     {
@@ -132,7 +133,7 @@ if (process.platform === 'darwin') {
       label: 'Bring All to Front',
       role: 'front'
     }
-  ]
-};
+  ];
+}
 
 export default Menu.buildFromTemplate(template);

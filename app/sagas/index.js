@@ -4,7 +4,7 @@ import handleGetUserTimeline from './statuses/userTimeline';
 import handleGetMentionsTimeline from './statuses/mentionsTimeline';
 import handlePostUpdate from './statuses/update';
 import { handlePostFavoritesCreate, handlePostFavoritesDestroy } from './favorites/favorites';
-import { handlePostRetweet } from './statuses/retweet';
+import handlePostRetweet from './statuses/retweet';
 import handleStreamUser from './streams/userStream';
 import { handleStreamSiteFollow, handleStreamSiteTrack } from './streams/siteStream';
 import handleGetList from './lists/list';

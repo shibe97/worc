@@ -3,16 +3,14 @@ import SearchTimeline from '../../components/Modules/SearchTimeline/SearchTimeli
 import { requestGetSearchTweets, inputQuery } from '../../actions/search';
 import { requestStreamSiteTrack } from '../../actions/siteStream';
 
-const mapStateToProps = (state) => {
-  return {
-    gettingTimeline : state.searchReducer.gettingStatuses,
-    timeline        : state.searchReducer.statuses,
-    query           : state.searchReducer.query,         
-    user            : state.userReducer.user
-  };
-}
+const mapStateToProps = state => ({
+  gettingTimeline: state.searchReducer.gettingStatuses,
+  timeline: state.searchReducer.statuses,
+  query: state.searchReducer.query,
+  user: state.userReducer.user
+});
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   inputQuery(value) {
     dispatch(inputQuery(value));
   },

@@ -1,4 +1,4 @@
-import twitterText from 'twitter-text';
+import 'twitter-text';
 
 const initialItems = {
   update: '',

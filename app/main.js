@@ -1,8 +1,6 @@
-'use strict';
-
 import { app, BrowserWindow, shell, screen, Menu } from 'electron';
-import Authentication from './utils/authentication';
 import storage from 'electron-json-storage';
+import Authentication from './utils/authentication';
 import menu from './menu';
 
 // メインウィンドウはGCされないようにグローバル宣言
@@ -17,9 +15,8 @@ app.on('window-all-closed', () => {
 
 // Electronの初期化完了後に実行
 app.on('ready', () => {
-  Menu.setApplicationMenu(menu)
+  Menu.setApplicationMenu(menu);
   new Authentication((token) => {
-
     storage.set('auth', token, (error) => {
       if (error) throw error;
     });
@@ -38,13 +35,13 @@ app.on('ready', () => {
     mainWindow.webContents.on('new-window', (e, url) => {
       e.preventDefault();
       shell.openExternal(url);
-    })
+    });
 
-    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
     // mainWindow.openDevTools(true);
 
     // ウィンドウが閉じられたらアプリも終了
-    mainWindow.on('closed', function() {
+    mainWindow.on('closed', () => {
       mainWindow = null;
     });
   });

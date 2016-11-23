@@ -1,15 +1,13 @@
-import { connect }    from 'react-redux';
-import App            from '../components/App';
+import { connect } from 'react-redux';
+import App from '../components/App';
 import { requestStreamUser } from '../actions/userStream';
 import { resetTimeline } from '../actions/timeline';
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    pathname : ownProps.location.pathname === '/' ? '/homeTimeline' : ownProps.location.pathname
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  pathname: ownProps.location.pathname === '/' ? '/homeTimeline' : ownProps.location.pathname
+});
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   requestStreamUser() {
     dispatch(requestStreamUser(dispatch));
   },
