@@ -39,7 +39,6 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
     "gulp-sass": "^2.3.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.1",
