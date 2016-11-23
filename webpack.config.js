@@ -33,9 +33,17 @@ module.exports = {
       {
         test: /\.svg$/,
         loader: 'svg-url-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'eslint',
+        exclude: /node_modules/
       }
     ]
   },
   postcss : [cssImport, cssNested],
-  target : 'electron'
+  target : 'electron',
+  eslint: {
+    fix: true
+  }
 };
