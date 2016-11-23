@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation';
-import PostForm from '../containers/PostForm';
+import PostForm from '../containers/Molecules/PostForm';
 
 export default class App extends Component {
   componentDidMount() {

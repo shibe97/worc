@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import PostForm from '../components/PostForm';
-import { inputUpdate, requestPostUpdate } from '../actions/update';
+import PostForm from '../../components/Molecules/PostForm/PostForm';
+import { inputUpdate, requestPostUpdate } from '../../actions/update';
 
 const mapStateToProps = state => ({
   data: state.updateReducer
