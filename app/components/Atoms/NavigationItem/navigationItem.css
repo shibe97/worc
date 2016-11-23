@@ -1,0 +1,43 @@
+.item {
+  height: 60px;
+  text-indent: -9999px;
+  overflow: hidden;
+
+  &.home {
+    background: url('./home.svg') no-repeat center center;
+    background-size: 32px 32px;
+  }
+
+  &.mentions {
+    background: url('./mentions.svg') no-repeat center center;
+    background-size: 24px 24px;
+  }
+
+  &.lists {
+    background: url('./lists.svg') no-repeat center center;
+    background-size: 30px 30px;
+  }
+
+  &.search {
+    background: url('./search.svg') no-repeat center center;
+    background-size: 40px 40px;
+  }
+
+  path {
+    fill: #eee;
+  }
+
+  a {
+    display: block;
+    height: 100%;
+  }
+
+  &:hover {
+    background-color: #2b4055;
+  }
+
+  &.isSelected {
+    background-color: #1a2633;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+  }
+}
