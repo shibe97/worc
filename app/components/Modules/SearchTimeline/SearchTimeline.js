@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Timeline from '../Timeline/Timeline';
+import Button from '../../Atoms/Button/Button';
 import styles from './searchTimeline.css';
 
 export default class SearchTimeline extends Component {
@@ -22,7 +23,12 @@ export default class SearchTimeline extends Component {
       <div>
         <div className={styles.searchArea}>
           <input className={styles.inputText} type="text" value={this.props.query} onChange={e => this.inputQuery(e.target.value)} />
-          <input className="Button Button__normal" type="button" value="Search" onClick={() => this.requestGetTimeline()} />
+          <Button
+            type="normal"
+            value="Search"
+            onClick={() => this.requestGetTimeline()}
+            disabled={this.props.gettingTimeline}
+          />
         </div>
         <Timeline
           gettingTimeline={this.props.gettingTimeline}
