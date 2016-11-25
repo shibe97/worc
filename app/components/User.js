@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Modal from 'react-awesome-modal';
 import Name from './Atoms/Name/Name';
 import ScreenName from './Atoms/ScreenName/ScreenName';
+import UserCounts from './Molecules/UserCounts/UserCounts';
 
 export default class User extends Component {
   render() {
@@ -22,30 +23,13 @@ export default class User extends Component {
                   <ScreenName>@{this.props.user.user.screen_name}</ScreenName>
                 </div>
                 <p className="User__description">{this.props.user.user.description}</p>
-                <ul className="User__count">
-                  <li className="User__countItem">
-                    <dl>
-                      <dd className="User__countValue">
-                        <Link to={`userTimeline/${this.props.user.user.id_str}`} onClick={() => this.props.closeUserModal()}>
-                          {this.props.user.user.statuses_count.toLocaleString()}
-                        </Link>
-                      </dd>
-                      <dt className="User__countKey">tweets</dt>
-                    </dl>
-                  </li>
-                  <li className="User__countItem">
-                    <dl>
-                      <dd className="User__countValue">{this.props.user.user.friends_count.toLocaleString()}</dd>
-                      <dt className="User__countKey">friends</dt>
-                    </dl>
-                  </li>
-                  <li className="User__countItem">
-                    <dl>
-                      <dd className="User__countValue">{this.props.user.user.followers_count.toLocaleString()}</dd>
-                      <dt className="User__countKey">followers</dt>
-                    </dl>
-                  </li>
-                </ul>
+                <UserCounts
+                  idStr={this.props.user.user.id_str}
+                  statusesCount={this.props.user.user.statuses_count}
+                  friendsCount={this.props.user.user.friends_count}
+                  followersCount={this.props.user.user.followers_count}
+                  closeModal={this.props.closeUserModal}
+                />
               </div>
             </div>
         }
