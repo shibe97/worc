@@ -1,0 +1,19 @@
+.user {
+  position: relative;
+  height: 100%;
+  padding-top: 100px;
+  border-radius: 5px;
+}
+
+.whiteArea {
+  background-color: #fff;
+  height: 100%;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.description {
+  font-size: 12px;
+  padding: 5px 0;
+}

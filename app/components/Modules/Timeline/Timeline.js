@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TweetWrapper from '../TweetWrapper/TweetWrapper';
-import User from '../../../containers/User';
+import UserModal from '../../../containers/Modules/UserModal';
 import Retweet from '../../../containers/Retweet';
 import Loading from '../../Atoms/Loading/Loading';
 
@@ -44,7 +44,7 @@ export default class Timeline extends Component {
         <ul className="List">
           {Timeline.returnTimeline(this.props.timeline)}
         </ul>
-        <User />
+        <UserModal />
         <Retweet />
       </div>
     );
