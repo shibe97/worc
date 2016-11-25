@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TweetWrapper from '../TweetWrapper/TweetWrapper';
 import UserModal from '../../../containers/Modules/UserModal';
-import Retweet from '../../../containers/Retweet';
+import RetweetModal from '../../../containers/Molecules/RetweetModal';
 import Loading from '../../Atoms/Loading/Loading';
 
 export default class Timeline extends Component {
@@ -45,7 +45,7 @@ export default class Timeline extends Component {
           {Timeline.returnTimeline(this.props.timeline)}
         </ul>
         <UserModal />
-        <Retweet />
+        <RetweetModal />
       </div>
     );
   }
