@@ -3,6 +3,7 @@ import TweetWrapper from '../TweetWrapper/TweetWrapper';
 import UserModal from '../../../containers/Modules/UserModal';
 import RetweetModal from '../../../containers/Molecules/RetweetModal';
 import Loading from '../../Atoms/Loading/Loading';
+import styles from './timeline.css';
 
 export default class Timeline extends Component {
   static returnTimeline(timeline) {
@@ -34,14 +35,14 @@ export default class Timeline extends Component {
   render() {
     if (this.props.gettingTimeline) {
       return (
-        <div className="List">
+        <div className={styles.timeline}>
           <Loading />
         </div>
       );
     }
     return (
       <div>
-        <ul className="List">
+        <ul className={styles.timeline}>
           {Timeline.returnTimeline(this.props.timeline)}
         </ul>
         <UserModal />

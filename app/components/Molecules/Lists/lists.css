@@ -1,0 +1,10 @@
+.lists {
+  font-size: 14px;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.list {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}

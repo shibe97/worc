@@ -5,7 +5,8 @@ const initialState = {
   gettingList: false,
   list: [],
   gettingStatuses: false,
-  statuses: []
+  statuses: [],
+  retweetedIds: [],
 };
 
 export default function listsReducer(state = initialState, action) {
@@ -82,6 +83,12 @@ export default function listsReducer(state = initialState, action) {
       };
 
     case 'SUCCESS_STREAM_SITE_FOLLOW':
+      if (action.payload.followData.retweeted_status !== undefined) {
+        if (state.retweetedIds.includes(action.payload.followData.retweeted_status.id_str)) {
+          return state;
+        }
+        state.retweetedIds.push(action.payload.followData.retweeted_status.id_str);
+      }
       return {
         ...state,
         statuses: [

@@ -1,3 +1,5 @@
+@import '../../../styles/variable';
+
 .button {
     display: inline-block;
     border: none;
@@ -37,11 +39,8 @@
     }
 }
 
-
 .submit {
-    background: -moz-linear-gradient(top, $color-submit, darken($color-submit, 10%));
-    background: -webkit-gradient(linear, left top, left bottom, from($color-submit), to(darken($color-submit, 10%)));
-    background-color: #0091e5;
+    background-color: var(--color-submit);
     color: #fff;
 
     &:hover {

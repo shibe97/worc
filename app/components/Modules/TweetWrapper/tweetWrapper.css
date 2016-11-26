@@ -1,0 +1,16 @@
+@import '../../../styles/variable';
+
+.wrapper {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.retweetedBy {
+  fill: var(--color-accent);
+  color: #ccc;
+  font-size: 12px;
+}
+
+.name {
+  margin-left: 5px;
+}

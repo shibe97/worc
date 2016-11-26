@@ -1,0 +1,5 @@
+.timeline {
+  font-size: 14px;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}

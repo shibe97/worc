@@ -3,6 +3,10 @@
   justify-content: flex-start;
 }
 
+.screenName {
+  margin-left: 5px;
+}
+
 .createdAt {
   margin-left: auto;
 }

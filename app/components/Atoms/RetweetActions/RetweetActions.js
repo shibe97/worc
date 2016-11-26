@@ -9,9 +9,9 @@ export default ({ tweetId, requestPostRetweet, closeRetweetModal }) => {
   };
 
   return (
-    <div className={`${styles.retweetActions} mt20px`}>
+    <div className={styles.retweetActions}>
       <Button type="submit" value="retweet" onClick={postRetweet} />
-      <a className="ml20px" href="javascript:void(0);" onClick={() => closeRetweetModal()}>cancel</a>
+      <a className={styles.cancel} href="javascript:void(0);" onClick={() => closeRetweetModal()}>cancel</a>
     </div>
   );
 };
