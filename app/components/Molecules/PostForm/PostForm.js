@@ -9,12 +9,14 @@ export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
     <Textarea value={data.update} inputUpdate={inputUpdate} />
     <div className={styles.actions}>
       <RemainingCharacters remainingCharacters={data.remainingCharacters} />
-      <Button
-        type="normal"
-        value="Post"
-        onClick={() => requestPostUpdate(data.update)}
-        disabled={data.postingUpdate || data.remainingCharacters === 140 || data.remainingCharacters < 0}
-      />
+      <span className={styles.button}>
+        <Button
+          type="normal"
+          value="Post"
+          onClick={() => requestPostUpdate(data.update)}
+          disabled={data.postingUpdate || data.remainingCharacters === 140 || data.remainingCharacters < 0}
+        />
+      </span>
     </div>
   </form>
 );
