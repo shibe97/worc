@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Navigation from './Molecules/Navigation/Navigation';
-import PostForm from '../containers/Molecules/PostForm';
+import Navigation from '../../Molecules/Navigation/Navigation';
+import PostForm from '../../../containers/Molecules/PostForm';
+import styles from './app.css';
 
 export default class App extends Component {
   componentDidMount() {
@@ -9,11 +10,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App__left">
+      <div>
+        <div className={styles.left}>
           <Navigation resetTimeline={this.props.resetTimeline} pathname={this.props.pathname} />
         </div>
-        <div className="App__right">
+        <div className={styles.right}>
           <PostForm />
           {this.props.children}
         </div>

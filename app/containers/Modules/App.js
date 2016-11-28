@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import App from '../components/App';
-import { requestStreamUser } from '../actions/userStream';
-import { resetTimeline } from '../actions/timeline';
+import App from '../../components/Modules/App/App';
+import { requestStreamUser } from '../../actions/userStream';
+import { resetTimeline } from '../../actions/timeline';
 
 const mapStateToProps = (state, ownProps) => ({
   pathname: ownProps.location.pathname === '/' ? '/homeTimeline' : ownProps.location.pathname
