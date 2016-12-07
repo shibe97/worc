@@ -4,11 +4,18 @@ import Button from '../../Atoms/Button/Button';
 import styles from './searchTimeline.css';
 
 export default class SearchTimeline extends Component {
+
   componentWillMount() {
     // this.props.requestStreamSiteTrack(this.props.query);
   }
 
-  inputQuery(value) {
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.requestGetTimeline();
+    }
+  }
+
+  inputQuery(e, value) {
     this.props.inputQuery(value);
   }
 
@@ -22,7 +29,7 @@ export default class SearchTimeline extends Component {
     return (
       <div>
         <div className={styles.searchArea}>
-          <input className={styles.inputText} type="text" value={this.props.query} onChange={e => this.inputQuery(e.target.value)} />
+          <input className={styles.inputText} type="text" value={this.props.query} onChange={e => this.inputQuery(e, e.target.value)} onKeyPress={e => this.handleKeyPress(e)} />
           <Button
             type="normal"
             value="Search"
