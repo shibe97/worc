@@ -1,4 +1,5 @@
 import React from 'react';
+import { Shortcuts } from 'react-shortcuts';
 import Textarea from '../../Atoms/Textarea/Textarea';
 import RemainingCharacters from '../../Atoms/RemainingCharacters/RemainingCharacters';
 import Button from '../../Atoms/Button/Button';
@@ -6,7 +7,19 @@ import styles from './postForm.css';
 
 export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
   <form className={styles.postForm}>
-    <Textarea value={data.update} inputUpdate={inputUpdate} />
+    <Shortcuts
+      name="POSTFORM" handler={(action) => {
+        switch (action) {
+          case 'POST':
+            requestPostUpdate(data.update);
+            break;
+          default:
+            break;
+        }
+      }}
+    >
+      <Textarea value={data.update} inputUpdate={inputUpdate} />
+    </Shortcuts>
     <div className={styles.actions}>
       <RemainingCharacters remainingCharacters={data.remainingCharacters} />
       <span className={styles.button}>

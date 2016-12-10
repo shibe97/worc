@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { ShortcutManager } from 'react-shortcuts';
 import Navigation from '../../Molecules/Navigation/Navigation';
 import PostForm from '../../../containers/Molecules/PostForm';
 import styles from './app.css';
+import keymap from '../../../keymap';
+
+
+const shortcutManager = new ShortcutManager(keymap);
 
 export default class App extends Component {
+  getChildContext() {
+    return { shortcuts: shortcutManager };
+  }
+
   componentDidMount() {
     this.props.requestStreamUser();
   }
@@ -22,3 +31,7 @@ export default class App extends Component {
     );
   }
 }
+
+App.childContextTypes = {
+  shortcuts: React.PropTypes.object.isRequired
+};
