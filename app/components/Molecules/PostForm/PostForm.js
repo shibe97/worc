@@ -5,13 +5,23 @@ import RemainingCharacters from '../../Atoms/RemainingCharacters/RemainingCharac
 import Button from '../../Atoms/Button/Button';
 import styles from './postForm.css';
 
+function readyToPost(data) {
+  return (
+    !data.postingUpdate &&
+    data.remainingCharacters >= 0 &&
+    data.remainingCharacters < 140
+  );
+}
+
 export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
   <form className={styles.postForm}>
     <Shortcuts
       name="POSTFORM" handler={(action) => {
         switch (action) {
           case 'POST':
-            requestPostUpdate(data.update);
+            if (readyToPost(data)) {
+              requestPostUpdate(data.update);
+            }
             break;
           default:
             break;
@@ -27,7 +37,7 @@ export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
           type="normal"
           value="Post"
           onClick={() => requestPostUpdate(data.update)}
-          disabled={data.postingUpdate || data.remainingCharacters === 140 || data.remainingCharacters < 0}
+          disabled={!readyToPost(data)}
         />
       </span>
     </div>
