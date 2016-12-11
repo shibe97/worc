@@ -1,6 +1,6 @@
 {
   "name": "worc",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A quiet twitter client",
   "main": "./dist/main.js",
   "dependencies": {
@@ -59,7 +59,7 @@
     "build": "webpack",
     "test": "jest app",
     "start": "electron dist/main.js",
-    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --ignore='node_modules' --overwrite"
+    "zip": "electron-zip-packager ./ worc --platform=darwin --arch=x64 --version=1.3.3 --icon=assets/images/worc.icns --overwrite"
   },
   "jest": {
     "moduleNameMapper": {
