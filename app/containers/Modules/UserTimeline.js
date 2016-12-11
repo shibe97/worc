@@ -25,8 +25,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setUser(user) {
     dispatch(setUser(user));
   },
-  openRetweetModal(tweetId) {
-    dispatch(openRetweetModal(tweetId));
+  openRetweetModal(tweet) {
+    dispatch(openRetweetModal(tweet));
   }
 });
 

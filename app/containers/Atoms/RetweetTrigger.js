@@ -5,8 +5,8 @@ import { openRetweetModal } from '../../actions/retweet';
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  openRetweetModal(tweetId) {
-    dispatch(openRetweetModal(tweetId));
+  openRetweetModal(tweet) {
+    dispatch(openRetweetModal(tweet));
   }
 });
 
