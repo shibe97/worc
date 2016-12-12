@@ -2,12 +2,13 @@ language: node_js
 node_js:
   - 6.3.0
 install:
-  - npm install
+  - npm i
 script:
   - npm run build
   - npm test
 after_success:
-  - npm prune --production
+  - rm -rf node_modules
+  - npm i @exponent/electron-cookies electron-zip-packager --global-style
   - test ${TRAVIS_TAG} && npm run zip
 cache:
   directories:
