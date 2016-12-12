@@ -2,12 +2,13 @@ language: node_js
 node_js:
   - 6.3.0
 install:
-  - npm install --global-style
+  - npm install
 script:
   - npm run build
   - npm test
 after_success:
   - test ${TRAVIS_TAG} && npm run zip
+  - npm prune --production
 cache:
   directories:
     - node_modules
