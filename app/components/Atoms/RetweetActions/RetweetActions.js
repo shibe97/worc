@@ -2,10 +2,10 @@ import React from 'react';
 import Button from '../Button/Button';
 import styles from './retweetActions.css';
 
-export default ({ tweetId, requestPostRetweet, closeRetweetModal }) => {
+export default ({ tweet, requestPostRetweet, closeRetweetModal }) => {
   const postRetweet = () => {
     closeRetweetModal();
-    requestPostRetweet(tweetId);
+    requestPostRetweet(tweet.id_str);
   };
 
   return (
