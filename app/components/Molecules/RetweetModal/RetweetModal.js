@@ -27,7 +27,7 @@ export default props => (
   <Modal visible={props.modal} width="340" effect="fadeInDown" onClickAway={() => props.closeRetweetModal()}>
     <div className={styles.modal}>
       {putTweetIfValid(props.tweet)}
-      <hr />
+      <hr width="200" />
       <p className={styles.title}>Are you sure you wanna retweet this?</p>
       <div className={styles.actions}>
         <RetweetActions {...props} />
