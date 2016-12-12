@@ -7,8 +7,8 @@ script:
   - npm run build
   - npm test
 after_success:
-  - test ${TRAVIS_TAG} && npm run zip
   - npm prune --production
+  - test ${TRAVIS_TAG} && npm run zip
 cache:
   directories:
     - node_modules
