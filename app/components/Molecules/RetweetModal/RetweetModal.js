@@ -1,13 +1,21 @@
 import React from 'react';
 import Modal from 'react-awesome-modal';
 import RetweetActions from '../../Atoms/RetweetActions/RetweetActions';
-import Tweet from '../../Organisms/Tweet/Tweet';
+import Meta from '../../Molecules/Meta/Meta';
+import Text from '../../Atoms/Text/Text';
 import styles from './retweetModal.css';
 
 function putTweetIfValid(tweet) {
   if (tweet.id_str) {
     return (
-      <Tweet tweet={tweet} />
+      <dl>
+        <dt>
+          <Meta tweet={tweet} setUser={() => true} />
+        </dt>
+        <dd>
+          <Text tweet={tweet} />
+        </dd>
+      </dl>
     );
   }
   return (
