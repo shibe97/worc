@@ -10,7 +10,7 @@ function putTweetIfValid(tweet) {
     return (
       <dl>
         <dt>
-          <Meta tweet={tweet} setUser={() => true} />
+          <Meta tweet={tweet} />
         </dt>
         <dd>
           <Text tweet={tweet} />
