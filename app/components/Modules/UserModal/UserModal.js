@@ -3,7 +3,7 @@ import Modal from 'react-awesome-modal';
 import User from '../../Organisms/User/User';
 
 export default ({ user, closeUserModal }) => (
-  <Modal visible={user.modal} width="340" height="340" effect="fadeInDown" onClickAway={() => closeUserModal()}>
+  <Modal visible={user.modal} width="340" effect="fadeInDown" onClickAway={() => closeUserModal()}>
     {
       user.user.profile_background_image_url_https &&
         <User
