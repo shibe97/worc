@@ -6,11 +6,7 @@ import styles from './triggers.css';
 export default ({ tweet = {} }) => (
   <ul>
     <li className={styles.action}>
-      <RetweetTrigger
-        id_str={tweet.id_str}
-        retweeted={tweet.retweeted}
-        retweet_count={tweet.retweet_count}
-      />
+      <RetweetTrigger tweet={tweet} />
     </li>
     <li className={styles.action}>
       <FavoriteTrigger

@@ -12,7 +12,7 @@
     "moment": "^2.15.0",
     "node-twitter-api": "^1.7.4",
     "react": "^15.1.0",
-    "react-awesome-modal": "^1.1.0",
+    "react-awesome-modal": "^2.0.1",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",

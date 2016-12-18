@@ -1,6 +1,6 @@
 const initialState = {
   modal: false,
-  tweetId: ''
+  tweet: {}
 };
 
 export default function retweetReducer(state = initialState, action) {
@@ -9,7 +9,7 @@ export default function retweetReducer(state = initialState, action) {
       return {
         ...state,
         modal: true,
-        tweetId: action.payload
+        tweet: action.payload
       };
 
     case 'CLOSE_RETWEET_MODAL':

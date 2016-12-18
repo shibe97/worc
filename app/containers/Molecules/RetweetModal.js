@@ -4,7 +4,7 @@ import { requestPostRetweet, closeRetweetModal } from '../../actions/retweet';
 
 const mapStateToProps = state => ({
   modal: state.retweetReducer.modal,
-  tweetId: state.retweetReducer.tweetId
+  tweet: state.retweetReducer.tweet
 });
 
 const mapDispatchToProps = dispatch => ({
