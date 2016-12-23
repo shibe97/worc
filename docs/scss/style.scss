@@ -1,0 +1,52 @@
+@import "reset";
+
+.Top {
+  background: url('../images/bg_top_01.jpg') repeat center center;
+  height: 640px;
+  
+  &__header {
+    padding: 20px 40px;
+  }
+
+  &__logo {
+    float: left;
+  }
+
+  &__nav {
+    float: right
+  }
+
+  &__navItem {
+    margin: 0 20px;
+    float: right;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin: 70px auto 40px;
+  }
+
+  &__catchcopy {
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.Screenshot {
+  &__images {
+    width: 806px;
+    margin: -80px auto 0;
+  }
+}
+
+.Motivation {
+  text-align: center;
+
+  &__title {
+    font-size: 40px;
+  }
+}
