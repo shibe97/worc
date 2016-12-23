@@ -120,6 +120,9 @@ input, select {
   margin: -80px auto 0; }
 
 .Motivation {
-  text-align: center; }
+  width: 960px;
+  margin: 0 auto; }
   .Motivation__title {
     font-size: 40px; }
+  .Motivation__description {
+    text-align: left; }
