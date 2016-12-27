@@ -1,6 +1,6 @@
 {
   "name": "worc",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "A quiet twitter client",
   "main": "./dist/main.js",
   "dependencies": {
@@ -62,7 +62,7 @@
     "clean:win": "rm -rf ./dist/win",
     "clean:osx": "rm -rf ./dist/osx",
     "zip": "npm run zip:win && npm run zip:osx",
-    "zip:win": "npm run clean:win && electron-zip-packager ./ worc --out=dist/osx --platform=win32 --arch=ia32 --version=1.4.13 --icon=assets/images/worc.ico --overwrite",
+    "zip:win": "npm run clean:win && electron-zip-packager ./ worc --out=dist/win --platform=win32 --arch=ia32 --version=1.4.13 --icon=assets/images/worc.ico --overwrite",
     "zip:osx": "npm run clean:osx && electron-zip-packager ./ worc --out=dist/osx --platform=darwin --arch=x64 --version=1.4.13 --icon=assets/images/worc.icns --overwrite"
   },
   "jest": {
