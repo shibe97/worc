@@ -7,8 +7,6 @@ script:
   - npm run build
   - npm test
 after_success:
-  - rm -rf node_modules
-  - npm i @exponent/electron-cookies electron-zip-packager --global-style
   - test ${TRAVIS_TAG} && npm run zip
 cache:
   directories:

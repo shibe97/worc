@@ -60,7 +60,7 @@
     "test": "jest app",
     "start": "electron dist/main.js",
     "clean:osx": "rm -rf ./dist/osx",
-    "zip": "npm run clean:osx && electron-zip-packager ./ worc --out=dist/osx --platform=darwin --arch=x64 --version=1.4.13 --icon=assets/images/worc.icns --ignore='node_modules/(electron-zip-packager)' --overwrite"
+    "zip": "npm run clean:osx && electron-zip-packager ./ worc --out=dist/osx --platform=darwin --arch=x64 --version=1.4.13 --icon=assets/images/worc.icns --overwrite"
   },
   "jest": {
     "moduleNameMapper": {
