@@ -1,0 +1,158 @@
+@charset "UTF-8";
+/* 
+html5doctor.com Reset Stylesheet v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  font-family: Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 2.0;
+  color: #1f2a68; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: #099; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.Top {
+  background: url("../images/bg_top_01.jpg") repeat center center;
+  height: 540px; }
+  .Top__header {
+    padding: 20px 40px; }
+  .Top__logo {
+    float: left; }
+  .Top__nav {
+    float: right; }
+  .Top__navItem {
+    margin: 0 20px;
+    float: right; }
+    .Top__navItem a {
+      color: #fff; }
+  .Top__icon {
+    display: block;
+    margin: 70px auto 40px; }
+  .Top__catchcopy {
+    color: #fff;
+    text-align: center; }
+
+.Screenshot__images {
+  width: 806px;
+  margin: -80px auto 0; }
+
+.Content {
+  width: 730px;
+  margin: 0 auto; }
+  .Content__title {
+    font-size: 40px;
+    color: #333; }
+  .Content__description {
+    text-align: left;
+    color: #333;
+    line-height: 1.5; }
+
+.Hr {
+  border-top: 1px solid #ddd;
+  margin: 70px auto;
+  width: 730px; }
+
+.Footer {
+  background-color: #333;
+  padding: 30px;
+  color: #999;
+  font-size: 12px;
+  margin-top: 100px; }
+  .Footer__title {
+    padding-bottom: 10px; }
+  .Footer__area {
+    width: 730px;
+    margin: 0 auto; }
+  .Footer__links {
+    display: flex; }
+  .Footer__link a {
+    color: #fff; }
+  .Footer__link::after {
+    content: '|';
+    margin: 0 10px; }
+  .Footer__link:last-child::after {
+    content: '';
+    margin: 0; }
