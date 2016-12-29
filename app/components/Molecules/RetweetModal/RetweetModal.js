@@ -8,7 +8,7 @@ import styles from './retweetModal.css';
 function putTweetIfValid(tweet) {
   if (tweet.id_str) {
     return (
-      <dl>
+      <dl className={styles.retweetWrapper}>
         <dt>
           <Meta tweet={tweet} />
         </dt>
@@ -27,7 +27,6 @@ export default props => (
   <Modal visible={props.modal} width="340" effect="fadeInDown" onClickAway={() => props.closeRetweetModal()}>
     <div className={styles.modal}>
       {putTweetIfValid(props.tweet)}
-      <hr width="200" />
       <p className={styles.title}>Are you sure you wanna retweet this?</p>
       <div className={styles.actions}>
         <RetweetActions {...props} />
