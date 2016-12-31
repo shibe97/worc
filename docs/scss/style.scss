@@ -1,8 +1,8 @@
 @import "reset";
 
 .Top {
-  background: url('../images/bg_top_01.jpg') repeat center center;
-  height: 540px;
+  background: url('../images/bg_top_01.jpg') repeat center -200px;
+  height: 500px;
   
   &__header {
     padding: 20px 40px;
