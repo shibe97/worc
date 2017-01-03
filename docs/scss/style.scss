@@ -65,6 +65,60 @@
   width: 730px;
 }
 
+.Functions {
+  background-color: #eee;
+  padding: 60px 0 20px;
+  margin-top: 70px;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 50%;
+  }
+
+  &__itemInner {
+    padding: 0 40px 60px 54px;
+    line-height: 1.3;
+  }
+
+  &__home {
+    background: url('../images/home.svg') no-repeat left top;
+    background-size: 40px 40px;
+  }
+
+  &__mentions {
+    background: url('../images/mentions.svg') no-repeat left top;
+    background-size: 40px 40px;
+  }
+
+  &__lists {
+    background: url('../images/lists.svg') no-repeat left top;
+    background-size: 40px 40px;
+  }
+
+  &__search {
+    background: url('../images/search.svg') no-repeat left top;
+    background-size: 40px 40px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  &__description {
+    padding-top: 5px;
+    font-size: 14px;
+  }
+}
+
+.mt70px {
+  margin-top: 70px;
+}
+
 .Footer {
   background-color: #333;
   padding: 30px;

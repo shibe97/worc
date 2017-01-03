@@ -52,6 +52,10 @@ a {
     background:transparent;
     text-decoration:none;
     color: #099;
+
+    &:hover {
+      text-decoration: underline;
+    }
 }
 /* change colours to suit your needs */
 ins {
