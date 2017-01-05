@@ -10,8 +10,6 @@ after_success:
   - sudo add-apt-repository ppa:ubuntu-wine/ppa -y
   - sudo apt-get update -q
   - sudo apt-get install -y wine1.7
-  - rm -rf node_modules
-  - npm i @exponent/electron-cookies electron-zip-packager
   - test ${TRAVIS_TAG} && npm run zip
 cache:
   directories:
