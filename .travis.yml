@@ -7,7 +7,6 @@ script:
   - npm run build
   - npm test
 after_success:
-  - test ${TRAVIS_TAG} && npm run zip:osx
   - test ${TRAVIS_TAG} && sudo add-apt-repository ppa:ubuntu-wine/ppa -y && sudo apt-get update -q && sudo apt-get install -y wine1.7
   - test ${TRAVIS_TAG} && npm run zip:win
 cache:

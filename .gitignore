@@ -2,8 +2,8 @@
 node_modules
 dist/*
 !index.html
+!osx
 assets/*
 !images
-worc-darwin-x64.zip
 worc-darwin-x64
 npm-debug.log
