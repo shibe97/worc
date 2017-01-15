@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link rel="icon" href="images/worc.ico">
+  <title>Worc: シンプルで静かなTwitterクライアント</title>
+  <meta name="description" content="Worcはシンプルさを追求し、タイムラインにアイコン画像を含まないタイプの新しいTwitterクライアントです。仕事中の情報収集に最適です。">
+  <meta name="keywords" content="twitter,client,worc,Twitterクライアント,シンプル,仕事中,情報収集">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Worc: シンプルで静かなTwitterクライアント">
+  <meta property="og:description" content="Worcはシンプルさを追求し、タイムラインにアイコン画像を含まないタイプの新しいTwitterクライアントです。仕事中の情報収集に最適です。">
+  <meta property="og:url" content="http://shibe97.github.io/worc/">
+  <meta property="og:image" content="http://shibe97.github.io/worc/images/ogp.png">
+  <meta property="og:site_name" content="worc">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@shibe97">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="Top">
+      <header class="Top__header clearfix">
+        <h1 class="Top__logo"><img src="../images/logo_worc_01.png" alt="worc" width="58" height="16"></h1>
+        <ul class="Top__nav clearfix">
+          <li class="Top__navItem"><a href="https://github.com/shibe97/worc">GitHub</a></li>
+          <li class="Top__navItem"><a href="https://github.com/shibe97/worc/releases">Releases</a></li>
+          <li class="Top__navItem Top__langItem">
+            <a href="https://shibe97.github.io/worc/">English</a>
+            /
+            日本語
+          </li>
+        </ul>
+      </header>
+      <img class="Top__icon" width="100" height="100" src="../images/logo_worc_02.png" alt="">
+      <h2 class="Top__catchcopy"><img width="730" src="../images/txt_catch_02.png" alt="A quiet twitter client"></h2>
+    </div>
+    <div class="Screenshot">
+      <div class="Screenshot__images">
+        <img width="400" src="../images/ss_timeline_01.png" alt="">
+        <img width="400" src="../images/ss_modal_01.png" alt="">
+      </div>
+    </div>
+    <div class="Content">
+      <h2 class="Content__title">Motivation</h2>
+      <p class="Content__description">
+        Twitterは情報収集ツールとして非常に優秀です。特に技術系の情報はTwitter上に多く存在しています。
+        あくまで情報収集として仕事中に使いたいという気持ちがありますが、社内で堂々と閲覧しているのは憚られます。<br>
+        そこで、シンプルで作業画面の隣においてもあまり目立たないTwitterクライアントを作成しました。
+        タイムラインにアイコン画像を含まない、ありそうで無かったTwitterクライアントです。
+      </p>
+    </div>
+    <hr class="Hr">
+    <div class="Content">
+      <h2 class="Content__title">How to Download</h2>
+      <p class="Content__description">
+        GitHub上からダウンロードすることができます。<br>
+        Releaseページから最新バージョンの「worc-darwin-x64.zip」というリンクからダウンロード可能です。<br>
+        ※未署名のため、ダウンロード後は「右クリック」→「開く」という手順で開く必要があります。
+      </p>
+    </div>
+    <div class="Functions">
+      <div class="Content">
+        <ul class="Functions__items">
+          <li class="Functions__item">
+            <dl class="Functions__itemInner Functions__home">
+              <dt class="Functions__title">ホームタイムライン</dt>
+              <dd class="Functions__description">あなたとあなたのフォローしているユーザーのツイート一覧が表示されます。ストリーム形式で閲覧することができます。</dd>
+            </dl>
+          </li>
+          <li class="Functions__item">
+            <dl class="Functions__itemInner Functions__mentions">
+              <dt class="Functions__title">メンション</dt>
+              <dd class="Functions__description">他のユーザーがあなたに対してメンションしたツイートの一覧が表示されます。</dd>
+            </dl>
+          </li>
+          <li class="Functions__item">
+            <dl class="Functions__itemInner Functions__lists">
+              <dt class="Functions__title">リストタイムライン</dt>
+              <dd class="Functions__description">あなたのリストに登録されているユーザーのツイートやリツイートの一覧が表示されます。ストリーム形式で閲覧することができます。</dd>
+            </dl>
+          </li>
+          <li class="Functions__item">
+            <dl class="Functions__itemInner Functions__search">
+              <dt class="Functions__title">検索機能</dt>
+              <dd class="Functions__description">ツイッターの検索機能が使えます。キーワードによってはタイムラインの流れが速すぎるため、ストリーム形式には現状対応しておりません。</dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="Content mt70px">
+      <h2 class="Content__title">Issues</h2>
+      <p class="Content__description">
+        バグや機能追加の提案などはGitHubの<a href="https://github.com/shibe97/worc/issues" target="issues">Issue</a>までお願いします。
+      </p>
+    </div>
+    <footer class="Footer">
+      <div class="Footer__area">
+        <h3 class="Footer__title"><img src="images/logo_worc_01.png" alt="worc" width="58" height="16"></h3>
+        <p>Copyright © 2017 Kazuki Shibata All rights reserved.</p>
+        <ul class="Footer__links">
+          <li class="Footer__link"><a href="https://github.com/shibe97/worc">GitHub</a></li>
+          <li class="Footer__link"><a href="https://twitter.com/shibe97">Twitter</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-88247026-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

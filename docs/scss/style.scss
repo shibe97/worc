@@ -18,7 +18,19 @@
 
   &__navItem {
     margin: 0 20px;
-    float: right;
+    float: left;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  &__lang {
+    padding: 0px 40px;
+  }
+
+  &__langItem {
+    color: #999;
 
     a {
       color: #fff;

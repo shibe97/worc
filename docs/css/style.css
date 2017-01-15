@@ -107,8 +107,14 @@ input, select {
     float: right; }
   .Top__navItem {
     margin: 0 20px;
-    float: right; }
+    float: left; }
     .Top__navItem a {
+      color: #fff; }
+  .Top__lang {
+    padding: 0px 40px; }
+  .Top__langItem {
+    color: #999; }
+    .Top__langItem a {
       color: #fff; }
   .Top__icon {
     display: block;
