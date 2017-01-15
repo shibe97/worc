@@ -7,8 +7,7 @@ script:
   - npm run build
   - npm test
 after_success:
-  - test ${TRAVIS_TAG} && sudo add-apt-repository ppa:ubuntu-wine/ppa -y && sudo apt-get update -q && sudo apt-get install -y wine1.7
-  - test ${TRAVIS_TAG} && npm run zip:win
+  - test ${TRAVIS_TAG} && npm run zip:osx
 cache:
   directories:
     - node_modules
@@ -18,7 +17,6 @@ deploy:
     secure: VSx3rAxBXC0u+Q7lIiRpqAbVjMuB6AhekOIIardzLRMyHT5ir/5p9+Nyyb98VQp8A7Pi++f+FkMeetE+rYmehJYs9RoC7T76gFfmdq5vUpUA4hTMehcGp13N5cqZsAw5Tvu1NA3zp4Pn7Gv99JhD8vCFh2mqHOLhUQsClyl3k5nzWpSn7XXKYplpRRSB15zYoJHUAry+8ujnPNtP1rrjqXZ1p8IS41/LPs1UBImtHNMGinRBv/2IQjZ/fe+urFL4vsM4zcnyLWrEcABCHtOwQTDsH/MwTzGOBXkx1gD9N/9uK2GwQc75fXOxgVno8ERm+yP4k8Br1UNBEnEOOfl+gB12XIEk7Geg71hwDqNUA9XeqMgB8SsbGuOQUlJgdoF6LIRpwIg7/CXS7+1+iokregAQhUCZKfXjod6MWVRYAC+pTi5lBR/+kdgk2Qb0BBAFNQkOEg5RB4CgukOb0MUhzdRHx12e6iHvaePZV/ciRu58FrHVl/KSVNxgPq0f0MFj7eALKCJy4QV1apGfxujizHWu2FX8+0WeTVV35y1WhwZjGU4J7S5dHxDT2o7yJKBtI0PlCiIwqMdW83IF8azk3Vxicmaac+7pMRWW8qsNcN54t+SvcvZo+MO3JvwRB8RJJOKRhbnl3jNp8gQh6P5FfTEgfBAhvHi/ghUwQGJ817c=
   file:
     - dist/osx/worc-darwin-x64.zip
-    - dist/win/worc-win32-ia32.zip
   on:
     repo: shibe97/worc
     tags: true
