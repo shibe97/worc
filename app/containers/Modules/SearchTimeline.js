@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import SearchTimeline from '../../components/Modules/SearchTimeline/SearchTimeline';
 import { requestGetSearchTweets, inputQuery } from '../../actions/search';
 import { requestStreamSiteTrack } from '../../actions/siteStream';
+import { requestGetUsersShow } from '../../actions/users';
 
 const mapStateToProps = state => ({
   gettingTimeline: state.searchReducer.gettingStatuses,
@@ -22,6 +23,9 @@ const mapDispatchToProps = dispatch => ({
       dispatch,
       keyword
     ));
+  },
+  requestGetUsersShow(id) {
+    dispatch(requestGetUsersShow(id));
   }
 });
 

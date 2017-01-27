@@ -4,6 +4,7 @@ import { requestGetUserTimeline } from '../../actions/timeline';
 import { setUser } from '../../actions/user';
 import { requestPostFavoritesCreate, requestPostFavoritesDestroy } from '../../actions/favorites';
 import { openRetweetModal } from '../../actions/retweet';
+import { requestGetUsersShow } from '../../actions/users';
 
 const mapStateToProps = state => ({
   gettingTimeline: state.userTimelineReducer.gettingTimeline,
@@ -27,6 +28,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   openRetweetModal(tweet) {
     dispatch(openRetweetModal(tweet));
+  },
+  requestGetUsersShow(id) {
+    dispatch(requestGetUsersShow(id));
   }
 });
 

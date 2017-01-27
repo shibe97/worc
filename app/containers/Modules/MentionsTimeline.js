@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Timeline from '../../components/Modules/Timeline/Timeline';
 import { requestGetMentionsTimeline } from '../../actions/timeline';
+import { requestGetUsersShow } from '../../actions/users';
 
 const mapStateToProps = state => ({
   gettingTimeline: state.mentionsTimelineReducer.gettingTimeline,
@@ -11,6 +12,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   requestGetTimeline() {
     dispatch(requestGetMentionsTimeline());
+  },
+  requestGetUsersShow(id) {
+    dispatch(requestGetUsersShow(id));
   }
 });
 

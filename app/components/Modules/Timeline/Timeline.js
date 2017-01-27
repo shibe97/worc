@@ -32,6 +32,13 @@ export default class Timeline extends Component {
     return false;
   }
 
+  componentDidUpdate() {
+    const elms = document.getElementsByClassName('userName');
+    Array.from(elms).forEach((elm) => {
+      elm.addEventListener('click', () => this.props.requestGetUsersShow(elm.getAttribute('data-id')));
+    });
+  }
+
   render() {
     if (this.props.gettingTimeline) {
       return (

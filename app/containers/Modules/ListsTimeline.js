@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ListsTimeline from '../../components/Modules/ListsTimeline/ListsTimeline';
 import { requestGetListsStatuses } from '../../actions/lists';
 import { requestStreamSiteFollow } from '../../actions/siteStream';
+import { requestGetUsersShow } from '../../actions/users';
 
 const mapStateToProps = state => ({
   gettingTimeline: state.listsReducer.gettingStatuses,
@@ -18,6 +19,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       dispatch,
       ownProps.params.listId
     ));
+  },
+  requestGetUsersShow(id) {
+    dispatch(requestGetUsersShow(id));
   }
 });
 

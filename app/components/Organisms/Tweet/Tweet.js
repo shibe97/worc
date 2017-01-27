@@ -10,7 +10,7 @@ export default ({ tweet = {}, setUser }) => (
       <Meta tweet={tweet} setUser={setUser} />
     </dt>
     <dd>
-      <Text tweet={tweet} />
+      <Text tweet={tweet} setUser={setUser} />
     </dd>
     <dd className={styles.actions}>
       <Triggers tweet={tweet} />

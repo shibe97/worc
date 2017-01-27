@@ -10,6 +10,7 @@ import { handleStreamSiteFollow, handleStreamSiteTrack } from './streams/siteStr
 import handleGetList from './lists/list';
 import handleGetListsStatuses from './lists/statuses';
 import handleGetSearchTweets from './search/tweets';
+import handleGetUsersShow from './users/show';
 
 export default function* rootSaga() {
   yield fork(handleGetHomeTimeline);
@@ -25,4 +26,5 @@ export default function* rootSaga() {
   yield fork(handleGetList);
   yield fork(handleGetListsStatuses);
   yield fork(handleGetSearchTweets);
+  yield fork(handleGetUsersShow);
 }

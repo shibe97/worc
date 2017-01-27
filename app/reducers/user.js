@@ -6,6 +6,7 @@ const initialState = {
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case 'SET_USER':
+    case 'SUCCESS_GET_USERS_SHOW':
       return {
         ...state,
         modal: true,
