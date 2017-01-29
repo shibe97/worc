@@ -27,6 +27,7 @@ export default class Text extends Component {
     sortedEntities.forEach((entity) => {
       switch (entity.type) {
         case 'hashtags':
+          str = `${str.substr(0, entity.indices[0])}<a href="#/searchTimeline" class="hashTag" data-text="${entity.text}" >#${entity.text}</a>${str.substr(entity.indices[1])}`;
           break;
         case 'urls':
           str = `${str.substr(0, entity.indices[0])}<a href="${entity.url}" target="_blank" >${entity.display_url}</a>${str.substr(entity.indices[1])}`;

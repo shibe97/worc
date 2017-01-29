@@ -33,9 +33,13 @@ export default class Timeline extends Component {
   }
 
   componentDidUpdate() {
-    const elms = document.getElementsByClassName('userName');
-    Array.from(elms).forEach((elm) => {
+    const userNameElms = document.getElementsByClassName('userName');
+    const hashTagElms = document.getElementsByClassName('hashTag');
+    Array.from(userNameElms).forEach((elm) => {
       elm.addEventListener('click', () => this.props.requestGetUsersShow(elm.getAttribute('data-id')));
+    });
+    Array.from(hashTagElms).forEach((elm) => {
+      elm.addEventListener('click', () => this.props.requestGetSearchTweets(elm.getAttribute('data-text')));
     });
   }
 
