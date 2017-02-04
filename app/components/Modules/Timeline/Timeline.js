@@ -39,7 +39,7 @@ export default class Timeline extends Component {
       elm.addEventListener('click', () => this.props.requestGetUsersShow(elm.getAttribute('data-id')));
     });
     Array.from(hashTagElms).forEach((elm) => {
-      elm.addEventListener('click', () => this.props.requestGetSearchTweets(elm.getAttribute('data-text')));
+      elm.addEventListener('click', () => this.props.requestGetSearchTweets(`#${elm.getAttribute('data-text')}`));
     });
   }
 

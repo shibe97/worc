@@ -24,6 +24,7 @@ export default function searchReducer(state = initialState, action) {
     case 'REQUEST_GET_SEARCH_TWEETS':
       return {
         ...state,
+        query: action.payload,
         gettingStatuses: true
       };
 

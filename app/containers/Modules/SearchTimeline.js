@@ -26,6 +26,9 @@ const mapDispatchToProps = dispatch => ({
   },
   requestGetUsersShow(id) {
     dispatch(requestGetUsersShow(id));
+  },
+  requestGetSearchTweets(q) {
+    dispatch(requestGetSearchTweets(q));
   }
 });
 

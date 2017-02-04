@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Timeline from '../../components/Modules/Timeline/Timeline';
 import { requestGetHomeTimeline } from '../../actions/timeline';
 import { requestGetUsersShow } from '../../actions/users';
+import { requestGetSearchTweets } from '../../actions/search';
 
 const mapStateToProps = state => ({
   gettingTimeline: state.homeTimelineReducer.gettingTimeline,
@@ -16,6 +17,9 @@ const mapDispatchToProps = dispatch => ({
   },
   requestGetUsersShow(id) {
     dispatch(requestGetUsersShow(id));
+  },
+  requestGetSearchTweets(q) {
+    dispatch(requestGetSearchTweets(q));
   }
 });
 

@@ -3,6 +3,7 @@ import ListsTimeline from '../../components/Modules/ListsTimeline/ListsTimeline'
 import { requestGetListsStatuses } from '../../actions/lists';
 import { requestStreamSiteFollow } from '../../actions/siteStream';
 import { requestGetUsersShow } from '../../actions/users';
+import { requestGetSearchTweets } from '../../actions/search';
 
 const mapStateToProps = state => ({
   gettingTimeline: state.listsReducer.gettingStatuses,
@@ -22,6 +23,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
   requestGetUsersShow(id) {
     dispatch(requestGetUsersShow(id));
+  },
+  requestGetSearchTweets(q) {
+    dispatch(requestGetSearchTweets(q));
   }
 });
 
