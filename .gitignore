@@ -4,5 +4,6 @@ dist/*
 !index.html
 assets/*
 !images
+docs/mac/worc.app
 worc-darwin-x64
 npm-debug.log
