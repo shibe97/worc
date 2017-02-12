@@ -2,7 +2,7 @@
 
 .Top {
   background: url('../images/bg_top_01.jpg') repeat center -200px;
-  height: 500px;
+  height: 600px;
   
   &__header {
     padding: 20px 40px;
@@ -10,6 +10,32 @@
 
   &__logo {
     float: left;
+  }
+
+  &__alignCenter {
+    text-align: center;
+  }
+
+  &__download {
+    display: inline-block;
+    width: 240px;
+    height: 40px;
+    padding: 6px 0 8px;
+    text-align: center;
+    border-radius: 3px;
+    background: -moz-linear-gradient(top, #e5ad0d, #c58d00);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e5ad0d), to(#c58d00));
+    background-color: #c58d00;
+    margin-top: 60px;
+    color: #fff;
+    font-size: 20px;
+    
+    &:hover {
+        background: -moz-linear-gradient(top, #f5cd2d, #e5ad0d);
+        background: -webkit-gradient(linear, left top, left bottom, from(#f5cd2d), to(#e5ad0d));
+        background-color: #e5ad0d;
+        text-decoration: none;
+    }
   }
 
   &__nav {
