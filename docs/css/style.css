@@ -142,6 +142,11 @@ input, select {
   .Top__catchcopy {
     color: #fff;
     text-align: center; }
+  .Top__catchcopy2 {
+    color: #eee;
+    text-align: center;
+    font-weight: normal;
+    margin-top: -10px; }
 
 .Screenshot__images {
   width: 806px;
