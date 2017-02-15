@@ -38,6 +38,7 @@ export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
           value="Post"
           onClick={() => requestPostUpdate(data.update)}
           disabled={!readyToPost(data)}
+          title={process.platform === 'darwin' ? 'Cmd+Enter' : 'Ctrl+Enter'}
         />
       </span>
     </div>
