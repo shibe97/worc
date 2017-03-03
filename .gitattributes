@@ -1,1 +1,2 @@
 docs/mac/worc-1.5.0.dmg filter=lfs diff=lfs merge=lfs -text
+docs/mac/worc-1.6.0.dmg filter=lfs diff=lfs merge=lfs -text
