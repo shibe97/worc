@@ -8,5 +8,6 @@ export default ({ pathname, resetTimeline }) => (
     <Item current={pathname} to="/mentionsTimeline" onClick={() => resetTimeline()} itemClass="mentions">mentions</Item>
     <Item current={pathname} to="/lists" onClick={() => resetTimeline()} itemClass="lists">lists</Item>
     <Item current={pathname} to="/searchTimeline" onClick={() => resetTimeline()} itemClass="search">search</Item>
+    <a href="https://github.com/shibe97/worc" target="GitHub" className={styles.github}>GitHub</a>
   </ul>
 );

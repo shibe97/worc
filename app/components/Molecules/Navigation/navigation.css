@@ -1,4 +1,17 @@
 .navigation {
+  position: relative;
   height: 100%;
   background-color: #234;
+}
+
+.github {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url('./github.svg') no-repeat center center;
+  background-size: 34px 34px;
+  text-indent: -9999px;
+  overflow: hidden;
 }
