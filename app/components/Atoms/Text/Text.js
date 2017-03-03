@@ -17,10 +17,15 @@ export default class Text extends Component {
       ...userMention,
       type: 'user_mentions'
     }));
+    const medias = entities.media ? entities.media.map(media => ({
+      ...media,
+      type: 'media'
+    })) : [];
     const newEntities = [
       ...hashtags,
       ...urls,
-      ...userMentions
+      ...userMentions,
+      ...medias
     ];
     const sortedEntities = newEntities.length > 0 ? newEntities.sort((a, b) => b.indices[0] - a.indices[0]) : [];
 
@@ -34,6 +39,9 @@ export default class Text extends Component {
           break;
         case 'user_mentions':
           str = `${str.substr(0, entity.indices[0])}<a href="javascript:void(0);" class="userName" data-id="${entity.id_str}" >@${entity.screen_name}</a>${str.substr(entity.indices[1])}`;
+          break;
+        case 'media':
+          str = `${str.substr(0, entity.indices[0])}<a href="${entity.url}" target="_blank" >${entity.display_url}</a>${str.substr(entity.indices[1])}`;
           break;
         default:
           break;
