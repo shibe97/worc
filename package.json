@@ -65,11 +65,9 @@
     "pack:osx": "build --mac --x64"
   },
   "build": {
-    "appId": "jp.worc.electron",
-    "category": "Development",
+    "appId": "com.electron.worc",
     "mac": {
-      "target": "dmg",
-      "title": "worc"
+      "target": "dmg"
     },
     "directories": {
       "output": "docs"
