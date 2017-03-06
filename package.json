@@ -62,7 +62,8 @@
     "docs": "node-sass --include-path scss docs/scss/style.scss docs/css/style.css",
     "test": "jest app",
     "start": "electron dist/main.js",
-    "pack:osx": "build --mac --x64"
+    "pack:osx": "build --mac --x64",
+    "pack:win": "build --win --ia32"
   },
   "build": {
     "appId": "com.electron.worc",
