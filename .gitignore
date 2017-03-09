@@ -8,3 +8,4 @@ docs/mac/worc.app
 docs/win-ia32-unpacked
 worc-darwin-x64
 npm-debug.log
+**/__snapshots__
