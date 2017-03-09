@@ -1,10 +1,17 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import sinon from 'sinon';
 import { shallow, mount, render } from 'enzyme';
 
 import Textarea from './Textarea';
 
-describe('components/atoms/button', function() {
+describe('components/atoms/textarea', function() {
+  it('renders correctly', () => {
+    const tree = renderer.create(
+      <Textarea value="test" inputUpdate={() => {}} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('should have "textarea" class', function() {
     expect(shallow(<Textarea value="test" />).hasClass('textarea')).toEqual(true);
   });
