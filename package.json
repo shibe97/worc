@@ -41,6 +41,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
+    "husky": "^0.13.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^16.0.1",
     "jsdom": "^9.2.1",
@@ -50,6 +51,7 @@
     "postcss-loader": "^1.0.0",
     "postcss-nested": "^1.0.0",
     "react-addons-test-utils": "^15.3.2",
+    "react-test-renderer": "^15.4.2",
     "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "svg-url-loader": "^1.1.0",
@@ -63,7 +65,8 @@
     "test": "jest app",
     "start": "electron dist/main.js",
     "pack:osx": "build --mac --x64",
-    "pack:win": "build --win --ia32"
+    "pack:win": "build --win --ia32",
+    "prepush": "npm test"
   },
   "build": {
     "appId": "com.electron.worc",
