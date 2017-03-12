@@ -2,7 +2,7 @@
 
 .Top {
   background: url('../images/bg_top_01.jpg') repeat center -200px;
-  height: 600px;
+  height: 700px;
   
   &__header {
     padding: 20px 40px;
@@ -13,20 +13,23 @@
   }
 
   &__alignCenter {
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   &__download {
-    display: inline-block;
-    width: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
     height: 40px;
-    padding: 6px 0 8px;
+    margin: 40px auto;
+    padding: 6px 10px 8px;
     text-align: center;
     border-radius: 3px;
     background: -moz-linear-gradient(top, #e5ad0d, #c58d00);
     background: -webkit-gradient(linear, left top, left bottom, from(#e5ad0d), to(#c58d00));
     background-color: #c58d00;
-    margin-top: 60px;
     color: #fff;
     font-size: 20px;
     
@@ -78,6 +81,10 @@
     text-align: center;
     font-weight: normal;
     margin-top: -10px;
+  }
+
+  &__smallText {
+    font-size: 88%;
   }
 }
 
