@@ -19,6 +19,11 @@ You can download from following link.
 This application is not signed.  
 You need to open it from right click.
 
+# Screenshots
+![ss_timeline_02](https://cloud.githubusercontent.com/assets/4659294/24149017/79b4273e-0e84-11e7-8b07-ce6245b76884.png)
+![ss_modal_02](https://cloud.githubusercontent.com/assets/4659294/24149016/79b2635e-0e84-11e7-84c3-0a8e40633113.png)
+
+
 # How To Develop
 ## Setup
 ```
