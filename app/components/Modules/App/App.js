@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ShortcutManager } from 'react-shortcuts';
+import Menu from '../../Atoms/Menu/Menu';
 import Navigation from '../../Molecules/Navigation/Navigation';
 import PostForm from '../../../containers/Molecules/PostForm';
 import styles from './app.css';
@@ -24,6 +25,7 @@ export default class App extends Component {
           <Navigation resetTimeline={this.props.resetTimeline} pathname={this.props.pathname} />
         </div>
         <div className={styles.right}>
+          <Menu history={this.props.history} />
           <PostForm />
           {this.props.children}
         </div>
