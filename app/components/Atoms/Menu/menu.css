@@ -1,0 +1,26 @@
+.menu {
+  background-color: #ccc;
+  height: 30px;
+  display: flex;
+  padding: 0 5px;
+}
+
+.back {
+  display: block;
+  width: 26px;
+  height: 30px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url('./back.svg') no-repeat center center;
+  background-size: 16px 16px;
+}
+
+.forward {
+  display: block;
+  width: 26px;
+  height: 30px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url('./forward.svg') no-repeat center center;
+  background-size: 16px 16px;
+}
