@@ -10,7 +10,7 @@
 
   &.mentions {
     background: url('./mentions.svg') no-repeat center center;
-    background-size: 24px 24px;
+    background-size: 32px 32px;
   }
 
   &.lists {
