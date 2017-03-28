@@ -11,7 +11,9 @@
   height: 30px;
   text-indent: -9999px;
   overflow: hidden;
-  background: url('./back.svg') no-repeat center center;
+  background-image: url('./back_on.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: 16px 16px;
 }
 
@@ -21,6 +23,8 @@
   height: 30px;
   text-indent: -9999px;
   overflow: hidden;
-  background: url('./forward.svg') no-repeat center center;
+  background-image: url('./forward_on.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: 16px 16px;
 }
