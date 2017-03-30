@@ -18,8 +18,18 @@ export default class Timeline extends Component {
     return <li />;
   }
 
+  static getId(props) {
+    return props.match && props.match.params && props.match.params.id;
+  }
+
   componentWillMount() {
-    this.props.requestGetTimeline();
+    this.props.requestGetTimeline(Timeline.getId(this.props));
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (Timeline.getId(this.props) !== Timeline.getId(nextProps)) {
+      this.props.requestGetTimeline(Timeline.getId(nextProps));
+    }
   }
 
   shouldComponentUpdate(nextProps) {

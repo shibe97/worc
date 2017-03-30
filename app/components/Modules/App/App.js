@@ -35,7 +35,7 @@ export default class App extends Component {
           <PostForm />
           <Route component={HomeTimeline} exact path="/" />
           <Route component={HomeTimeline} path="/homeTimeline" />
-          <Route component={UserTimeline} path="/userTimeline/:userId" />
+          <Route component={UserTimeline} path="/userTimeline/:id" />
           <Route component={MentionsTimeline} path="/mentionsTimeline" />
           <Route component={Lists} exact path="/lists" />
           <Route component={ListsTimeline} path="/lists/:listId/:listName" />
