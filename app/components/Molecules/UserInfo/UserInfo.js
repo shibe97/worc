@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import UserImage from '../../Atoms/UserImage/UserImage';
 import Name from '../../Atoms/Name/Name';
 import ScreenName from '../../Atoms/ScreenName/ScreenName';
