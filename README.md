@@ -13,7 +13,7 @@ A quiet twitter client made by Electron.
 # Downloads
 You can download from following link.
 
-[https://github.com/shibe97/worc/releases](https://github.com/shibe97/worc/releases)
+[https://shibe97.github.io/worc/](https://shibe97.github.io/worc/)
 
 **-NOTICE-**  
 This application is not signed.  
