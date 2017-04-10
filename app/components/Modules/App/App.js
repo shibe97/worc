@@ -25,7 +25,7 @@ export default class App extends Component {
           <Navigation resetTimeline={this.props.resetTimeline} pathname={this.props.pathname} />
         </div>
         <div className={styles.right}>
-          <Menu history={this.props.history} />
+          <Menu router={this.context.router} />
           <PostForm />
           {this.props.children}
         </div>
@@ -37,3 +37,7 @@ export default class App extends Component {
 App.childContextTypes = {
   shortcuts: React.PropTypes.object.isRequired
 };
+App.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
+
