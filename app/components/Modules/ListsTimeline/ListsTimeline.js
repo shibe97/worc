@@ -10,12 +10,13 @@ export default class ListsTimeline extends Component {
   render() {
     return (
       <div>
-        <p className={styles.current}>list : {this.props.params.listName}</p>
+        <p className={styles.current}>list : {this.props.match.params.listName}</p>
         <Timeline
           gettingTimeline={this.props.gettingTimeline}
           timeline={this.props.timeline}
           user={this.props.user}
           requestGetTimeline={this.props.requestGetTimeline}
+          requestGetUsersShow={this.props.requestGetUsersShow}
           requestGetSearchTweets={this.props.requestGetSearchTweets}
           requestGetUsersShow={this.props.requestGetUsersShow}
         />
