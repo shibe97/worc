@@ -18,7 +18,6 @@ export default class ListsTimeline extends Component {
           requestGetTimeline={this.props.requestGetTimeline}
           requestGetUsersShow={this.props.requestGetUsersShow}
           requestGetSearchTweets={this.props.requestGetSearchTweets}
-          requestGetUsersShow={this.props.requestGetUsersShow}
         />
       </div>
     );

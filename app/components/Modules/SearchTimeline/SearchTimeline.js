@@ -44,7 +44,6 @@ export default class SearchTimeline extends Component {
           requestGetTimeline={() => this.requestGetTimeline()}
           requestGetUsersShow={this.props.requestGetUsersShow}
           requestGetSearchTweets={this.props.requestGetSearchTweets}
-          requestGetUsersShow={this.props.requestGetUsersShow}
         />
       </div>
     );
