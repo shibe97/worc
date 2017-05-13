@@ -14,9 +14,9 @@ const mapStateToProps = state => ({
   userModal: state.userReducer.modal
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  requestGetTimeline() {
-    dispatch(requestGetUserTimeline(ownProps.params.userId));
+const mapDispatchToProps = dispatch => ({
+  requestGetTimeline(userId) {
+    dispatch(requestGetUserTimeline(userId));
   },
   requestPostFavoritesCreate(tweetId) {
     dispatch(requestPostFavoritesCreate(tweetId));

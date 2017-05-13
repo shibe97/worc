@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import styles from './navigationItem.css';
 
 export default ({ current, to, onClick, children, itemClass }) => {

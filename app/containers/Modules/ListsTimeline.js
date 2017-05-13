@@ -13,12 +13,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   requestGetTimeline() {
-    dispatch(requestGetListsStatuses(ownProps.params.listId));
+    dispatch(requestGetListsStatuses(ownProps.match.params.listId));
   },
   requestStreamSiteFollow() {
     dispatch(requestStreamSiteFollow(
       dispatch,
-      ownProps.params.listId
+      ownProps.match.params.listId
     ));
   },
   requestGetUsersShow(id) {
