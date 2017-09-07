@@ -17,6 +17,7 @@ import mentionsTimelineReducer from './reducers/mentionsTimeline';
 import searchReducer from './reducers/searchTimeline';
 import userReducer from './reducers/user';
 import retweetReducer from './reducers/retweet';
+import replyReducer from './reducers/reply';
 import updateReducer from './reducers/update';
 import listsReducer from './reducers/lists';
 
@@ -34,6 +35,7 @@ const reducer = combineReducers({
   searchReducer,
   userReducer,
   retweetReducer,
+  replyReducer,
   updateReducer,
   listsReducer
 });

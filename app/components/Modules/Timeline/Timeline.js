@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TweetWrapper from '../TweetWrapper/TweetWrapper';
 import UserModal from '../../../containers/Modules/UserModal';
 import RetweetModal from '../../../containers/Molecules/RetweetModal';
+import ReplyModal from '../../../containers/Molecules/ReplyModal';
 import Loading from '../../Atoms/Loading/Loading';
 import styles from './timeline.css';
 
@@ -68,6 +69,7 @@ export default class Timeline extends Component {
         </ul>
         <UserModal />
         <RetweetModal />
+        <ReplyModal />
       </div>
     );
   }

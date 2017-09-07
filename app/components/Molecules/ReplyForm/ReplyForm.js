@@ -3,24 +3,24 @@ import { Shortcuts } from 'react-shortcuts';
 import Textarea from '../../Atoms/Textarea/Textarea';
 import RemainingCharacters from '../../Atoms/RemainingCharacters/RemainingCharacters';
 import Button from '../../Atoms/Button/Button';
-import styles from './postForm.css';
+import styles from './replyForm.css';
 
-function readyToPost(data) {
+function readyToReply(data) {
   return (
-    !data.postingUpdate &&
+    !data.postingReply &&
     data.remainingCharacters >= 0 &&
     data.remainingCharacters < 140
   );
 }
 
-export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
+export default ({ data = {}, inReplyToStatusId, inputReply, requestPostReply }) => (
   <form className={styles.postForm}>
     <Shortcuts
       name="POSTFORM" handler={(action) => {
         switch (action) {
           case 'POST':
-            if (readyToPost(data)) {
-              requestPostUpdate(data.update);
+            if (readyToReply(data)) {
+              requestPostReply(data.reply);
             }
             break;
           default:
@@ -28,7 +28,7 @@ export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
         }
       }}
     >
-      <Textarea value={data.update} inputUpdate={inputUpdate} />
+      <Textarea value={data.reply} inputUpdate={inputReply} />
     </Shortcuts>
     <div className={styles.actions}>
       <RemainingCharacters remainingCharacters={data.remainingCharacters} />
@@ -36,8 +36,8 @@ export default ({ data = {}, inputUpdate, requestPostUpdate }) => (
         <Button
           type="normal"
           value="Post"
-          onClick={() => requestPostUpdate({ status: data.update })}
-          disabled={!readyToPost(data)}
+          onClick={() => requestPostReply({ status: data.reply, in_reply_to_status_id: inReplyToStatusId })}
+          disabled={!readyToReply(data)}
           title={process.platform === 'darwin' ? 'Cmd+Enter' : 'Ctrl+Enter'}
         />
       </span>

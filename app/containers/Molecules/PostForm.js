@@ -10,8 +10,8 @@ const mapDispatchToProps = dispatch => ({
   inputUpdate(value) {
     dispatch(inputUpdate(value));
   },
-  requestPostUpdate(value) {
-    dispatch(requestPostUpdate(value));
+  requestPostUpdate(params) {
+    dispatch(requestPostUpdate(params));
   }
 });
 

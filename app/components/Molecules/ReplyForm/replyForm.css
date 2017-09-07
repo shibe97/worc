@@ -1,0 +1,13 @@
+.postForm {
+  background-color: #eee;
+  border-bottom: 3px solid #ccc;
+  padding: 20px;
+}
+
+.actions {
+  text-align: right;
+}
+
+.button {
+  margin-left: 10px;
+}
