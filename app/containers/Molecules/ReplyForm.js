@@ -10,7 +10,8 @@ const mapDispatchToProps = dispatch => ({
   inputReply(value) {
     dispatch(inputReply(value));
   },
-  requestPostReply(params) {
+  requestPostReply(params, closeModal) {
+    closeModal();
     dispatch(requestPostReply(params));
   }
 });

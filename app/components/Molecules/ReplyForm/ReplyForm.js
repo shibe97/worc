@@ -13,7 +13,7 @@ function readyToReply(data) {
   );
 }
 
-export default ({ data = {}, inReplyToStatusId, inputReply, requestPostReply }) => (
+export default ({ data = {}, inReplyToStatusId, inputReply, requestPostReply, closeModal }) => (
   <form className={styles.postForm}>
     <Shortcuts
       name="POSTFORM" handler={(action) => {
@@ -36,7 +36,7 @@ export default ({ data = {}, inReplyToStatusId, inputReply, requestPostReply }) 
         <Button
           type="normal"
           value="Post"
-          onClick={() => requestPostReply({ status: data.reply, in_reply_to_status_id: inReplyToStatusId })}
+          onClick={() => requestPostReply({ status: data.reply, in_reply_to_status_id: inReplyToStatusId }, closeModal)}
           disabled={!readyToReply(data)}
           title={process.platform === 'darwin' ? 'Cmd+Enter' : 'Ctrl+Enter'}
         />

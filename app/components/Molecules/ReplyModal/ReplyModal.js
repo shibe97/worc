@@ -29,6 +29,6 @@ export default props => (
       {putTweetIfValid(props.tweet)}
     </div>
     <p className={styles.replyToUser}>Replying to @{props.tweet.user && props.tweet.user.screen_name}</p>
-    <ReplyForm inReplyToStatusId={props.tweet.id_str} />
+    <ReplyForm inReplyToStatusId={props.tweet.id_str} closeModal={() => props.closeReplyModal()} />
   </Modal>
 );
